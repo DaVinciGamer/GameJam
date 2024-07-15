@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-        public float moveSpeed = 0.01f;
+    public float moveSpeed = 0.01f;
     public InputAction LeftAction;
     public InputAction RightAction;
     public InputAction UpAction;
     public InputAction DownAction;
     public InputAction AttackAction;
-    public InputAction SneakAction;
+
 
     public GameObject projectilePrefab; // Referenz zum Projektil-Prefab
 
@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
         UpAction.Enable();
         DownAction.Enable();
         AttackAction.Enable();
-        SneakAction.Enable();
 
         originalMoveSpeed = moveSpeed;
 
@@ -36,16 +35,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Geschwindigkeit anpassen, wenn SneakAction aktiv ist
-        if (SneakAction.IsPressed())
-        {
-            moveSpeed = originalMoveSpeed * 0.5f; // Geschwindigkeit um 30% verringern
-        }
-        else
-        {
-            moveSpeed = originalMoveSpeed; // ursprüngliche Geschwindigkeit wiederherstellen
-        }
-
         // Bewegungscode
         float horizontal = 0.0f;
         if (LeftAction.IsPressed())
