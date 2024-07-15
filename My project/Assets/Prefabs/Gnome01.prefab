@@ -195,7 +195,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 5e446337-2473-4f5a-ac99-e07956d090ca
-      m_Path: 
+      m_Path: <Keyboard>/i
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -203,6 +203,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   projectilePrefab: {fileID: 0}
+  pickUpRadius: 1.5
 --- !u!61 &4249437363521426207
 BoxCollider2D:
   m_ObjectHideFlags: 0
