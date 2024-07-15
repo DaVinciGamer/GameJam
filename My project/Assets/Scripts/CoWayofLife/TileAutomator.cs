@@ -147,7 +147,7 @@ public class TileAutomator : MonoBehaviour
     public void SaveAssetMap()
     {
         string saveName = "tmapXY_" + count;
-        var mf = GameObject.Find("Grid");
+        var mf = GameObject.Find("MapGenerator");
 
         if (mf)
         {
