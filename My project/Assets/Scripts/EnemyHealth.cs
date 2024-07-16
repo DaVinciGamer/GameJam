@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Callbacks;
+// using UnityEditor.Callbacks;
 using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
@@ -16,12 +16,12 @@ public class EnemyHealth : MonoBehaviour
         healthBar = GetComponentInChildren<HealthBar>();
     }
 
-    private void Start()
-    {
-        playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
-        health = maxHealth;
-        healthBar.UpdateHealthBar(health, maxHealth);
-    }
+    // private void Start()
+    // {
+    //     playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
+    //     health = maxHealth;
+    //     healthBar.UpdateHealthBar(health, maxHealth);
+    // }
 
     public void TakeDamage(float damageAmount)
     {
