@@ -35,7 +35,6 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        playerController.updateScore(1);
         Destroy(gameObject);
     }
 }

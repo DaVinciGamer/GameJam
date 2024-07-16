@@ -10,7 +10,6 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("---collision detction----");
             playerClass.currentHealth -= 10;
         }
     }

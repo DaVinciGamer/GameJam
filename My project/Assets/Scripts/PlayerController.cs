@@ -19,13 +19,9 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
     public float projectileSpeed = 10.0f;
-    public int score = 0;
     public int currentHealth = 100;
     public int maxHealth = 100;
     public Image healthBar;
-
-    public TMP_Text scoreText;
-
     public float pickUpRadius = 1.5f; // Radius of the player for picking up objects
     private GameObject carriedObject = null; // Declare carried object instance variable
 
@@ -37,9 +33,11 @@ public class PlayerController : MonoBehaviour
     // Reference to the SpriteRenderer component
     private SpriteRenderer spriteRenderer;
 
+    public Animator animator;
+
     void Start()
     {
-// Find VarInvertedWorld component
+        // Find VarInvertedWorld component
         varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
 
         if (varInvertedWorld == null)
@@ -64,10 +62,6 @@ public class PlayerController : MonoBehaviour
 
         //Call TogglePickUp method when PickUpAction is executed
         PickUpAction.performed += _ => TogglePickUp();
-        
-        scoreText.text = "Score: " + score.ToString();
-
-        
     }
 
     void Update()
@@ -79,23 +73,44 @@ public class PlayerController : MonoBehaviour
         {
             if (VarInvertedWorld.invertedWorld == "true")
             {
-                Debug.Log("VarInvertedWorld = true");
+                animator.SetBool("LeftInv", false);
+                animator.SetBool("RightInv", false);
+                animator.SetBool("UpInv", false);
+                animator.SetBool("DownInv", false); 
+                // Debug.Log("VarInvertedWorld = true");
                 if (LeftAction.IsPressed())
                 {
+                    animator.SetBool("Left", true);
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", false);
                     move.x = -1f;
+                   
                 }
                 else if (RightAction.IsPressed())
                 {
-                    move.x = 1f;
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", true);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", false);
+                    move.x = 1f;                   
                 }
 
                 if (UpAction.IsPressed())
                 {
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Up", true);
+                    animator.SetBool("Down", false);
                     move.y = 1f;
                 }
                 else if (DownAction.IsPressed())
                 {
-                    move.y = -1f;
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", true);
+                    move.y = -1f;                   
                 }
 
                 // Set the normal sprite
@@ -106,22 +121,42 @@ public class PlayerController : MonoBehaviour
             }
             else if (VarInvertedWorld.invertedWorld == "false")
             {
-                Debug.Log("VarInvertedWorld = false");
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", false);
+                animator.SetBool("Up", false);
+                animator.SetBool("Down", false);
+                // Debug.Log("VarInvertedWorld = false");
                 if (LeftAction.IsPressed())
                 {
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("RightInv", true);
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("DownInv", false);
                     move.x = 1f;
                 }
                 else if (RightAction.IsPressed())
                 {
+                    animator.SetBool("LeftInv", true);
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("DownInv", false);
                     move.x = -1f;
                 }
 
                 if (UpAction.IsPressed())
                 {
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("DownInv", true);
                     move.y = -1f;
                 }
                 else if (DownAction.IsPressed())
                 {
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("UpInv", true);
+                    animator.SetBool("DownInv", false);
                     move.y = 1f;
                 }
                 // Set the inverted sprite
@@ -170,12 +205,6 @@ public class PlayerController : MonoBehaviour
         rb.velocity = direction * projectileSpeed;
     }
 
-    public void updateScore(int points)
-    {
-        score = score + points;
-        scoreText.text = "Score: " + score.ToString();
-    }
-
     public void takeDamage(int healthPoints)
     {
         currentHealth -= healthPoints;
@@ -193,8 +222,8 @@ public class PlayerController : MonoBehaviour
         healthBar.fillAmount = currentHealth / maxHealth;
     }
 
-     
-     // Method for picking up or dropping an object
+
+    // Method for picking up or dropping an object
     void TogglePickUp()
     {
         // If an object is currently being carried, it is dropped and carriedObject is set to zero
@@ -228,5 +257,5 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, pickUpRadius);
     }
-    
+
 }
