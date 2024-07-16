@@ -48,7 +48,7 @@ public class StateBar : MonoBehaviour
             elapsed = 0.0f;
             UpdateSliders();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             state = (state == "or") ? "inv" : "or";
         }
