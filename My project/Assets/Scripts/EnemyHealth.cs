@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Callbacks;
@@ -6,14 +7,22 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float health, maxHealth = 3f;
     [SerializeField] HealthBar healthBar;
+    [SerializeField] GameObject healthBarGameObject;
 
     [SerializeField] PlayerController playerController;
     Rigidbody2D rb;
+    CircleCollider2D circleCollider;
+
+    [SerializeField] GameObject destroyedEnemy;
+    [SerializeField] GameObject intactEnemy;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         healthBar = GetComponentInChildren<HealthBar>();
+        destroyedEnemy.SetActive(false);
+        intactEnemy.SetActive(true);
+        circleCollider = GetComponent<CircleCollider2D>();
     }
 
     private void Start()
@@ -35,6 +44,11 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        destroyedEnemy.SetActive(true); //Enable the destroyed Game Object
+        intactEnemy.SetActive(false); //Disable the intact Game Object
+        AIPath aiPath = GetComponentInParent<AIPath>();
+        aiPath.enabled = false; //Disable the AIPath component so the destroyed Game Object stays in place
+        healthBarGameObject.SetActive(false); //Disable the health bar
+        circleCollider.enabled = false;
     }
 }
