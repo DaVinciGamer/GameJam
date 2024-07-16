@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class VarInvertedWorld : MonoBehaviour
 {
-    static bool invertedWorld = true; // True = Erwachsenenwelt, False = Kinderwelt
+    static bool invertedWorld = true; // True = Adult-World, False = Child-World
 }

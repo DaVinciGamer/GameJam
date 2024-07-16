@@ -1,124 +1,109 @@
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    //definieren der Public Variablen
-    public float moveSpeed = 0.01f;  // anpassbare Bewegungsgeschwindigkeit
-    // Aktion für die Bewegungen nach oben, unten, links und rechts
-    public InputAction LeftAction;   
+    public float moveSpeed = 2.0f;
+    public InputAction LeftAction;
     public InputAction RightAction;
     public InputAction UpAction;
     public InputAction DownAction;
-    // Aktion für Angriff und Aufheben und Fallenlassen von Objects
-    public InputAction AttackAction;
-    public InputAction PickUpAction;
+    public InputAction ShootAction;
 
-    public GameObject projectilePrefab; // Referenz zum Projektil-Prefab
-    public float pickUpRadius = 1.5f; // Radius des Players für das Aufheben von Objekten
-    private GameObject carriedObject = null; // Carried Object Instanzvariable deklarieren
+    public GameObject projectilePrefab;
+    public Transform projectileSpawnPoint;
+    public float projectileSpeed = 10.0f;
+    public int score = 0;
+    public int currentHealth = 100;
+    public int maxHealth = 100;
+    public Image healthBar;
+
+    public TMP_Text scoreText;
 
     void Start()
     {
-        // Aktivieren der Eingabeaktionen
         LeftAction.Enable();
         RightAction.Enable();
         UpAction.Enable();
         DownAction.Enable();
-        AttackAction.Enable();
-        PickUpAction.Enable();
-        //Fire Projectile Methode aufrufen, wenn AttacAction ausgeführt wird
-        AttackAction.performed += _ => FireProjectile();
-        //TogglePickUp Methode aufrufen, wenn PickUpAction ausgeführt wird
-        PickUpAction.performed += _ => TogglePickUp();
+        ShootAction.Enable();
+
+        scoreText.text = "Score: " + score.ToString();
     }
 
     void Update()
     {
-        // Initialisierung der horizonthalen Bewegung
-        float horizontal = 0.0f;
-        // Abfragen, ob Left- oder Right Action aufgerufen wird falls ja Player nach L oder R bewegen
+        Vector2 move = Vector2.zero;
+
         if (LeftAction.IsPressed())
         {
-            horizontal = -moveSpeed;
+            move.x = -1f;
         }
         else if (RightAction.IsPressed())
         {
-            horizontal = moveSpeed;
+            move.x = 1f;
         }
-        // Initialisierung der vertikalen Bewegung
-        float vertical = 0.0f;
-        // Abfragen, ob Up- oder Down Action aufgerufen wird falls ja Player nach U oder D bewegen
+
         if (UpAction.IsPressed())
         {
-            vertical = moveSpeed;
+            move.y = 1f;
         }
         else if (DownAction.IsPressed())
         {
-            vertical = -moveSpeed;
+            move.y = -1f;
         }
 
-        // Berechnung der neuen Position basierend auf den Eingaben
-        Vector2 position = transform.position; // Abfragen der aktuellen Position des Objects im Weltkoordinatensystem
-        position.x += 0.1f * horizontal; // bewegungswert mit 0.1 skallieren und zur aktuellen X-Position addieren
-        position.y += 0.1f * vertical;   // bewegungswert mit 0.1 skallieren und zur aktuellen Y-Position addieren
-        transform.position = position;   // neu berechnete Position setzen
-
-        // wenn carriedObject nicht null ist, wird es auf die aktuelle Position des Players gesetzt
-        if (carriedObject != null)
+        if (move != Vector2.zero)
         {
-            carriedObject.transform.position = transform.position;
+            move.Normalize();
+        }
+
+        float currentSpeed = moveSpeed;
+
+        transform.position += (Vector3)move * currentSpeed * Time.deltaTime;
+
+        if (ShootAction.triggered)
+        {
+            ShootProjectile();
         }
     }
 
-    // Methode um Projektil zu erstellen und richtung Mauszeiger zu feuern
-    void FireProjectile()
+    void ShootProjectile()
     {
-        // aktuelle Maus Position auf Bildschrim lesen und in Weltkoordinaten umwandeln, z=0 da 2D game
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        mousePosition.z = 0;
-        // Instanz des Projectil Objects an aktueller Player Position erstellen
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        // berechnen des Vektors von aktueller Position zu Mausposition und normalisieren
-        Vector2 direction = (mousePosition - transform.position).normalized;
-        // Geschwindikeit des Projektils setzen um es in Richtung der Maus zu schießen
-        projectile.GetComponent<Rigidbody2D>().velocity = direction * 10f;
+        mousePosition.z = 0f;
+
+        Vector3 direction = (mousePosition - projectileSpawnPoint.position).normalized;
+
+        GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        rb.velocity = direction * projectileSpeed;
     }
 
-    // Methode um Objekt aufzuheben oder fallen zu lassen
-    void TogglePickUp()
+    public void updateScore(int points)
     {
-        // Wenn aktuell ein Object getragen wird, wird es fallengelassen und carriedObject auf null gesetzt
-        if (carriedObject != null)
+        score = score + points;
+        scoreText.text = "Score: " + score.ToString();
+    }
+
+    public void takeDamage(int healthPoints)
+    {
+        currentHealth -= healthPoints;
+        healthBar.fillAmount = currentHealth / maxHealth;
+        if (currentHealth == 0)
         {
-            carriedObject = null;
-        }
-        // Wenn kein Object getragen wird
-        else
-        {
-            // nach Collider objecten im PickUpRadius suchen
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, pickUpRadius);
-            foreach (var collider in colliders)
-            {
-                // überprüfen, ob Collider Object den Tag Pickup trägt
-                if (collider.gameObject != this.gameObject && collider.gameObject.tag == "Pickup")
-                {
-                    //Debug-Nachricht die den Namen des aufzuhebenden Objekts anzeigt
-                    Debug.Log("Picking up object: " + collider.gameObject.name);
-                    //Gefundenes Object als carriedObject setzen, damit der Player es trägt
-                    carriedObject = collider.gameObject;
-                    break;
-                }
-            }
+            //show Death screen
         }
     }
 
-    //Methode um benutzerdeffinierten Gizmo zu erstellen, der den PickupRadius darstellt
-    private void OnDrawGizmosSelected()
+    public void heal(int healthPoints)
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, pickUpRadius);
+        currentHealth += healthPoints;
+        currentHealth = Mathf.Clamp(healthPoints, 0, maxHealth);
+        healthBar.fillAmount = currentHealth / maxHealth;
     }
 }
