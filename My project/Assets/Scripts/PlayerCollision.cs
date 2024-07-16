@@ -8,6 +8,7 @@ public class PlayerCollision : MonoBehaviour
     public PlayerClass playerClass;
     public Slider healthSlider;
     public EnemyDamage enemyDamage;
+    public GameOver gameOver;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -18,6 +19,22 @@ public class PlayerCollision : MonoBehaviour
 
             // Aktualisiere den Slider-Wert
             healthSlider.value = (float)playerClass.currentHealth / playerClass.maxHealth;
+        }
+        if (playerClass.currentHealth <= 0)
+        {
+            ShowGameOverPanel();
+        }
+    }
+
+    private void ShowGameOverPanel()
+    {
+        if (gameOver != null && gameOver.gameOverCanvas != null)
+        {
+            gameOver.gameOverCanvas.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("GameOver reference or GameOverPanel is not set in the Inspector.");
         }
     }
 }
