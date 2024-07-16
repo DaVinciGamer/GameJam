@@ -16,15 +16,18 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the projectile collides with an enemy
-        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Deal damage to the enemy
-            enemyHealth.TakeDamage(damageAmount);
-        }
+            // Check if the projectile collides with an enemy
+            EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                // Deal damage to the enemy
+                enemyHealth.TakeDamage(damageAmount);
+            }
 
-        // Destroy the projectile upon collision
-        Destroy(gameObject);
+            // Destroy the projectile upon collision
+            Destroy(gameObject);
+        }
     }
 }
