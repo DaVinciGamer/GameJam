@@ -46,6 +46,7 @@ public class TileAutomator : MonoBehaviour
     public GameObject adultscene;
 
     private bool childsceneloaded;
+    public TileAuto tileAuto;
 
     public void doSim(int nu)
     {
@@ -239,6 +240,14 @@ public class TileAutomator : MonoBehaviour
             river.SetActive(false);
             childscene.SetActive(false);
             childsceneloaded = false;
+        }
+
+        if (childsceneloaded == true)
+        {
+            tileAuto.clearMap(true);
+            tileAuto.iniChance = 20;
+            tileAuto.delaycount = 2;
+            tileAuto.time -= Time.deltaTime;
         }
 
         /*if (Input.GetMouseButtonDown(0))

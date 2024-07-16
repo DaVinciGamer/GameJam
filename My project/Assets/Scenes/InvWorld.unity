@@ -27419,6 +27419,7 @@ MonoBehaviour:
   childscene: {fileID: 729819808}
   street: {fileID: 1260619387}
   adultscene: {fileID: 1148843625}
+  tileAuto: {fileID: 71604849}
 --- !u!4 &2002303140
 Transform:
   m_ObjectHideFlags: 0

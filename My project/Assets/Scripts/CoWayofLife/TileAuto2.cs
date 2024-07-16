@@ -31,9 +31,10 @@ public class TileAuto : MonoBehaviour
     int height; //height of the Map
 
     //Timer für die Nebelwolken zum spawnen
-    private float time;
+    public float time;
     private float delay;
-    private float delaycount;
+    public float delaycount;
+    //public GameObject fog;
     public void doSim(int nu)
     {
         clearMap(false);
@@ -141,9 +142,9 @@ public class TileAuto : MonoBehaviour
             {
                 delaycount = 0;
                 iniChance++;
+                deathLimit = 2;
                 //Debug.Log("inichance: " + iniChance);
                 doSim(numR);
-
             }
             
             //iniChance= (int)time;
@@ -151,6 +152,23 @@ public class TileAuto : MonoBehaviour
             //initPos();
            
         }
+        /*else if(time <= 100 && !fog.activeSelf)
+        {
+            Debug.Log("Scene Not Active anymore");
+            time -= Time.deltaTime;
+            //Debug.Log("Time: " + time);
+            delaycount -= Time.deltaTime;
+
+            if (delaycount <= delay)
+            {
+                delaycount = 0;
+                iniChance--;
+                deathLimit = 5;
+                //Debug.Log("inichance: " + iniChance);
+                doSim(numR);
+
+            }
+        }*/
 
     }
 
@@ -162,7 +180,7 @@ public class TileAuto : MonoBehaviour
         //doSim(numR);
     }
 
-    public void SaveAssetMap()
+    /*public void SaveAssetMap()
     {
         string saveName = "tmapXY_" + count;
         var mf = GameObject.Find("MapGenerator");
@@ -179,7 +197,7 @@ public class TileAuto : MonoBehaviour
                 EditorUtility.DisplayDialog("Tilemap NOT saved", "An ERROR occured while trying to saveTilemap under" + savePath, "Continue");
             }
         }
-    }
+    }*/
 
     public void clearMap(bool complete)
     {
