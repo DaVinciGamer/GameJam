@@ -2,24 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerCollision : MonoBehaviour
 {
-    public PlayerClass playerClass; // Stelle sicher, dass dies im Inspector gesetzt ist!
-
-    void OnCollisionEnter(Collision collision)
+    public PlayerClass playerClass;
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        void OnTriggerEnter(Collider other)
+        if (collision.gameObject.tag == "Enemy")
         {
-            if (other.tag == "Enemy")
-            {
-                playerClass.currentHealth -= 10; // Oder jede andere Logik zur Schadensberechnung
-                Debug.Log("--- OnTriggerEnter---");
-
-                if (playerClass.currentHealth <= 0)
-                {
-                    Debug.Log("Player is dead!");
-                }
-            }
+            Debug.Log("---collision detction----");
+            playerClass.currentHealth -= 10;
         }
     }
 }
