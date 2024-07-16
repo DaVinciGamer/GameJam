@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4301830019693825777}
   - component: {fileID: 8419875035398233055}
   - component: {fileID: 6366507446981504246}
+  - component: {fileID: -1641944908185629080}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -213,6 +214,7 @@ MonoBehaviour:
   pickUpRadius: 1.5
   normalSprite: {fileID: 702981761, guid: 550ff245f52b991418101b5360cd8e74, type: 3}
   invertedSprite: {fileID: -471527043, guid: db17da46ca9c5e14c80385f8760bd315, type: 3}
+  animator: {fileID: -1641944908185629080}
 --- !u!50 &735272092497349149
 Rigidbody2D:
   serializedVersion: 4
@@ -302,3 +304,24 @@ CapsuleCollider2D:
   m_Offset: {x: -0.012245655, y: -0.00058731437}
   m_Size: {x: 0.46817762, y: 0.9825255}
   m_Direction: 0
+--- !u!95 &-1641944908185629080
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373415073562632051}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 38260ad02f78c452aac0138a4b8b1251, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
