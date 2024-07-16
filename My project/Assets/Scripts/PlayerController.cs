@@ -117,22 +117,42 @@ public class PlayerController : MonoBehaviour
             }
             else if (VarInvertedWorld.invertedWorld == "false")
             {
+                animator.SetBool("Left", false);
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", false);
                 // Debug.Log("VarInvertedWorld = false");
                 if (LeftAction.IsPressed())
                 {
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("RightInv", true);
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("DownInv", false);
                     move.x = 1f;
                 }
                 else if (RightAction.IsPressed())
                 {
+                    animator.SetBool("LeftInv", true);
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("DownInv", false);
                     move.x = -1f;
                 }
 
                 if (UpAction.IsPressed())
                 {
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("DownInv", true);
                     move.y = -1f;
                 }
                 else if (DownAction.IsPressed())
                 {
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("UpInv", true);
+                    animator.SetBool("DownInv", false);
                     move.y = 1f;
                 }
                 // Set the inverted sprite
