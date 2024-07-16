@@ -27417,6 +27417,8 @@ MonoBehaviour:
   botTileChild: {fileID: 11400000, guid: fcbf16d19b039a74084364bb5c3090a5, type: 2}
   river: {fileID: 1406159657}
   childscene: {fileID: 729819808}
+  street: {fileID: 1260619387}
+  adultscene: {fileID: 1148843625}
 --- !u!4 &2002303140
 Transform:
   m_ObjectHideFlags: 0

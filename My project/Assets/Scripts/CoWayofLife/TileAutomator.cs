@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEditor;
 using System;
+using UnityEngine.UIElements;
 
 public class TileAutomator : MonoBehaviour
 {
@@ -40,6 +41,11 @@ public class TileAutomator : MonoBehaviour
 
     public GameObject river;
     public GameObject childscene;
+
+    public GameObject street;
+    public GameObject adultscene;
+
+    private bool childsceneloaded;
 
     public void doSim(int nu)
     {
@@ -210,12 +216,30 @@ public class TileAutomator : MonoBehaviour
         doSim(numR);
         river.SetActive(false);
         childscene.SetActive(false);
+        childsceneloaded = false;
 
         //SaveAssetMap(); 
     }
 
     void Update()
     {
+        if (Input.GetKeyDown("c")&&childsceneloaded==false)
+        {
+            Debug.Log("Button Pressed");
+            street.SetActive(false);
+            adultscene.SetActive(false);
+            river.SetActive(true);
+            childscene.SetActive(true);
+            childsceneloaded = true;
+        }
+        else if (Input.GetKeyDown("c") && childsceneloaded == true)
+        {
+            street.SetActive(true);
+            adultscene.SetActive(true);
+            river.SetActive(false);
+            childscene.SetActive(false);
+            childsceneloaded = false;
+        }
 
         /*if (Input.GetMouseButtonDown(0))
         {

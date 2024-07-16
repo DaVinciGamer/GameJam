@@ -134,14 +134,14 @@ public class TileAuto : MonoBehaviour
         if (time <= 100)
         {
             time += Time.deltaTime;
-            Debug.Log("Time: " + time);
+            //Debug.Log("Time: " + time);
             delaycount += Time.deltaTime;
 
             if (delaycount>=delay)
             {
                 delaycount = 0;
                 iniChance++;
-                Debug.Log("inichance: " + iniChance);
+                //Debug.Log("inichance: " + iniChance);
                 doSim(numR);
 
             }
