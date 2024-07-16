@@ -18,9 +18,11 @@ public class TileAutomator : MonoBehaviour
 
     [Range (1, 10)]
     public int numR; //number of repetition for the algorithm 
-    private int count = 0;
+    //private int count = 0;
     private int[,] terrainMap;
+    //private int[,] terrainMapChild;
     public Vector3Int tmapSize;
+    //public Vector3Int tmapSizeChild;
 
     public Tilemap topMap; //z.B. Grass
     public Tilemap botMap; //z.B. Stone
@@ -29,6 +31,16 @@ public class TileAutomator : MonoBehaviour
 
     int width; //width of the Map
     int height; //height of the Map
+
+    //Map for the Childscene
+    public Tilemap topMapChild;
+    public Tilemap botMapChild;
+    public RuleTile topTileChild;
+    public Tile botTileChild;
+
+    public GameObject river;
+    public GameObject childscene;
+
     public void doSim(int nu)
     {
         clearMap(false);
@@ -38,6 +50,7 @@ public class TileAutomator : MonoBehaviour
         if (terrainMap == null)
         {
             terrainMap = new int[width, height];
+            //terrainMapChild = new int[width, height];
             initPos();
         }
 
@@ -45,6 +58,7 @@ public class TileAutomator : MonoBehaviour
         for (int i = 0; i < nu; i++)
         {
             terrainMap = genTilePos(terrainMap);
+            //terrainMapChild = genTilePosChild(terrainMap);
         }
 
         for (int x = 0; x < width; x++)
@@ -52,8 +66,12 @@ public class TileAutomator : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 if (terrainMap[x, y] == 1)
+                {
                     topMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTile);
+                    topMapChild.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), topTileChild);                   
+                }
                 botMap.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), botTile);
+                botMapChild.SetTile(new Vector3Int(-x + width / 2, -y + height / 2, 0), botTileChild);
             }
         }
     }
@@ -65,6 +83,7 @@ public class TileAutomator : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 terrainMap[x, y] = UnityEngine.Random.Range(1, 101) < iniChance ? 1 : 0;
+                //terrainMapChild[x, y] = terrainMap[x, y];
             }
         }
     }
@@ -73,6 +92,7 @@ public class TileAutomator : MonoBehaviour
     public int[,] genTilePos(int[,] oldMap)
     {
         int[,] newMap = new int[width, height];
+        //int[,] newMapChild = new int[width, height];
         int neighb;
         BoundsInt myB = new BoundsInt(-1, -1, 0, 3, 3, 1);
 
@@ -96,18 +116,23 @@ public class TileAutomator : MonoBehaviour
 
                 if (oldMap[x, y] == 1)
                 {
-                    if (neighb < deathLimit) newMap[x, y] = 0;
+                    if (neighb < deathLimit)
+                    {
+                        newMap[x, y] = 0;
+                    }
 
                     else
                     {
                         newMap[x, y] = 1;
-
                     }
                 }
 
                 if (oldMap[x, y] == 0)
                 {
-                    if (neighb > birthLimit) newMap[x, y] = 1;
+                    if (neighb > birthLimit)
+                    {
+                        newMap[x, y] = 1;
+                    }
 
                     else
                     {
@@ -122,9 +147,71 @@ public class TileAutomator : MonoBehaviour
         return newMap;
     }
 
+    /*public int[,] genTilePosChild(int[,] oldMap)
+    {
+        int[,] newMapChild = new int[width, height];
+        int neighb;
+        BoundsInt myB = new BoundsInt(-1, -1, 0, 3, 3, 1);
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                neighb = 0;
+                foreach (var b in myB.allPositionsWithin)
+                {
+                    if (b.x == 0 && b.y == 0) continue;
+                    if (x + b.x >= 0 && x + b.x < width && y + b.y >= 0 && y + b.y < height)
+                    {
+                        neighb += oldMap[x + b.x, y + b.y];
+                    }
+                    else
+                    {
+                        neighb++;
+                    }
+                }
+
+                if (oldMap[x, y] == 1)
+                {
+                    if (neighb < deathLimit)
+                    {
+                        newMapChild[x, y] = 0;
+                    }
+
+                    else
+                    {
+                        newMapChild[x, y] = 1;
+
+                    }
+                }
+
+                if (oldMap[x, y] == 0)
+                {
+                    if (neighb > birthLimit)
+                    {
+                        newMapChild[x, y] = 1;
+                    }
+
+                    else
+                    {
+                        newMapChild[x, y] = 0;
+                    }
+                }
+
+            }
+
+        }
+
+        return newMapChild;
+    }*/
+
     private void Start()
     {
         doSim(numR);
+        river.SetActive(false);
+        childscene.SetActive(false);
+
+        //SaveAssetMap(); 
     }
 
     void Update()
@@ -133,7 +220,7 @@ public class TileAutomator : MonoBehaviour
         /*if (Input.GetMouseButtonDown(0))
         {
             doSim(numR);
-        }*/
+        }
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -144,28 +231,16 @@ public class TileAutomator : MonoBehaviour
         {
             SaveAssetMap();
             count++;
-        }
+        }*/
     }
-
-
-    public void SaveAssetMap()
+    /*public void SaveAssetMap()
     {
-        string saveName = "tmapXY_" + count;
+        string saveName = "PrefabMapChild";
         var mf = GameObject.Find("MapGenerator");
 
-        if (mf)
-        {
-            var savePath = "Assets/" + saveName + ".prefab";
-            if (PrefabUtility.CreatePrefab(savePath, mf))
-            {
-                EditorUtility.DisplayDialog("Tilemap saved", "Your Tilemap was saved under" + savePath, "Continue");
-            }
-            else
-            {
-                EditorUtility.DisplayDialog("Tilemap NOT saved", "An ERROR occured while trying to saveTilemap under" + savePath, "Continue");
-            }
-        }
-    }
+        var savePath = "Assets/Map/" + saveName + ".prefab";
+        PrefabUtility.SaveAsPrefabAsset(savePath, mf,true);
+    }*/
 
     public void clearMap(bool complete)
     {

@@ -29,6 +29,11 @@ public class TileAuto : MonoBehaviour
 
     int width; //width of the Map
     int height; //height of the Map
+
+    //Timer für die Nebelwolken zum spawnen
+    private float time;
+    private float delay;
+    private float delaycount;
     public void doSim(int nu)
     {
         clearMap(false);
@@ -125,31 +130,36 @@ public class TileAuto : MonoBehaviour
 
     void Update()
     {
-
-       /* if (Input.GetMouseButtonDown(0))
-        {
-            doSim(numR);
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            clearMap(true);
-        }
-
-        if (Input.GetMouseButton(2))
-        {
-            SaveAssetMap();
-            count++;
-        }*/
-
         //inichance hochzählen wenn die Zeit vergeht 
+        if (time <= 100)
+        {
+            time += Time.deltaTime;
+            Debug.Log("Time: " + time);
+            delaycount += Time.deltaTime;
+
+            if (delaycount>=delay)
+            {
+                delaycount = 0;
+                iniChance++;
+                Debug.Log("inichance: " + iniChance);
+                doSim(numR);
+
+            }
+            
+            //iniChance= (int)time;
+            
+            //initPos();
+           
+        }
 
     }
 
     private void Start()
     {
-        iniChance = 0;
-        doSim(numR);
+        iniChance = 20;
+        delay = 2;
+        delaycount = 0;
+        //doSim(numR);
     }
 
     public void SaveAssetMap()
