@@ -168,15 +168,6 @@ MonoBehaviour:
       m_Action: Down
       m_Flags: 0
     m_Flags: 0
-  SneakAction:
-    m_Name: Sneak
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: fd610c06-1cdb-4f74-88db-4ccc92defb48
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   ShootAction:
     m_Name: Shoot
     m_Type: 0
@@ -184,16 +175,42 @@ MonoBehaviour:
     m_Id: 9895693d-4425-4030-b079-f533de59f40c
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3d144dd7-7522-434d-8e83-ad90d66fa7f3
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Shoot
+      m_Flags: 0
+    m_Flags: 0
+  PickUpAction:
+    m_Name: Pick Up
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e5d76b59-ca81-42d4-a066-9e3568c5731c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 32f555da-05b6-4bae-a7c2-026f03dd01ea
+      m_Path: <Keyboard>/i
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pick Up
+      m_Flags: 0
     m_Flags: 0
   projectilePrefab: {fileID: 0}
-  projectileSpawnPoint: {fileID: 0}
+  projectileSpawnPoint: {fileID: 242924466133884933}
   projectileSpeed: 10
   score: 0
   currentHealth: 100
   maxHealth: 100
   healthBar: {fileID: 0}
   scoreText: {fileID: 0}
+  pickUpRadius: 1.5
 --- !u!61 &4249437363521426207
 BoxCollider2D:
   m_ObjectHideFlags: 0

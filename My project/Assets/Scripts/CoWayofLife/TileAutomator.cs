@@ -122,14 +122,18 @@ public class TileAutomator : MonoBehaviour
         return newMap;
     }
 
+    private void Start()
+    {
+        doSim(numR);
+    }
 
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             doSim(numR);
-        }
+        }*/
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -147,7 +151,7 @@ public class TileAutomator : MonoBehaviour
     public void SaveAssetMap()
     {
         string saveName = "tmapXY_" + count;
-        var mf = GameObject.Find("Grid");
+        var mf = GameObject.Find("MapGenerator");
 
         if (mf)
         {
