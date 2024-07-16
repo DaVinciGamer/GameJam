@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     // Reference to the SpriteRenderer component
     private SpriteRenderer spriteRenderer;
 
+    public Animator animator;
+
     void Start()
     {
 // Find VarInvertedWorld component
@@ -82,20 +84,37 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("VarInvertedWorld = true");
                 if (LeftAction.IsPressed())
                 {
+                    animator.SetBool("Left", true);
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", false);
                     move.x = -1f;
+                   
                 }
                 else if (RightAction.IsPressed())
                 {
-                    move.x = 1f;
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", true);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", false);
+                    move.x = 1f;                   
                 }
 
                 if (UpAction.IsPressed())
                 {
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Up", true);
+                    animator.SetBool("Down", false);
                     move.y = 1f;
                 }
                 else if (DownAction.IsPressed())
                 {
-                    move.y = -1f;
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", true);
+                    move.y = -1f;                   
                 }
 
                 // Set the normal sprite
