@@ -29,9 +29,20 @@ public class PlayerController : MonoBehaviour
     public float pickUpRadius = 1.5f; // Radius of the player for picking up objects
     private GameObject carriedObject = null; // Declare carried object instance variable
 
+    // Reference to VarInvertedWorld component
+    private VarInvertedWorld varInvertedWorld;
+
 
     void Start()
     {
+// Find VarInvertedWorld component
+        varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
+
+        if (varInvertedWorld == null)
+        {
+            Debug.LogError("VarInvertedWorld component not found in the scene.");
+        }
+
         // Activate Input Actions
         LeftAction.Enable();
         RightAction.Enable();
@@ -52,22 +63,55 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 move = Vector2.zero;
 
-        if (LeftAction.IsPressed())
+        // Check the value of the invertedWorld string
+        if (varInvertedWorld != null)
         {
-            move.x = -1f;
-        }
-        else if (RightAction.IsPressed())
-        {
-            move.x = 1f;
-        }
+            if (VarInvertedWorld.invertedWorld == "true")
+            {
+                Debug.Log("VarInvertedWorld = true");
+                if (LeftAction.IsPressed())
+                {
+                    move.x = -1f;
+                }
+                else if (RightAction.IsPressed())
+                {
+                    move.x = 1f;
+                }
 
-        if (UpAction.IsPressed())
-        {
-            move.y = 1f;
-        }
-        else if (DownAction.IsPressed())
-        {
-            move.y = -1f;
+                if (UpAction.IsPressed())
+                {
+                    move.y = 1f;
+                }
+                else if (DownAction.IsPressed())
+                {
+                    move.y = -1f;
+                }
+            }
+            else if (VarInvertedWorld.invertedWorld == "false")
+            {
+                Debug.Log("VarInvertedWorld = false");
+                if (LeftAction.IsPressed())
+                {
+                    move.x = 1f;
+                }
+                else if (RightAction.IsPressed())
+                {
+                    move.x = -1f;
+                }
+
+                if (UpAction.IsPressed())
+                {
+                    move.y = -1f;
+                }
+                else if (DownAction.IsPressed())
+                {
+                    move.y = 1f;
+                }
+            }
+            else
+            {
+                Debug.LogError("VarInvertedWorld has an invalid value: " + VarInvertedWorld.invertedWorld);
+            }
         }
 
         if (move != Vector2.zero)
@@ -84,12 +128,13 @@ public class PlayerController : MonoBehaviour
             ShootProjectile();
         }
 
-        //if carriedObject is not null, it is set to the current position of the player
+        // if carriedObject is not null, it is set to the current position of the player
         if (carriedObject != null)
         {
             carriedObject.transform.position = transform.position;
         }
     }
+
 
     void ShootProjectile()
     {
