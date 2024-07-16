@@ -63,22 +63,55 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 move = Vector2.zero;
 
-        if (LeftAction.IsPressed())
+        // Check the value of the invertedWorld string
+        if (varInvertedWorld != null)
         {
-            move.x = -1f;
-        }
-        else if (RightAction.IsPressed())
-        {
-            move.x = 1f;
-        }
+            if (VarInvertedWorld.invertedWorld == "true")
+            {
+                Debug.Log("VarInvertedWorld = true");
+                if (LeftAction.IsPressed())
+                {
+                    move.x = -1f;
+                }
+                else if (RightAction.IsPressed())
+                {
+                    move.x = 1f;
+                }
 
-        if (UpAction.IsPressed())
-        {
-            move.y = 1f;
-        }
-        else if (DownAction.IsPressed())
-        {
-            move.y = -1f;
+                if (UpAction.IsPressed())
+                {
+                    move.y = 1f;
+                }
+                else if (DownAction.IsPressed())
+                {
+                    move.y = -1f;
+                }
+            }
+            else if (VarInvertedWorld.invertedWorld == "false")
+            {
+                Debug.Log("VarInvertedWorld = false");
+                if (LeftAction.IsPressed())
+                {
+                    move.x = 1f;
+                }
+                else if (RightAction.IsPressed())
+                {
+                    move.x = -1f;
+                }
+
+                if (UpAction.IsPressed())
+                {
+                    move.y = -1f;
+                }
+                else if (DownAction.IsPressed())
+                {
+                    move.y = 1f;
+                }
+            }
+            else
+            {
+                Debug.LogError("VarInvertedWorld has an invalid value: " + VarInvertedWorld.invertedWorld);
+            }
         }
 
         if (move != Vector2.zero)
@@ -95,32 +128,13 @@ public class PlayerController : MonoBehaviour
             ShootProjectile();
         }
 
-        //if carriedObject is not null, it is set to the current position of the player
+        // if carriedObject is not null, it is set to the current position of the player
         if (carriedObject != null)
         {
             carriedObject.transform.position = transform.position;
         }
-
-        // Example usage of the invertedWorld variable
-        if (varInvertedWorld != null)
-        {
-            // Check the value of the invertedWorld string
-            if (VarInvertedWorld.invertedWorld == "true")
-            {
-                Debug.Log("VarInvertedWorld = true");
-                // Perform actions specific to the inverted world
-            }
-            else if (VarInvertedWorld.invertedWorld == "false")
-            {
-                Debug.Log("VarInvertedWorld = false");
-                // Perform actions specific to the non-inverted world
-            }
-            else
-            {
-                Debug.LogError("VarInvertedWorld has an invalid value: " + VarInvertedWorld.invertedWorld);
-            }
-        }
     }
+
 
     void ShootProjectile()
     {
