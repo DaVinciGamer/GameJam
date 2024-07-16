@@ -31,7 +31,11 @@ public class PlayerController : MonoBehaviour
 
     // Reference to VarInvertedWorld component
     private VarInvertedWorld varInvertedWorld;
-
+    // New public variable for the alternate sprite
+    public Sprite normalSprite;
+    public Sprite invertedSprite;
+    // Reference to the SpriteRenderer component
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -41,6 +45,13 @@ public class PlayerController : MonoBehaviour
         if (varInvertedWorld == null)
         {
             Debug.LogError("VarInvertedWorld component not found in the scene.");
+        }
+
+        // Get the SpriteRenderer component
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("No SpriteRenderer component found on this GameObject.");
         }
 
         // Activate Input Actions
@@ -86,6 +97,12 @@ public class PlayerController : MonoBehaviour
                 {
                     move.y = -1f;
                 }
+
+                // Set the normal sprite
+                if (spriteRenderer != null && spriteRenderer.sprite != normalSprite)
+                {
+                    spriteRenderer.sprite = normalSprite;
+                }
             }
             else if (VarInvertedWorld.invertedWorld == "false")
             {
@@ -106,6 +123,11 @@ public class PlayerController : MonoBehaviour
                 else if (DownAction.IsPressed())
                 {
                     move.y = 1f;
+                }
+                // Set the inverted sprite
+                if (spriteRenderer != null && spriteRenderer.sprite != invertedSprite)
+                {
+                    spriteRenderer.sprite = invertedSprite;
                 }
             }
             else

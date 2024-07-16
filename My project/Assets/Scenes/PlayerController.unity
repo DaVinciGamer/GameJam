@@ -170,14 +170,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1991442668784836004, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 702981761, guid: 550ff245f52b991418101b5360cd8e74, type: 3}
     - target: {fileID: 5800412307154293210, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
       propertyPath: moveSpeed
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5800412307154293210, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
+      propertyPath: normalSprite
+      value: 
+      objectReference: {fileID: 702981761, guid: 550ff245f52b991418101b5360cd8e74, type: 3}
+    - target: {fileID: 5800412307154293210, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
       propertyPath: pickUpRadius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5800412307154293210, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
+      propertyPath: invertedSprite
+      value: 
+      objectReference: {fileID: -471527043, guid: db17da46ca9c5e14c80385f8760bd315, type: 3}
     - target: {fileID: 5800412307154293210, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
       propertyPath: projectilePrefab
       value: 
@@ -192,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5913465796246017672, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
       propertyPath: m_Name
-      value: Gnome01
+      value: PlayerCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 5913465796246017672, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
       propertyPath: m_TagString
