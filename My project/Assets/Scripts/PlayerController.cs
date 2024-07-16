@@ -73,6 +73,10 @@ public class PlayerController : MonoBehaviour
         {
             if (VarInvertedWorld.invertedWorld == "true")
             {
+                animator.SetBool("LeftInv", false);
+                animator.SetBool("RightInv", false);
+                animator.SetBool("UpInv", false);
+                animator.SetBool("DownInv", false); 
                 // Debug.Log("VarInvertedWorld = true");
                 if (LeftAction.IsPressed())
                 {
@@ -118,9 +122,9 @@ public class PlayerController : MonoBehaviour
             else if (VarInvertedWorld.invertedWorld == "false")
             {
                 animator.SetBool("Left", false);
-                    animator.SetBool("Right", false);
-                    animator.SetBool("Up", false);
-                    animator.SetBool("Down", false);
+                animator.SetBool("Right", false);
+                animator.SetBool("Up", false);
+                animator.SetBool("Down", false);
                 // Debug.Log("VarInvertedWorld = false");
                 if (LeftAction.IsPressed())
                 {
