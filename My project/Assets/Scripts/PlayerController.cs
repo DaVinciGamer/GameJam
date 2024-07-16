@@ -29,9 +29,20 @@ public class PlayerController : MonoBehaviour
     public float pickUpRadius = 1.5f; // Radius of the player for picking up objects
     private GameObject carriedObject = null; // Declare carried object instance variable
 
+    // Reference to VarInvertedWorld component
+    private VarInvertedWorld varInvertedWorld;
+
 
     void Start()
     {
+// Find VarInvertedWorld component
+        varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
+
+        if (varInvertedWorld == null)
+        {
+            Debug.LogError("VarInvertedWorld component not found in the scene.");
+        }
+
         // Activate Input Actions
         LeftAction.Enable();
         RightAction.Enable();
@@ -88,6 +99,26 @@ public class PlayerController : MonoBehaviour
         if (carriedObject != null)
         {
             carriedObject.transform.position = transform.position;
+        }
+
+        // Example usage of the invertedWorld variable
+        if (varInvertedWorld != null)
+        {
+            // Check the value of the invertedWorld string
+            if (VarInvertedWorld.invertedWorld == "true")
+            {
+                Debug.Log("VarInvertedWorld = true");
+                // Perform actions specific to the inverted world
+            }
+            else if (VarInvertedWorld.invertedWorld == "false")
+            {
+                Debug.Log("VarInvertedWorld = false");
+                // Perform actions specific to the non-inverted world
+            }
+            else
+            {
+                Debug.LogError("VarInvertedWorld has an invalid value: " + VarInvertedWorld.invertedWorld);
+            }
         }
     }
 
