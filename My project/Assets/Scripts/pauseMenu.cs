@@ -22,11 +22,13 @@ public class pauseMenu : MonoBehaviour
     }
     public void openMenu()
     {
+        Time.timeScale = 0;
         menuOverlay.SetActive(true);
     }
 
     public void closeMenu()
     {
+        Time.timeScale = 1;
         menuOverlay.SetActive(false);
     }
 
