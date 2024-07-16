@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 using UnityEditor;
 using System;
 
-public class TileAutomator : MonoBehaviour
+public class TileAuto : MonoBehaviour
 {
     [Range(0, 100)] // zwischen 0% und 100% 
     public int iniChance; //initial chance of the tiles being alive
@@ -25,7 +25,7 @@ public class TileAutomator : MonoBehaviour
     public Tilemap topMap; //z.B. Grass
     public Tilemap botMap; //z.B. Stone
     public RuleTile topTile;
-    public Tile botTile;
+    public RuleTile botTile;
 
     int width; //width of the Map
     int height; //height of the Map
@@ -122,18 +122,14 @@ public class TileAutomator : MonoBehaviour
         return newMap;
     }
 
-    private void Start()
-    {
-        doSim(numR);
-    }
 
     void Update()
     {
 
-        /*if (Input.GetMouseButtonDown(0))
+       /* if (Input.GetMouseButtonDown(0))
         {
             doSim(numR);
-        }*/
+        }
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -144,9 +140,17 @@ public class TileAutomator : MonoBehaviour
         {
             SaveAssetMap();
             count++;
-        }
+        }*/
+
+        //inichance hochzählen wenn die Zeit vergeht 
+
     }
 
+    private void Start()
+    {
+        iniChance = 0;
+        doSim(numR);
+    }
 
     public void SaveAssetMap()
     {
