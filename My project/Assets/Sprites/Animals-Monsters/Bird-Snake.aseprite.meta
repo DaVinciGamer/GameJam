@@ -1,0 +1,1096 @@
+fileFormatVersion: 2
+guid: 336ec2b9477418744a250e4bd8d2b952
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Bird-Snake_Frame_0
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 114
+      y: 102
+      width: 31
+      height: 40
+    spriteID: 898eafe9cc7fdfc4aac95f5259b36d41
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 114, y: 102}
+  - name: Bird-Snake_Frame_1
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 114
+      y: 150
+      width: 31
+      height: 40
+    spriteID: cb8513acb06691a41aab675afc92a708
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 114, y: 150}
+  - name: Bird-Snake_Frame_2
+    originalName: 
+    pivot: {x: 0.6333333, y: -0.13888888}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 114
+      y: 438
+      width: 30
+      height: 36
+    spriteID: 4070cd47817c9ff43b0e09f26ffae4c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 114, y: 438}
+  - name: Bird-Snake_Frame_3
+    originalName: 
+    pivot: {x: 0.6333333, y: -0.13888888}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 156
+      y: 4
+      width: 30
+      height: 36
+    spriteID: db760a027d848c8449928c7853b034b0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 156, y: 4}
+  - name: Bird-Snake_Frame_4
+    originalName: 
+    pivot: {x: 0.5806452, y: -0.14999999}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 114
+      y: 198
+      width: 31
+      height: 40
+    spriteID: 6713567f638649e4fbb541cb8a2fae92
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 114, y: 198}
+  - name: Bird-Snake_Frame_5
+    originalName: 
+    pivot: {x: 0.5806452, y: -0.14999999}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 114
+      y: 246
+      width: 31
+      height: 40
+    spriteID: ddf0aa18fe2a2f24bbde84fd4fb161d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 114, y: 246}
+  - name: Bird-Snake_Frame_6
+    originalName: 
+    pivot: {x: 0.6, y: -0.13888888}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 156
+      y: 48
+      width: 30
+      height: 36
+    spriteID: 7ec8ed2d48cc24a48bce9fac4cb316b5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 156, y: 48}
+  - name: Bird-Snake_Frame_7
+    originalName: 
+    pivot: {x: 0.6, y: -0.13888888}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 156
+      y: 92
+      width: 30
+      height: 36
+    spriteID: 6a0329101db1f5642916c58da07313a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 156, y: 92}
+  - name: Bird-Snake_Frame_8
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 114
+      y: 294
+      width: 31
+      height: 40
+    spriteID: dbc6e040f7671094da7e43d5b3dc1557
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 114, y: 294}
+  - name: Bird-Snake_Frame_9
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 114
+      y: 342
+      width: 31
+      height: 40
+    spriteID: 05d0866a13ad3cd45a31cc435035671b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 114, y: 342}
+  - name: Bird-Snake_Frame_10
+    originalName: 
+    pivot: {x: 0.5588235, y: -0.12195122}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 416
+      width: 34
+      height: 41
+    spriteID: 61146dd39e8f89d4594757c79f1a359a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 416}
+  - name: Bird-Snake_Frame_11
+    originalName: 
+    pivot: {x: 0.5588235, y: -0.12195122}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 465
+      width: 34
+      height: 41
+    spriteID: b1c600b3293118f409465d731f0ea806
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 465}
+  - name: Bird-Snake_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 212
+      width: 40
+      height: 43
+    spriteID: 35f8015d54a289f42b42be4a8d9f3cde
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 212}
+  - name: Bird-Snake_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 263
+      width: 40
+      height: 43
+    spriteID: a9c3c85918895d2468eb79d8e0c441d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 263}
+  - name: Bird-Snake_Frame_14
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 208
+      width: 47
+      height: 43
+    spriteID: 8ed7b4d31a9f91d4a970f544935d8ed4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 208}
+  - name: Bird-Snake_Frame_15
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 259
+      width: 47
+      height: 43
+    spriteID: 5b1e252fa7b18be42a2db6cef2de8f85
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 259}
+  - name: Bird-Snake_Frame_16
+    originalName: 
+    pivot: {x: 0.51111114, y: -0.11363637}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 4
+      width: 45
+      height: 44
+    spriteID: e1f954cd92830794ea0ed92bceeb37f1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 4}
+  - name: Bird-Snake_Frame_17
+    originalName: 
+    pivot: {x: 0.51111114, y: -0.11363637}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 56
+      width: 45
+      height: 44
+    spriteID: 427601d4323e79b4bb0b66f9bb8bbf27
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 56}
+  - name: Bird-Snake_Frame_18
+    originalName: 
+    pivot: {x: 0.4897959, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 49
+      height: 43
+    spriteID: 156b5a3fe7b053843a5987d5df82ab14
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Bird-Snake_Frame_19
+    originalName: 
+    pivot: {x: 0.4897959, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 55
+      width: 49
+      height: 43
+    spriteID: 8aaf2d139b2770948845bfb9a87f78b5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 55}
+  - name: Bird-Snake_Frame_20
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 310
+      width: 47
+      height: 43
+    spriteID: 09ca695521df7ac49ba5ce6e2add2715
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 310}
+  - name: Bird-Snake_Frame_21
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 361
+      width: 47
+      height: 43
+    spriteID: 568fbd6bf71232741b95192a0432f663
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 361}
+  - name: Bird-Snake_Frame_22
+    originalName: 
+    pivot: {x: 0.51111114, y: -0.11363637}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 108
+      width: 45
+      height: 44
+    spriteID: fee7f70203c4bd94f86d69d12f6060c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 108}
+  - name: Bird-Snake_Frame_23
+    originalName: 
+    pivot: {x: 0.51111114, y: -0.11363637}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 160
+      width: 45
+      height: 44
+    spriteID: 78ea3c2f4c094114084e49b3077f37eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 160}
+  - name: Bird-Snake_Frame_24
+    originalName: 
+    pivot: {x: 0.4897959, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 106
+      width: 49
+      height: 43
+    spriteID: 5fa05514e22e3ca4c859a15832b64f1a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 106}
+  - name: Bird-Snake_Frame_25
+    originalName: 
+    pivot: {x: 0.4897959, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 157
+      width: 49
+      height: 43
+    spriteID: adc2a6b1209bd894988f3d881a788e82
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 157}
+  - name: Bird-Snake_Frame_26
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 412
+      width: 47
+      height: 43
+    spriteID: 0d8a75b6b181f27418f3be1744b70a48
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 412}
+  - name: Bird-Snake_Frame_27
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 463
+      width: 47
+      height: 43
+    spriteID: 98030cfcd3ba5094eaddaef5b53f27bb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 463}
+  - name: Bird-Snake_Frame_28
+    originalName: 
+    pivot: {x: 0.5, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 314
+      width: 40
+      height: 43
+    spriteID: 65fe66d4d7e093e4c846a7b2a4199039
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 314}
+  - name: Bird-Snake_Frame_29
+    originalName: 
+    pivot: {x: 0.5, y: -0.116279066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 365
+      width: 40
+      height: 43
+    spriteID: 7524f91c219d5954288c5f952e2a19cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 365}
+  - name: Bird-Snake_Frame_30
+    originalName: 
+    pivot: {x: 0.5588235, y: -0.12195122}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 114
+      y: 4
+      width: 34
+      height: 41
+    spriteID: 27bc349d24b93c44a9e47f08943d93f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 114, y: 4}
+  - name: Bird-Snake_Frame_31
+    originalName: 
+    pivot: {x: 0.5588235, y: -0.12195122}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 114
+      y: 53
+      width: 34
+      height: 41
+    spriteID: 68b40d0f8b4d0454cb5fdbac134372ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 114, y: 53}
+  - name: Bird-Snake_Frame_32
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 114
+      y: 390
+      width: 31
+      height: 40
+    spriteID: 0bc1961eebd31604eb2f9efeb337dc13
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 114, y: 390}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1688701464
+    name: Bird-Snake
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Bird-Snake_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 31
+        height: 40
+      spriteId: 898eafe9cc7fdfc4aac95f5259b36d41
+    - name: Bird-Snake_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 31
+        height: 40
+      spriteId: cb8513acb06691a41aab675afc92a708
+    - name: Bird-Snake_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 30
+        height: 36
+      spriteId: 4070cd47817c9ff43b0e09f26ffae4c3
+    - name: Bird-Snake_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 30
+        height: 36
+      spriteId: db760a027d848c8449928c7853b034b0
+    - name: Bird-Snake_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 6
+        width: 31
+        height: 40
+      spriteId: 6713567f638649e4fbb541cb8a2fae92
+    - name: Bird-Snake_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 6
+        width: 31
+        height: 40
+      spriteId: ddf0aa18fe2a2f24bbde84fd4fb161d7
+    - name: Bird-Snake_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 5
+        width: 30
+        height: 36
+      spriteId: 7ec8ed2d48cc24a48bce9fac4cb316b5
+    - name: Bird-Snake_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 5
+        width: 30
+        height: 36
+      spriteId: 6a0329101db1f5642916c58da07313a0
+    - name: Bird-Snake_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 31
+        height: 40
+      spriteId: dbc6e040f7671094da7e43d5b3dc1557
+    - name: Bird-Snake_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 31
+        height: 40
+      spriteId: 05d0866a13ad3cd45a31cc435035671b
+    - name: Bird-Snake_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 34
+        height: 41
+      spriteId: 61146dd39e8f89d4594757c79f1a359a
+    - name: Bird-Snake_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 34
+        height: 41
+      spriteId: b1c600b3293118f409465d731f0ea806
+    - name: Bird-Snake_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 5
+        width: 40
+        height: 43
+      spriteId: 35f8015d54a289f42b42be4a8d9f3cde
+    - name: Bird-Snake_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 5
+        width: 40
+        height: 43
+      spriteId: a9c3c85918895d2468eb79d8e0c441d9
+    - name: Bird-Snake_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 47
+        height: 43
+      spriteId: 8ed7b4d31a9f91d4a970f544935d8ed4
+    - name: Bird-Snake_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 47
+        height: 43
+      spriteId: 5b1e252fa7b18be42a2db6cef2de8f85
+    - name: Bird-Snake_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 45
+        height: 44
+      spriteId: e1f954cd92830794ea0ed92bceeb37f1
+    - name: Bird-Snake_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 45
+        height: 44
+      spriteId: 427601d4323e79b4bb0b66f9bb8bbf27
+    - name: Bird-Snake_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 5
+        width: 49
+        height: 43
+      spriteId: 156b5a3fe7b053843a5987d5df82ab14
+    - name: Bird-Snake_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 5
+        width: 49
+        height: 43
+      spriteId: 8aaf2d139b2770948845bfb9a87f78b5
+    - name: Bird-Snake_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 47
+        height: 43
+      spriteId: 09ca695521df7ac49ba5ce6e2add2715
+    - name: Bird-Snake_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 47
+        height: 43
+      spriteId: 568fbd6bf71232741b95192a0432f663
+    - name: Bird-Snake_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 45
+        height: 44
+      spriteId: fee7f70203c4bd94f86d69d12f6060c0
+    - name: Bird-Snake_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 45
+        height: 44
+      spriteId: 78ea3c2f4c094114084e49b3077f37eb
+    - name: Bird-Snake_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 5
+        width: 49
+        height: 43
+      spriteId: 5fa05514e22e3ca4c859a15832b64f1a
+    - name: Bird-Snake_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 1
+        y: 5
+        width: 49
+        height: 43
+      spriteId: adc2a6b1209bd894988f3d881a788e82
+    - name: Bird-Snake_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 47
+        height: 43
+      spriteId: 0d8a75b6b181f27418f3be1744b70a48
+    - name: Bird-Snake_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 47
+        height: 43
+      spriteId: 98030cfcd3ba5094eaddaef5b53f27bb
+    - name: Bird-Snake_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 5
+        width: 40
+        height: 43
+      spriteId: 65fe66d4d7e093e4c846a7b2a4199039
+    - name: Bird-Snake_Frame_29
+      frameIndex: 29
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 5
+        width: 40
+        height: 43
+      spriteId: 7524f91c219d5954288c5f952e2a19cb
+    - name: Bird-Snake_Frame_30
+      frameIndex: 30
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 34
+        height: 41
+      spriteId: 27bc349d24b93c44a9e47f08943d93f0
+    - name: Bird-Snake_Frame_31
+      frameIndex: 31
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 34
+        height: 41
+      spriteId: 68b40d0f8b4d0454cb5fdbac134372ef
+    - name: Bird-Snake_Frame_32
+      frameIndex: 32
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 5
+        width: 31
+        height: 40
+      spriteId: 0bc1961eebd31604eb2f9efeb337dc13
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 50, y: 50}
