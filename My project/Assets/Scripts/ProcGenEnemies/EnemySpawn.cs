@@ -68,7 +68,7 @@ public class EnemySpawn : MonoBehaviour
                 //Debug.Log("Random Vector werte: "+randVectorRa.x +", "+randVectorRa.y+", "+randVectorRa.z);
                 if (terrainMap[x, y] == 1 && !isfilled)
                 {
-                    Debug.Log("Anamalen des Tiles mit isFilled: " + isfilled);
+                    //Debug.Log("Anamalen des Tiles mit isFilled: " + isfilled);
                     int random = Random.Range(0, 3);
                     if (random == 1)
                     {
@@ -193,14 +193,14 @@ public class EnemySpawn : MonoBehaviour
 
     public void tileFilled(Tilemap tilemap, Vector3Int vec)
     {
-        Debug.Log("In Methode TileFilled");
+        //Debug.Log("In Methode TileFilled");
         //waterMap = tilemap;
 
         if (tilemap.HasTile(vec))
         {
-            Debug.Log("Tilemap has tile an position: " + vec.x + ", " + vec.y + ", " + vec.z);
+            //Debug.Log("Tilemap has tile an position: " + vec.x + ", " + vec.y + ", " + vec.z);
             isfilled = true;
-            Debug.Log("Sprite used:" + tilemap.GetSprite(vec).name);
+            //Debug.Log("Sprite used:" + tilemap.GetSprite(vec).name);
             //Debug.Log("isFilled: " + isfilled);
         }
         else
