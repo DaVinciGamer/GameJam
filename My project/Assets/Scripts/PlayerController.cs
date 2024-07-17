@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     // Reference to VarInvertedWorld component
     private VarInvertedWorld varInvertedWorld;
+    private MusicController MusicController;
     // New public variable for the alternate sprite
     public Sprite normalSprite;
     public Sprite invertedSprite;
@@ -103,7 +104,7 @@ public class PlayerController : MonoBehaviour
         // Check the value of the invertedWorld string
         if (varInvertedWorld != null)
         {
-            if (VarInvertedWorld.invertedWorld == "true")
+            if (VarInvertedWorld.invertedWorld == "false")
             {
                 //Set bucket Sprite to not broken
                 if (BucketState == false)
@@ -157,7 +158,7 @@ public class PlayerController : MonoBehaviour
                     spriteRenderer.sprite = normalSprite;
                 }
             }
-            else if (VarInvertedWorld.invertedWorld == "false")
+            else if (VarInvertedWorld.invertedWorld == "true")
             {
                 //Set bucket Sprite to not broken
                 if (BucketState == false)
@@ -230,6 +231,7 @@ public class PlayerController : MonoBehaviour
         if (ShootAction.triggered)
         {
             ShootProjectile();
+            MusicController.Instance.PlaySoundEffect(1);
         }
 
         // Update position of carried object
@@ -256,34 +258,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("BucketState gesetzt auf true.");
         }
     }
-
-
-
-
-    // void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     Debug.Log("Kolliiiiiision");
-    //     // Überprüfen, ob die Kollision mit den spezifischen GameObjects stattgefunden hat
-    //     if (collision.gameObject.tag == "Pickup")
-    //     {
-    //         Bucket Bucket = collision.gameObject.GetComponent<bu>();
-    //         if (bucket != null)
-    //         {
-    //             // Setze den BucketState auf true
-    //             bucket.BucketState = true;
-    //         }
-    //     }
-
-    //     ((collision.gameObject == Bucket && gameObject == WaterCollider) ||
-    //         (collision.gameObject == WaterCollider && gameObject == Bucket))
-    //     {
-    //         // Ändere den Zustand der Variable von true auf false
-    //         BucketState = true;
-
-    //         // Optional: Debug-Nachricht in der Konsole anzeigen
-    //         Debug.Log("Kollision zwischen Bucket und WaterCollider erkannt. BucketState ist jetzt: " + BucketState);
-    //     }
-    // }
 
     void ShootProjectile()
     {
@@ -322,7 +296,7 @@ public class PlayerController : MonoBehaviour
         if (carriedObject != null)
         {
             carriedObject = null;
-            Debug.Log("Dropped object");
+            Debug.LogWarning("Dropped object");
             PickupBucket = false;
         }
         //When no object is worn

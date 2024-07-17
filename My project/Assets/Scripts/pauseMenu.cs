@@ -5,7 +5,11 @@ using UnityEngine;
 public class pauseMenu : MonoBehaviour
 {
     public GameObject menuOverlay;
+    private MusicController MusicController;
 
+void Start(){
+    MusicController.Instance.FadeTo(5);
+}
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
