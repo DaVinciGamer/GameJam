@@ -32,6 +32,7 @@ public class StateBar : MonoBehaviour
 
     private float elapsed = 0.0f;
     public float updateInterval = 1.0f;
+    private MusicController MusicController;
 
     void Start()
     {
@@ -51,7 +52,7 @@ public class StateBar : MonoBehaviour
             elapsed = 0.0f;
             UpdateSliders();
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             VarInvertedWorld.invertedWorld = (VarInvertedWorld.invertedWorld == "true") ? "false" : "true";
         }
@@ -151,6 +152,7 @@ public class StateBar : MonoBehaviour
     void orStartRotation()
     {
         isDangerActive = true;
+        MusicController.Instance.FadeTo(2);
         orRotationTween = orImage.DORotate(new Vector3(0, 0, rotationAngle), rotationDuration)
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.InOutSine);
@@ -159,6 +161,7 @@ public class StateBar : MonoBehaviour
     void orStopRotation()
     {
         isDangerActive = false;
+        MusicController.Instance.FadeTo(1);
         orRotationTween.Kill();
         orImage.rotation = Quaternion.Euler(0, 0, 0);
     }
@@ -166,6 +169,7 @@ public class StateBar : MonoBehaviour
     void invStartRotation()
     {
         isDangerActive = true;
+        MusicController.Instance.FadeTo(2);
         invRotationTween = invImage.DORotate(new Vector3(0, 0, rotationAngle), rotationDuration)
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.InOutSine);
@@ -174,6 +178,7 @@ public class StateBar : MonoBehaviour
     void invStopRotation()
     {
         isDangerActive = false;
+        MusicController.Instance.FadeTo(1);
         invRotationTween.Kill();
         invImage.rotation = Quaternion.Euler(0, 0, 0);
     }
