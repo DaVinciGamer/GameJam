@@ -238,7 +238,7 @@ public class PlayerController : MonoBehaviour
         spriteRendererBucket.sprite = waterBucket;
     }
 }
-
+/*
     // Diese Methode wird aufgerufen, wenn die Kollision beginnt
     private void OnCollisionEnter(Collision collision)
     {
@@ -253,7 +253,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Kollision zwischen Bucket und WaterCollider erkannt. BucketState ist jetzt: " + BucketState);
         }
     }
-
+*/
     void ShootProjectile()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
