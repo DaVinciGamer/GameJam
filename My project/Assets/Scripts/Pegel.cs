@@ -12,7 +12,9 @@ public class StateBar : MonoBehaviour
     float inc_speed = 1.9f;
     float dec_speed = 1.8f;
     public static float danger_zone_trigger = 90.0f; //triggers warning
-    string state = "or";    //global ersetzen
+    private VarInvertedWorld varInvertedWorld;
+
+    public bool isDangerActive = false;
 
     public Slider or_slider;
     public Slider inv_slider;
@@ -38,6 +40,7 @@ public class StateBar : MonoBehaviour
         or_curr = max_value;
         or_slider.value = or_curr;
         inv_slider.value = inv_curr;
+        varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
     }
 
     void Update()
@@ -50,13 +53,13 @@ public class StateBar : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            state = (state == "or") ? "inv" : "or";
+            VarInvertedWorld.invertedWorld = (VarInvertedWorld.invertedWorld == "true") ? "false" : "true";
         }
     }
 
     void UpdateSliders()
     {
-        if (state == "or")
+        if (VarInvertedWorld.invertedWorld == "true")
         {
             if (or_curr > 0)
             {
@@ -147,6 +150,7 @@ public class StateBar : MonoBehaviour
     //rotation animation based on https://www.youtube.com/watch?v=Y8cv-rF5j6c&ab_channel=Tarodev and ChatGPT
     void orStartRotation()
     {
+        isDangerActive = true;
         orRotationTween = orImage.DORotate(new Vector3(0, 0, rotationAngle), rotationDuration)
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.InOutSine);
@@ -154,12 +158,14 @@ public class StateBar : MonoBehaviour
 
     void orStopRotation()
     {
+        isDangerActive = false;
         orRotationTween.Kill();
         orImage.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     void invStartRotation()
     {
+        isDangerActive = true;
         invRotationTween = invImage.DORotate(new Vector3(0, 0, rotationAngle), rotationDuration)
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.InOutSine);
@@ -167,7 +173,9 @@ public class StateBar : MonoBehaviour
 
     void invStopRotation()
     {
+        isDangerActive = false;
         invRotationTween.Kill();
         invImage.rotation = Quaternion.Euler(0, 0, 0);
     }
+
 }
