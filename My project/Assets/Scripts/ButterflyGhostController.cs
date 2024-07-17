@@ -53,7 +53,7 @@ public class ButterflyGhostController : MonoBehaviour
             else if (testIsDangerActive && !isTransitionedInverted) // Testweise Variable
             {
                 isTransitionedInverted = true;
-                StartCoroutine(PlayDangerAnimations("CorporateSlaveDangerTransition", "Fly")); //play transition animation from normal to monster and then keep monster state
+                StartCoroutine(PlayDangerAnimations("CorporateDangerTransition", "Fly")); //play transition animation from normal to monster and then keep monster state
             }
         }
     }
