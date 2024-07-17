@@ -42,6 +42,11 @@ public class PlayerControllerCollisionTest : MonoBehaviour
     private bool jumpingState = false;
     private Vector2 lastDirection;
     private Rigidbody2D rb;
+    public LayerMask obstacleLayer;
+    private bool isCollidingLeft = false;
+    private bool isCollidingRight = false;
+    private bool isCollidingTop = false;
+    private bool isCollidingBottom = false;
 
     void Start()
     {
@@ -84,7 +89,6 @@ public class PlayerControllerCollisionTest : MonoBehaviour
             StartCoroutine(Jump());
         }
 
-        // Check the value of the invertedWorld string
         if (varInvertedWorld != null)
         {
             if (VarInvertedWorld.invertedWorld == "true")
@@ -93,15 +97,17 @@ public class PlayerControllerCollisionTest : MonoBehaviour
                 animator.SetBool("RightInv", false);
                 animator.SetBool("UpInv", false);
                 animator.SetBool("DownInv", false);
-                // Debug.Log("VarInvertedWorld = true");
                 if (LeftAction.IsPressed())
                 {
                     animator.SetBool("Left", true);
                     animator.SetBool("Right", false);
                     animator.SetBool("Up", false);
                     animator.SetBool("Down", false);
-                    move.x = -1f;
-                    lastDirection = Vector2.left; // last direction is relevant to know where to jump
+                    if (!isCollidingLeft)
+                    {
+                        move.x = -1f;
+                    }
+                    lastDirection = Vector2.left;
                 }
                 else if (RightAction.IsPressed())
                 {
@@ -109,7 +115,10 @@ public class PlayerControllerCollisionTest : MonoBehaviour
                     animator.SetBool("Right", true);
                     animator.SetBool("Up", false);
                     animator.SetBool("Down", false);
-                    move.x = 1f;
+                    if (!isCollidingRight)
+                    {
+                        move.x = 1f;
+                    }
                     lastDirection = Vector2.right;
                 }
 
@@ -119,7 +128,10 @@ public class PlayerControllerCollisionTest : MonoBehaviour
                     animator.SetBool("Right", false);
                     animator.SetBool("Up", true);
                     animator.SetBool("Down", false);
-                    move.y = 1f;
+                    if (!isCollidingTop)
+                    {
+                        move.y = 1f;
+                    }
                     lastDirection = Vector2.up;
                 }
                 else if (DownAction.IsPressed())
@@ -128,11 +140,13 @@ public class PlayerControllerCollisionTest : MonoBehaviour
                     animator.SetBool("Right", false);
                     animator.SetBool("Up", false);
                     animator.SetBool("Down", true);
-                    move.y = -1f;
-                    lastDirection = Vector2.down; 
+                    if (!isCollidingBottom)
+                    {
+                        move.y = -1f;
+                    }
+                    lastDirection = Vector2.down;
                 }
 
-                // Set the normal sprite
                 if (spriteRenderer != null && spriteRenderer.sprite != normalSprite)
                 {
                     spriteRenderer.sprite = normalSprite;
@@ -144,14 +158,16 @@ public class PlayerControllerCollisionTest : MonoBehaviour
                 animator.SetBool("Right", false);
                 animator.SetBool("Up", false);
                 animator.SetBool("Down", false);
-                // Debug.Log("VarInvertedWorld = false");
                 if (LeftAction.IsPressed())
                 {
                     animator.SetBool("LeftInv", false);
                     animator.SetBool("RightInv", true);
                     animator.SetBool("UpInv", false);
                     animator.SetBool("DownInv", false);
-                    move.x = 1f;
+                    if (!isCollidingRight)
+                    {
+                        move.x = 1f;
+                    }
                     lastDirection = Vector2.right;
                 }
                 else if (RightAction.IsPressed())
@@ -160,7 +176,10 @@ public class PlayerControllerCollisionTest : MonoBehaviour
                     animator.SetBool("RightInv", false);
                     animator.SetBool("UpInv", false);
                     animator.SetBool("DownInv", false);
-                    move.x = -1f;
+                    if (!isCollidingLeft)
+                    {
+                        move.x = -1f;
+                    }
                     lastDirection = Vector2.left;
                 }
 
@@ -170,7 +189,10 @@ public class PlayerControllerCollisionTest : MonoBehaviour
                     animator.SetBool("RightInv", false);
                     animator.SetBool("UpInv", false);
                     animator.SetBool("DownInv", true);
-                    move.y = -1f;
+                    if (!isCollidingBottom)
+                    {
+                        move.y = -1f;
+                    }
                     lastDirection = Vector2.down;
                 }
                 else if (DownAction.IsPressed())
@@ -179,13 +201,13 @@ public class PlayerControllerCollisionTest : MonoBehaviour
                     animator.SetBool("RightInv", false);
                     animator.SetBool("UpInv", true);
                     animator.SetBool("DownInv", false);
-                    move.y = 1f;
+                    if (!isCollidingTop)
+                    {
+                        move.y = 1f;
+                    }
                     lastDirection = Vector2.up;
                 }
 
-
-
-                // Set the inverted sprite
                 if (spriteRenderer != null && spriteRenderer.sprite != invertedSprite)
                 {
                     spriteRenderer.sprite = invertedSprite;
@@ -203,7 +225,6 @@ public class PlayerControllerCollisionTest : MonoBehaviour
         }
 
         float currentSpeed = moveSpeed;
-
         transform.position += (Vector3)move * currentSpeed * Time.deltaTime;
 
         if (ShootAction.triggered)
@@ -211,13 +232,65 @@ public class PlayerControllerCollisionTest : MonoBehaviour
             ShootProjectile();
         }
 
-        // if carriedObject is not null, it is set to the current position of the player
         if (carriedObject != null)
         {
             carriedObject.transform.position = transform.position;
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("River"))
+        {
+            Vector2 contactPoint = collision.GetContact(0).point;
+            Vector2 center = collision.collider.bounds.center;
+
+            float angle = Vector2.SignedAngle(contactPoint - center, Vector2.up);
+            if (angle >= -45f && angle <= 45f)
+            {
+                isCollidingTop = true;
+            }
+            else if (angle > 45f && angle <= 135f)
+            {
+                isCollidingRight = true;
+            }
+            else if (angle < -45f && angle >= -135f)
+            {
+                isCollidingLeft = true;
+            }
+            else
+            {
+                isCollidingBottom = true;
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("River"))
+        {
+            Vector2 contactPoint = collision.GetContact(0).point;
+            Vector2 center = collision.collider.bounds.center;
+
+            float angle = Vector2.SignedAngle(contactPoint - center, Vector2.up);
+            if (angle >= -45f && angle <= 45f)
+            {
+                isCollidingTop = false;
+            }
+            else if (angle > 45f && angle <= 135f)
+            {
+                isCollidingRight = false;
+            }
+            else if (angle < -45f && angle >= -135f)
+            {
+                isCollidingLeft = false;
+            }
+            else
+            {
+                isCollidingBottom = false;
+            }
+        }
+    }
 
     void ShootProjectile()
     {
