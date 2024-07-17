@@ -26,6 +26,18 @@ public class EnemyHealth : MonoBehaviour
         destroyedEnemy.SetActive(false);
         intactEnemy.SetActive(true);
         circleCollider = GetComponent<CircleCollider2D>();
+        healthBarGameObject.SetActive(false);
+    }
+    private void Update()
+    {
+        showHealthBar();
+    }
+    private void showHealthBar()
+    {
+        if(health < maxHealth && !isDead)
+        {
+            healthBarGameObject.SetActive(true);
+        }
     }
 
     // private void Start()

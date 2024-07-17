@@ -21,6 +21,8 @@ public class ButterflyGhostController : MonoBehaviour
     private GameObject butterflyGameObject;
     private GameObject corporateSlaveGameObject;
 
+    CircleCollider2D circleCollider;
+
 
     private void Start()
     {
@@ -29,6 +31,10 @@ public class ButterflyGhostController : MonoBehaviour
         animatorButterfly = butterflyGameObject.GetComponent<Animator>();
         animatorCorporate = corporateSlaveGameObject.GetComponent<Animator>();
         enemyHealthScript = FindAnyObjectByType<EnemyHealth>();
+        circleCollider = GetComponent<CircleCollider2D>();
+        circleCollider.enabled = false;
+        AIPath aiPath = GetComponentInParent<AIPath>();
+        aiPath.enabled = false;
     }
 
     private void Update()
@@ -46,12 +52,16 @@ public class ButterflyGhostController : MonoBehaviour
                 if (testIsDangerActive == false) // Testweise Variable
                 {
                     animatorButterfly.Play("ButterflyEnemy");
+                    AIPath aiPath = GetComponentInParent<AIPath>();
+                    aiPath.enabled = false;
+                    circleCollider.enabled = false;
                 }
 
                 // if (stateBarScript.isDangerActive) //in original world and danger zone begins
 
                 else if (testIsDangerActive && !isTransitionedOriginal) // Testweise Variable
                 {
+                    circleCollider.enabled = true;
                     AIPath aiPath = GetComponentInParent<AIPath>();
                     aiPath.enabled = true;
 
@@ -69,12 +79,16 @@ public class ButterflyGhostController : MonoBehaviour
                 if (testIsDangerActive == false) // Testweise Variable
                 {
                     animatorCorporate.Play("CorporateSlave");
+                    AIPath aiPath = GetComponentInParent<AIPath>();
+                    aiPath.enabled = false;
+                    circleCollider.enabled = false;
                 }
 
                 // if (stateBarScript.isDangerActive) //in original world and danger zone begins
 
                 else if (testIsDangerActive && !isTransitionedInverted) // Testweise Variable
                 {
+                    circleCollider.enabled = true;
                     AIPath aiPath = GetComponentInParent<AIPath>();
                     aiPath.enabled = true;
                     StartCoroutine(PlayDangerAnimations(animatorCorporate, "CorporateDangerTransition", "Fly")); //play transition animation from normal to monster and then keep monster state
