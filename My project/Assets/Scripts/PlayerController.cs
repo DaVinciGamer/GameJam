@@ -239,7 +239,20 @@ public class PlayerController : MonoBehaviour
     }
 }
 
+    // Diese Methode wird aufgerufen, wenn die Kollision beginnt
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Überprüfen, ob die Kollision mit den spezifischen GameObjects stattgefunden hat
+        if ((collision.gameObject == Bucket && gameObject == WaterCollider) ||
+            (collision.gameObject == WaterCollider && gameObject == Bucket))
+        {
+            // Ändere den Zustand der Variable von true auf false
+            BucketState = true;
 
+            // Optional: Debug-Nachricht in der Konsole anzeigen
+            Debug.Log("Kollision zwischen Bucket und WaterCollider erkannt. BucketState ist jetzt: " + BucketState);
+        }
+    }
 
     void ShootProjectile()
     {
