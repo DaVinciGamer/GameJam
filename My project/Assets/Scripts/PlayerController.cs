@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -36,224 +37,254 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     // Bucket State Variable for Sprite switches between the worlds
-    private bool BucketState = false;
+    public bool BucketState = false; // True = Water inside
     public GameObject Bucket;
     private SpriteRenderer spriteRendererBucket;
     public Sprite brokenBucket;
     public Sprite normalBucket;
     public Sprite waterBucket;
+    public bool PickupBucket;
 
     // Reference to the WaterCollider GameObject
     public GameObject WaterCollider;
 
 
     void Start()
-{
-    // Find VarInvertedWorld component
-    varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
-
-    if (varInvertedWorld == null)
     {
-        Debug.LogError("VarInvertedWorld component not found in the scene.");
+        // Find VarInvertedWorld component
+        varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
+
+        if (varInvertedWorld == null)
+        {
+            Debug.LogError("VarInvertedWorld component not found in the scene.");
+        }
+
+        // Get the SpriteRenderer component
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("No SpriteRenderer component found on this GameObject.");
+        }
+
+        // Get the Bucket SpriteRenderer Component
+        spriteRendererBucket = Bucket.GetComponent<SpriteRenderer>();
+        if (spriteRendererBucket == null)
+        {
+            Debug.LogError("No SpriteRenderer component found on Bucket.");
+        }
+        else { Debug.Log("Bucket Sprite gefunden"); }
+
+        // Get the Animator component
+        animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogError("No Animator component found on this GameObject.");
+        }
+
+        // Activate Input Actions
+        LeftAction.Enable();
+        RightAction.Enable();
+        UpAction.Enable();
+        DownAction.Enable();
+        ShootAction.Enable();
+        PickUpAction.Enable();
+
+        // Call TogglePickUp method when PickUpAction is executed
+        PickUpAction.performed += _ => TogglePickUp();
+
+        PickupBucket = false;
     }
-
-    // Get the SpriteRenderer component
-    spriteRenderer = GetComponent<SpriteRenderer>();
-    if (spriteRenderer == null)
-    {
-        Debug.LogError("No SpriteRenderer component found on this GameObject.");
-    }
-
-    // Get the Bucket SpriteRenderer Component
-    spriteRendererBucket = Bucket.GetComponent<SpriteRenderer>();
-    if (spriteRendererBucket == null)
-    {
-        Debug.LogError("No SpriteRenderer component found on Bucket.");
-    }
-
-    // Get the Animator component
-    animator = GetComponent<Animator>();
-    if (animator == null)
-    {
-        Debug.LogError("No Animator component found on this GameObject.");
-    }
-
-    // Activate Input Actions
-    LeftAction.Enable();
-    RightAction.Enable();
-    UpAction.Enable();
-    DownAction.Enable();
-    ShootAction.Enable();
-    PickUpAction.Enable();
-
-    // Call TogglePickUp method when PickUpAction is executed
-    PickUpAction.performed += _ => TogglePickUp();
-}
 
 
     void Update()
-{
-    Vector2 move = Vector2.zero;
-
-    // Check the value of the invertedWorld string
-    if (varInvertedWorld != null)
     {
-        if (VarInvertedWorld.invertedWorld == "true")
+        Vector2 move = Vector2.zero;
+
+        // Check the value of the invertedWorld string
+        if (varInvertedWorld != null)
         {
-            //Set bucket Sprite to not broken
-            if (BucketState == false)
+            if (VarInvertedWorld.invertedWorld == "true")
             {
-            spriteRendererBucket.sprite = normalBucket;
-            }
+                //Set bucket Sprite to not broken
+                if (BucketState == false)
+                {
+                    spriteRendererBucket.sprite = normalBucket;
 
-            animator.SetBool("LeftInv", false);
-            animator.SetBool("RightInv", false);
-            animator.SetBool("UpInv", false);
-            animator.SetBool("DownInv", false); 
+                }
 
-            if (LeftAction.IsPressed())
-            {
-                animator.SetBool("Left", true);
-                animator.SetBool("Right", false);
-                animator.SetBool("Up", false);
-                animator.SetBool("Down", false);
-                move.x = -1f;
-            }
-            else if (RightAction.IsPressed())
-            {
-                animator.SetBool("Left", false);
-                animator.SetBool("Right", true);
-                animator.SetBool("Up", false);
-                animator.SetBool("Down", false);
-                move.x = 1f;                   
-            }
-
-            if (UpAction.IsPressed())
-            {
-                animator.SetBool("Left", false);
-                animator.SetBool("Right", false);
-                animator.SetBool("Up", true);
-                animator.SetBool("Down", false);
-                move.y = 1f;
-            }
-            else if (DownAction.IsPressed())
-            {
-                animator.SetBool("Left", false);
-                animator.SetBool("Right", false);
-                animator.SetBool("Up", false);
-                animator.SetBool("Down", true);
-                move.y = -1f;                   
-            }
-
-            // Set the normal sprite
-            if (spriteRenderer != null && spriteRenderer.sprite != normalSprite)
-            {
-                spriteRenderer.sprite = normalSprite;
-            }
-        }
-        else if (VarInvertedWorld.invertedWorld == "false")
-        {
-            //Set bucket Sprite to not broken
-            if (BucketState == false)
-            {
-            spriteRendererBucket.sprite = brokenBucket;
-            }
-
-            animator.SetBool("Left", false);
-            animator.SetBool("Right", false);
-            animator.SetBool("Up", false);
-            animator.SetBool("Down", false);
-
-            if (LeftAction.IsPressed())
-            {
-                animator.SetBool("LeftInv", false);
-                animator.SetBool("RightInv", true);
-                animator.SetBool("UpInv", false);
-                animator.SetBool("DownInv", false);
-                move.x = 1f;
-            }
-            else if (RightAction.IsPressed())
-            {
-                animator.SetBool("LeftInv", true);
-                animator.SetBool("RightInv", false);
-                animator.SetBool("UpInv", false);
-                animator.SetBool("DownInv", false);
-                move.x = -1f;
-            }
-
-            if (UpAction.IsPressed())
-            {
                 animator.SetBool("LeftInv", false);
                 animator.SetBool("RightInv", false);
                 animator.SetBool("UpInv", false);
-                animator.SetBool("DownInv", true);
-                move.y = -1f;
-            }
-            else if (DownAction.IsPressed())
-            {
-                animator.SetBool("LeftInv", false);
-                animator.SetBool("RightInv", false);
-                animator.SetBool("UpInv", true);
                 animator.SetBool("DownInv", false);
-                move.y = 1f;
-            }
 
-            // Set the inverted sprite
-            if (spriteRenderer != null && spriteRenderer.sprite != invertedSprite)
+                if (LeftAction.IsPressed())
+                {
+                    animator.SetBool("Left", true);
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", false);
+                    move.x = -1f;
+                }
+                else if (RightAction.IsPressed())
+                {
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", true);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", false);
+                    move.x = 1f;
+                }
+
+                if (UpAction.IsPressed())
+                {
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Up", true);
+                    animator.SetBool("Down", false);
+                    move.y = 1f;
+                }
+                else if (DownAction.IsPressed())
+                {
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", false);
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Down", true);
+                    move.y = -1f;
+                }
+
+                // Set the normal sprite
+                if (spriteRenderer != null && spriteRenderer.sprite != normalSprite)
+                {
+                    spriteRenderer.sprite = normalSprite;
+                }
+            }
+            else if (VarInvertedWorld.invertedWorld == "false")
             {
-                spriteRenderer.sprite = invertedSprite;
+                //Set bucket Sprite to not broken
+                if (BucketState == false)
+                {
+                    spriteRendererBucket.sprite = brokenBucket;
+                }
+
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", false);
+                animator.SetBool("Up", false);
+                animator.SetBool("Down", false);
+
+                if (LeftAction.IsPressed())
+                {
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("RightInv", true);
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("DownInv", false);
+                    move.x = 1f;
+                }
+                else if (RightAction.IsPressed())
+                {
+                    animator.SetBool("LeftInv", true);
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("DownInv", false);
+                    move.x = -1f;
+                }
+
+                if (UpAction.IsPressed())
+                {
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("DownInv", true);
+                    move.y = -1f;
+                }
+                else if (DownAction.IsPressed())
+                {
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("UpInv", true);
+                    animator.SetBool("DownInv", false);
+                    move.y = 1f;
+                }
+
+                // Set the inverted sprite
+                if (spriteRenderer != null && spriteRenderer.sprite != invertedSprite)
+                {
+                    spriteRenderer.sprite = invertedSprite;
+                }
+            }
+            else
+            {
+                Debug.LogError("VarInvertedWorld has an invalid value: " + VarInvertedWorld.invertedWorld);
             }
         }
-        else
+
+        // Normalize move vector
+        if (move != Vector2.zero)
         {
-            Debug.LogError("VarInvertedWorld has an invalid value: " + VarInvertedWorld.invertedWorld);
+            move.Normalize();
+        }
+
+        // Move the player
+        float currentSpeed = moveSpeed;
+        transform.position += (Vector3)move * currentSpeed * Time.deltaTime;
+
+        // Shoot projectile if action is triggered
+        if (ShootAction.triggered)
+        {
+            ShootProjectile();
+        }
+
+        // Update position of carried object
+        if (carriedObject != null)
+        {
+            carriedObject.transform.position = transform.position;
+        }
+
+        // Check BucketState and set spriteRendererBucket.sprite
+        if (BucketState == true)
+        {
+            spriteRendererBucket.sprite = waterBucket;
         }
     }
 
-    // Normalize move vector
-    if (move != Vector2.zero)
-    {
-        move.Normalize();
-    }
-
-    // Move the player
-    float currentSpeed = moveSpeed;
-    transform.position += (Vector3)move * currentSpeed * Time.deltaTime;
-
-    // Shoot projectile if action is triggered
-    if (ShootAction.triggered)
-    {
-        ShootProjectile();
-    }
-
-    // Update position of carried object
-    if (carriedObject != null)
-    {
-        carriedObject.transform.position = transform.position;
-    }
-
-    // Check BucketState and set spriteRendererBucket.sprite
-    if (BucketState == true)
-    {
-        spriteRendererBucket.sprite = waterBucket;
-    }
-}
-/*
     // Diese Methode wird aufgerufen, wenn die Kollision beginnt
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Überprüfen, ob die Kollision mit den spezifischen GameObjects stattgefunden hat
-        if ((collision.gameObject == Bucket && gameObject == WaterCollider) ||
-            (collision.gameObject == WaterCollider && gameObject == Bucket))
+        //Debug.Log("Colliiiiiision");
+        // Überprüfen, ob das kollidierende Objekt ein Wasserobjekt ist
+        if (collision.gameObject.tag == "River" && PickupBucket == true)
         {
-            // Ändere den Zustand der Variable von true auf false
             BucketState = true;
-
-            // Optional: Debug-Nachricht in der Konsole anzeigen
-            Debug.Log("Kollision zwischen Bucket und WaterCollider erkannt. BucketState ist jetzt: " + BucketState);
+            Debug.Log("BucketState gesetzt auf true.");
         }
     }
-*/
+
+
+
+
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     Debug.Log("Kolliiiiiision");
+    //     // Überprüfen, ob die Kollision mit den spezifischen GameObjects stattgefunden hat
+    //     if (collision.gameObject.tag == "Pickup")
+    //     {
+    //         Bucket Bucket = collision.gameObject.GetComponent<bu>();
+    //         if (bucket != null)
+    //         {
+    //             // Setze den BucketState auf true
+    //             bucket.BucketState = true;
+    //         }
+    //     }
+
+    //     ((collision.gameObject == Bucket && gameObject == WaterCollider) ||
+    //         (collision.gameObject == WaterCollider && gameObject == Bucket))
+    //     {
+    //         // Ändere den Zustand der Variable von true auf false
+    //         BucketState = true;
+
+    //         // Optional: Debug-Nachricht in der Konsole anzeigen
+    //         Debug.Log("Kollision zwischen Bucket und WaterCollider erkannt. BucketState ist jetzt: " + BucketState);
+    //     }
+    // }
+
     void ShootProjectile()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -292,6 +323,7 @@ public class PlayerController : MonoBehaviour
         {
             carriedObject = null;
             Debug.Log("Dropped object");
+            PickupBucket = false;
         }
         //When no object is worn
         else
@@ -305,6 +337,7 @@ public class PlayerController : MonoBehaviour
                 {
                     //Debug message that displays the name of the object to be picked up
                     Debug.Log("Picking up object: " + collider.gameObject.name);
+                    PickupBucket = true;
                     //Set found object as carriedObject so that the player carries it
                     carriedObject = collider.gameObject;
                     break;
@@ -328,5 +361,4 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, pickUpRadius);
     }
-
 }
