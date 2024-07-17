@@ -45,7 +45,7 @@ public class TileAutomator : MonoBehaviour
     public GameObject street;
     public GameObject adultscene;
 
-    private bool childsceneloaded;
+    public static bool childsceneloaded;
     public TileAuto tileAuto;
 
     public void doSim(int nu)
