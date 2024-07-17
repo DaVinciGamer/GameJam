@@ -259,34 +259,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
-
-    // void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     Debug.Log("Kolliiiiiision");
-    //     // Überprüfen, ob die Kollision mit den spezifischen GameObjects stattgefunden hat
-    //     if (collision.gameObject.tag == "Pickup")
-    //     {
-    //         Bucket Bucket = collision.gameObject.GetComponent<bu>();
-    //         if (bucket != null)
-    //         {
-    //             // Setze den BucketState auf true
-    //             bucket.BucketState = true;
-    //         }
-    //     }
-
-    //     ((collision.gameObject == Bucket && gameObject == WaterCollider) ||
-    //         (collision.gameObject == WaterCollider && gameObject == Bucket))
-    //     {
-    //         // Ändere den Zustand der Variable von true auf false
-    //         BucketState = true;
-
-    //         // Optional: Debug-Nachricht in der Konsole anzeigen
-    //         Debug.Log("Kollision zwischen Bucket und WaterCollider erkannt. BucketState ist jetzt: " + BucketState);
-    //     }
-    // }
-
     void ShootProjectile()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -324,7 +296,7 @@ public class PlayerController : MonoBehaviour
         if (carriedObject != null)
         {
             carriedObject = null;
-            Debug.Log("Dropped object");
+            Debug.LogWarning("Dropped object");
             PickupBucket = false;
         }
         //When no object is worn
