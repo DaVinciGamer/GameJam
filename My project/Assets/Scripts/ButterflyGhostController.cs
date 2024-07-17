@@ -5,6 +5,9 @@ using UnityEngine;
 public class ButterflyGhostController : MonoBehaviour
 {
     private Animator animator;
+    private bool isTransitionedOriginal = false;
+    private bool isTransitionedInverted = false;
+    
     // private StateBar stateBarScript;
     // private VarInvertedWorld varInvertedWorld;
 
@@ -12,69 +15,54 @@ public class ButterflyGhostController : MonoBehaviour
     public bool testIsDangerActive;
     public string testInvertedWorld;
 
+
     private void Start()
     {
-        // Automatisches Finden der Referenzen
-        // stateBarScript = FindObjectOfType<StateBar>();
-        // if (stateBarScript == null)
-        // {
-        //     Debug.LogError("StateBar script not found in the scene.");
-        // }
-
-        // varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
-        // if (varInvertedWorld == null)
-        // {
-        //     Debug.LogError("VarInvertedWorld script not found in the scene.");
-        // }
-
         animator = GetComponentInChildren<Animator>();
-        if (animator == null)
-        {
-            Debug.LogError("Animator not found in child objects.");
-        }
     }
 
     private void Update()
     {
-        // Check if all required components are initialized
-        if (animator == null) // || stateBarScript == null || varInvertedWorld == null
+        if (testInvertedWorld == "false")
         {
-            return;
+            // if (VarInvertedWorld.invertedWorld == "false") //when original world is active
+            if (testIsDangerActive == false) // Testweise Variable
+            {
+                animator.Play("Butterfly");
+            }
+
+            // if (stateBarScript.isDangerActive) //in original world and danger zone begins
+
+            else if (testIsDangerActive && !isTransitionedOriginal) // Testweise Variable
+            {
+                isTransitionedOriginal = true;
+                StartCoroutine(PlayDangerAnimations("ButterflyDangerTransition", "Ghost")); //play transition animation from normal to monster and then keep monster state
+            }
+
         }
 
-        // if (VarInvertedWorld.invertedWorld == "false") //when original world is active
-        if (testInvertedWorld == "false") // Testweise Variable
-        {
-            PlayButterflyNormalAnimation();
-        }
-
-        // if (stateBarScript.isDangerActive) //in original world and danger zone begins
-        if (testIsDangerActive) // Testweise Variable
-        {
-            StartCoroutine(PlayDangerAnimations()); //play transition animation from normal to monster and then keep monster state
-        }
         else
         {
-            StartCoroutine(PlaySafeAnimations()); //danger zone no longer active so transition back to normal state and stay there
+            if (testIsDangerActive == false) // Testweise Variable
+            {
+                animator.Play("CorporateSlave");
+            }
+
+            // if (stateBarScript.isDangerActive) //in original world and danger zone begins
+
+            else if (testIsDangerActive && !isTransitionedInverted) // Testweise Variable
+            {
+                isTransitionedInverted = true;
+                StartCoroutine(PlayDangerAnimations("CorporateSlaveDangerTransition", "Fly")); //play transition animation from normal to monster and then keep monster state
+            }
         }
     }
 
-    private void PlayButterflyNormalAnimation()
+    private IEnumerator PlayDangerAnimations(string animation1, string animation2)
     {
-        animator.Play("Butterfly");
-    }
-
-    private IEnumerator PlayDangerAnimations()
-    {
-        animator.Play("ButterflyDangerTransition");
+        
+        animator.Play(animation1);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-        animator.Play("Ghost");
-    }
-
-    private IEnumerator PlaySafeAnimations()
-    {
-        animator.Play("GhostSafeTransition");
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-        animator.Play("Butterfly");
+        animator.Play(animation2);
     }
 }
