@@ -111,6 +111,7 @@ public class PlayerController : MonoBehaviour
                     spriteRendererBucket.sprite = normalBucket;
 
                 }
+                animator.SetBool("Down", true);
 
                 animator.SetBool("LeftInv", false);
                 animator.SetBool("RightInv", false);
@@ -164,6 +165,7 @@ public class PlayerController : MonoBehaviour
                 {
                     spriteRendererBucket.sprite = brokenBucket;
                 }
+                animator.SetBool("DownInv", true);
 
                 animator.SetBool("Left", false);
                 animator.SetBool("Right", false);
