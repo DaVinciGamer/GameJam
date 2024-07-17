@@ -7,11 +7,11 @@ using DG.Tweening;
 public class StateBar : MonoBehaviour
 {
     float max_value = 100.0f;
-    float inv_curr;
-    float or_curr;
+    public static float inv_curr;
+    public static float or_curr;
     float inc_speed = 1.9f;
     float dec_speed = 1.8f;
-    float danger_zone_trigger = 90.0f; //triggers warning
+    public static float danger_zone_trigger = 90.0f; //triggers warning
     string state = "or";    //global ersetzen
 
     public Slider or_slider;

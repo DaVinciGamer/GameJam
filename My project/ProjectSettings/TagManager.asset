@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Pickup
+  - River
+  - Crocodile
+  - Log
   layers:
   - Default
   - TransparentFX
