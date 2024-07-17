@@ -1556,6 +1556,9 @@ MonoBehaviour:
   botTileChild: {fileID: 11400000, guid: fcbf16d19b039a74084364bb5c3090a5, type: 2}
   river: {fileID: 1932133688}
   childscene: {fileID: 2043398340}
+  street: {fileID: 0}
+  adultscene: {fileID: 0}
+  tileAuto: {fileID: 0}
 --- !u!4 &574439527
 Transform:
   m_ObjectHideFlags: 0
@@ -10124,6 +10127,8 @@ MonoBehaviour:
   botMap: {fileID: 1570981702}
   topTile: {fileID: 11400000, guid: 869e3732b8da55b4d8638bf066e91bb8, type: 2}
   botTile: {fileID: 0}
+  time: 0
+  delaycount: 0
 --- !u!1 &849703633
 GameObject:
   m_ObjectHideFlags: 0
@@ -31270,3 +31275,4 @@ SceneRoots:
   - {fileID: 1141213854}
   - {fileID: 174724655}
   - {fileID: 1430138435}
+  - {fileID: 1745662753}
