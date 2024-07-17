@@ -36,161 +36,172 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     void Start()
+{
+    // Find VarInvertedWorld component
+    varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
+
+    if (varInvertedWorld == null)
     {
-        // Find VarInvertedWorld component
-        varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
-
-        if (varInvertedWorld == null)
-        {
-            Debug.LogError("VarInvertedWorld component not found in the scene.");
-        }
-
-        // Get the SpriteRenderer component
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer == null)
-        {
-            Debug.LogError("No SpriteRenderer component found on this GameObject.");
-        }
-
-        // Activate Input Actions
-        LeftAction.Enable();
-        RightAction.Enable();
-        UpAction.Enable();
-        DownAction.Enable();
-        ShootAction.Enable();
-        PickUpAction.Enable();
-
-        //Call TogglePickUp method when PickUpAction is executed
-        PickUpAction.performed += _ => TogglePickUp();
+        Debug.LogError("VarInvertedWorld component not found in the scene.");
     }
 
-    void Update()
+    // Get the SpriteRenderer component
+    spriteRenderer = GetComponent<SpriteRenderer>();
+    if (spriteRenderer == null)
     {
-        Vector2 move = Vector2.zero;
+        Debug.LogError("No SpriteRenderer component found on this GameObject.");
+    }
 
-        // Check the value of the invertedWorld string
-        if (varInvertedWorld != null)
+    // Get the Animator component
+    animator = GetComponent<Animator>();
+    if (animator == null)
+    {
+        Debug.LogError("No Animator component found on this GameObject.");
+    }
+
+    // Activate Input Actions
+    LeftAction.Enable();
+    RightAction.Enable();
+    UpAction.Enable();
+    DownAction.Enable();
+    ShootAction.Enable();
+    PickUpAction.Enable();
+
+    // Call TogglePickUp method when PickUpAction is executed
+    PickUpAction.performed += _ => TogglePickUp();
+}
+
+
+    void Update()
+{
+    Vector2 move = Vector2.zero;
+
+    // Check the value of the invertedWorld string
+    if (varInvertedWorld != null)
+    {
+        if (VarInvertedWorld.invertedWorld == "true")
         {
-            if (VarInvertedWorld.invertedWorld == "true")
+            animator.SetBool("LeftInv", false);
+            animator.SetBool("RightInv", false);
+            animator.SetBool("UpInv", false);
+            animator.SetBool("DownInv", false); 
+
+            if (LeftAction.IsPressed())
             {
-                animator.SetBool("LeftInv", false);
-                animator.SetBool("RightInv", false);
-                animator.SetBool("UpInv", false);
-                animator.SetBool("DownInv", false); 
-                // Debug.Log("VarInvertedWorld = true");
-                if (LeftAction.IsPressed())
-                {
-                    animator.SetBool("Left", true);
-                    animator.SetBool("Right", false);
-                    animator.SetBool("Up", false);
-                    animator.SetBool("Down", false);
-                    move.x = -1f;
-                   
-                }
-                else if (RightAction.IsPressed())
-                {
-                    animator.SetBool("Left", false);
-                    animator.SetBool("Right", true);
-                    animator.SetBool("Up", false);
-                    animator.SetBool("Down", false);
-                    move.x = 1f;                   
-                }
-
-                if (UpAction.IsPressed())
-                {
-                    animator.SetBool("Left", false);
-                    animator.SetBool("Right", false);
-                    animator.SetBool("Up", true);
-                    animator.SetBool("Down", false);
-                    move.y = 1f;
-                }
-                else if (DownAction.IsPressed())
-                {
-                    animator.SetBool("Left", false);
-                    animator.SetBool("Right", false);
-                    animator.SetBool("Up", false);
-                    animator.SetBool("Down", true);
-                    move.y = -1f;                   
-                }
-
-                // Set the normal sprite
-                if (spriteRenderer != null && spriteRenderer.sprite != normalSprite)
-                {
-                    spriteRenderer.sprite = normalSprite;
-                }
+                animator.SetBool("Left", true);
+                animator.SetBool("Right", false);
+                animator.SetBool("Up", false);
+                animator.SetBool("Down", false);
+                move.x = -1f;
             }
-            else if (VarInvertedWorld.invertedWorld == "false")
+            else if (RightAction.IsPressed())
+            {
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", true);
+                animator.SetBool("Up", false);
+                animator.SetBool("Down", false);
+                move.x = 1f;                   
+            }
+
+            if (UpAction.IsPressed())
+            {
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", false);
+                animator.SetBool("Up", true);
+                animator.SetBool("Down", false);
+                move.y = 1f;
+            }
+            else if (DownAction.IsPressed())
             {
                 animator.SetBool("Left", false);
                 animator.SetBool("Right", false);
                 animator.SetBool("Up", false);
-                animator.SetBool("Down", false);
-                // Debug.Log("VarInvertedWorld = false");
-                if (LeftAction.IsPressed())
-                {
-                    animator.SetBool("LeftInv", false);
-                    animator.SetBool("RightInv", true);
-                    animator.SetBool("UpInv", false);
-                    animator.SetBool("DownInv", false);
-                    move.x = 1f;
-                }
-                else if (RightAction.IsPressed())
-                {
-                    animator.SetBool("LeftInv", true);
-                    animator.SetBool("RightInv", false);
-                    animator.SetBool("UpInv", false);
-                    animator.SetBool("DownInv", false);
-                    move.x = -1f;
-                }
-
-                if (UpAction.IsPressed())
-                {
-                    animator.SetBool("LeftInv", false);
-                    animator.SetBool("RightInv", false);
-                    animator.SetBool("UpInv", false);
-                    animator.SetBool("DownInv", true);
-                    move.y = -1f;
-                }
-                else if (DownAction.IsPressed())
-                {
-                    animator.SetBool("LeftInv", false);
-                    animator.SetBool("RightInv", false);
-                    animator.SetBool("UpInv", true);
-                    animator.SetBool("DownInv", false);
-                    move.y = 1f;
-                }
-                // Set the inverted sprite
-                if (spriteRenderer != null && spriteRenderer.sprite != invertedSprite)
-                {
-                    spriteRenderer.sprite = invertedSprite;
-                }
+                animator.SetBool("Down", true);
+                move.y = -1f;                   
             }
-            else
+
+            // Set the normal sprite
+            if (spriteRenderer != null && spriteRenderer.sprite != normalSprite)
             {
-                Debug.LogError("VarInvertedWorld has an invalid value: " + VarInvertedWorld.invertedWorld);
+                spriteRenderer.sprite = normalSprite;
             }
         }
-
-        if (move != Vector2.zero)
+        else if (VarInvertedWorld.invertedWorld == "false")
         {
-            move.Normalize();
+            animator.SetBool("Left", false);
+            animator.SetBool("Right", false);
+            animator.SetBool("Up", false);
+            animator.SetBool("Down", false);
+
+            if (LeftAction.IsPressed())
+            {
+                animator.SetBool("LeftInv", false);
+                animator.SetBool("RightInv", true);
+                animator.SetBool("UpInv", false);
+                animator.SetBool("DownInv", false);
+                move.x = 1f;
+            }
+            else if (RightAction.IsPressed())
+            {
+                animator.SetBool("LeftInv", true);
+                animator.SetBool("RightInv", false);
+                animator.SetBool("UpInv", false);
+                animator.SetBool("DownInv", false);
+                move.x = -1f;
+            }
+
+            if (UpAction.IsPressed())
+            {
+                animator.SetBool("LeftInv", false);
+                animator.SetBool("RightInv", false);
+                animator.SetBool("UpInv", false);
+                animator.SetBool("DownInv", true);
+                move.y = -1f;
+            }
+            else if (DownAction.IsPressed())
+            {
+                animator.SetBool("LeftInv", false);
+                animator.SetBool("RightInv", false);
+                animator.SetBool("UpInv", true);
+                animator.SetBool("DownInv", false);
+                move.y = 1f;
+            }
+
+            // Set the inverted sprite
+            if (spriteRenderer != null && spriteRenderer.sprite != invertedSprite)
+            {
+                spriteRenderer.sprite = invertedSprite;
+            }
         }
-
-        float currentSpeed = moveSpeed;
-
-        transform.position += (Vector3)move * currentSpeed * Time.deltaTime;
-
-        if (ShootAction.triggered)
+        else
         {
-            ShootProjectile();
-        }
-
-        // if carriedObject is not null, it is set to the current position of the player
-        if (carriedObject != null)
-        {
-            carriedObject.transform.position = transform.position;
+            Debug.LogError("VarInvertedWorld has an invalid value: " + VarInvertedWorld.invertedWorld);
         }
     }
+
+    // Normalize move vector
+    if (move != Vector2.zero)
+    {
+        move.Normalize();
+    }
+
+    // Move the player
+    float currentSpeed = moveSpeed;
+    transform.position += (Vector3)move * currentSpeed * Time.deltaTime;
+
+    // Shoot projectile if action is triggered
+    if (ShootAction.triggered)
+    {
+        ShootProjectile();
+    }
+
+    // Update position of carried object
+    if (carriedObject != null)
+    {
+        carriedObject.transform.position = transform.position;
+    }
+}
+
 
 
     void ShootProjectile()
