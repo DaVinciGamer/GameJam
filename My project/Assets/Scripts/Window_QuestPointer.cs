@@ -3,8 +3,10 @@ using UnityEngine;
 public class Window_QuestPointer : MonoBehaviour
 {
     public Transform targetTransform; // Das Zielobjekt, auf das der Pfeil zeigen soll
+    public Transform fireTargetTransform;
     private RectTransform pointerRectTransform;
     private Canvas canvas;
+    public PlayerController playerController;
 
     private void Awake()
     {
@@ -14,6 +16,17 @@ public class Window_QuestPointer : MonoBehaviour
 
     private void Update()
     {
+        if (playerController == null)
+        {
+            Debug.LogWarning("PlayerController is not assigned!");
+            return;
+        }
+
+        if (playerController.BucketState && fireTargetTransform != null)
+        {
+            targetTransform = fireTargetTransform;
+        }
+
         if (targetTransform == null)
         {
             Debug.LogWarning("Target Transform is not assigned!");
