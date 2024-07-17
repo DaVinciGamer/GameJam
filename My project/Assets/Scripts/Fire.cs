@@ -8,28 +8,48 @@ public class Fire : MonoBehaviour
     private PlayerController playerController;
     private SpriteRenderer spriteRenderer;
     public Sprite deletedFire;
-     
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        playerController = GameObject.FindObjectOfType<PlayerController>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.LogWarning("Collision with Fire");
-        Debug.LogWarning(playerController.PickupBucket + "PickupBucket STate");
-        if (playerController.PickupBucket == false && playerController.BucketState == true)
+        // Get the SpriteRenderer from the FireObject
+        if (FireObject != null)
         {
-            Debug.LogWarning("Fire Delete Anforderungen Erfüllt");
-            spriteRenderer.sprite = deletedFire;
+            animator = FireObject.GetComponent<Animator>();
+            spriteRenderer = FireObject.GetComponent<SpriteRenderer>();
+            if (spriteRenderer == null)
+            {
+                Debug.LogError("No SpriteRenderer found on the FireObject");
+            }
         }
-        
+        else
+        {
+            Debug.LogError("FireObject is not assigned");
+        }
+        spriteRenderer.sprite = deletedFire;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (playerController != null)
+        {
+            if (playerController.PickupBucket == false && playerController.BucketState == true)
+            {
+                Debug.Log("PickupBucket is false and BucketState is true");
+                if (spriteRenderer != null)
+                {
+                    animator.SetBool("Fire", false);
+                    //spriteRenderer.sprite = deletedFire;
+                    Debug.Log("Deleted Fire");
+                }
+                else
+                {
+                    Debug.LogError("SpriteRenderer is not assigned");
+                }
+            }
+        }
     }
 }
