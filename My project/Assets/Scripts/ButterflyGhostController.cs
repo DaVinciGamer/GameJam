@@ -10,13 +10,13 @@ public class ButterflyGhostController : MonoBehaviour
     private bool isTransitionedOriginal = false;
     private bool isTransitionedInverted = false;
 
-    // private StateBar stateBarScript;
-    // private VarInvertedWorld varInvertedWorld;
+    private StateBar stateBarScript;
+    private VarInvertedWorld varInvertedWorld;
     private EnemyHealth enemyHealthScript;
 
     // Testweise im Inspector hinzugefügte Variablen
-    public bool testIsDangerActive;
-    public string testInvertedWorld;
+    //public bool testIsDangerActive;
+    //public string testInvertedWorld;
 
     private GameObject butterflyGameObject;
     private GameObject corporateSlaveGameObject;
@@ -42,14 +42,14 @@ public class ButterflyGhostController : MonoBehaviour
         if (!enemyHealthScript.isDead)
         {
 
-            if (testInvertedWorld == "false")
+            if (varInvertedWorld.ToString() == "false")
             {
                 isTransitionedInverted = false;
                 butterflyGameObject.SetActive(true);
                 corporateSlaveGameObject.SetActive(false);
 
                 // if (VarInvertedWorld.invertedWorld == "false") //when original world is active
-                if (testIsDangerActive == false) // Testweise Variable
+                if (stateBarScript.isDangerActive == false) // Testweise Variable
                 {
                     animatorButterfly.Play("ButterflyEnemy");
                     AIPath aiPath = GetComponentInParent<AIPath>();
@@ -59,7 +59,7 @@ public class ButterflyGhostController : MonoBehaviour
 
                 // if (stateBarScript.isDangerActive) //in original world and danger zone begins
 
-                else if (testIsDangerActive && !isTransitionedOriginal) // Testweise Variable
+                else if (stateBarScript.isDangerActive && !isTransitionedOriginal) // Testweise Variable
                 {
                     circleCollider.enabled = true;
                     AIPath aiPath = GetComponentInParent<AIPath>();
@@ -76,7 +76,7 @@ public class ButterflyGhostController : MonoBehaviour
                 butterflyGameObject.SetActive(false);
                 corporateSlaveGameObject.SetActive(true);
 
-                if (testIsDangerActive == false) // Testweise Variable
+                if (stateBarScript.isDangerActive == false) // Testweise Variable
                 {
                     animatorCorporate.Play("CorporateSlave");
                     AIPath aiPath = GetComponentInParent<AIPath>();
@@ -86,7 +86,7 @@ public class ButterflyGhostController : MonoBehaviour
 
                 // if (stateBarScript.isDangerActive) //in original world and danger zone begins
 
-                else if (testIsDangerActive && !isTransitionedInverted) // Testweise Variable
+                else if (stateBarScript.isDangerActive && !isTransitionedInverted) // Testweise Variable
                 {
                     circleCollider.enabled = true;
                     AIPath aiPath = GetComponentInParent<AIPath>();
