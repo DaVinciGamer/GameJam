@@ -175,6 +175,8 @@ MonoBehaviour:
   botMap: {fileID: 1071103754}
   topTile: {fileID: 11400000, guid: 869e3732b8da55b4d8638bf066e91bb8, type: 2}
   botTile: {fileID: 0}
+  time: 0
+  delaycount: 0
 --- !u!1 &80362367
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +554,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &220654390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 220654391}
+  - component: {fileID: 220654392}
+  m_Layer: 0
+  m_Name: MonsterGenerate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &220654391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220654390}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 729819810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &220654392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220654390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2080e4e89a63440ad4ddf06d7b855a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iniChance: 13
+  birthLimit: 6
+  deathLimit: 3
+  numR: 1
+  tmapSize: {x: 120, y: 80, z: 0}
+  randVectorRa: {x: 0, y: 0, z: 0}
+  randVectorBi: {x: 0, y: 0, z: 0}
+  randVectorBu: {x: 0, y: 0, z: 0}
+  monsterMap: {fileID: 183240155}
+  waterMap: {fileID: 1531336658}
+  rabbit: {fileID: 11400000, guid: 762f0a5fc40ea854e99358872483dff9, type: 2}
+  butterfly: {fileID: 11400000, guid: 27ed4a7e74df2ca4583771d8a30f5fef, type: 2}
+  bird: {fileID: 11400000, guid: 0c1a5cf705f33554893b94eef474dc83, type: 2}
 --- !u!1 &310349338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,6 +2276,7 @@ Transform:
   - {fileID: 554309948}
   - {fileID: 175599530}
   - {fileID: 183240153}
+  - {fileID: 220654391}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1071103751
@@ -10664,6 +10724,7 @@ GameObject:
   - component: {fileID: 1531336656}
   - component: {fileID: 1531336658}
   - component: {fileID: 1531336657}
+  - component: {fileID: 1531336659}
   m_Layer: 0
   m_Name: WaterFlower
   m_TagString: Untagged
@@ -10726,7 +10787,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.100000024, y: 0.100000024, z: 0}
   m_MaxChunkCount: 16
@@ -27253,6 +27314,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1531336659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531336655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f1cdfd597b9c741a9874186e1bbf3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tmapSize: {x: 120, y: 80, z: 0}
 --- !u!1 &1620968645
 GameObject:
   m_ObjectHideFlags: 0
@@ -27417,6 +27491,9 @@ MonoBehaviour:
   botTileChild: {fileID: 11400000, guid: fcbf16d19b039a74084364bb5c3090a5, type: 2}
   river: {fileID: 1406159657}
   childscene: {fileID: 729819808}
+  street: {fileID: 1260619387}
+  adultscene: {fileID: 1148843625}
+  tileAuto: {fileID: 71604849}
 --- !u!4 &2002303140
 Transform:
   m_ObjectHideFlags: 0
