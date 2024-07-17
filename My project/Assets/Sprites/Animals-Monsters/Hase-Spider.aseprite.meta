@@ -1,0 +1,1357 @@
+fileFormatVersion: 2
+guid: 3284bd4e9d4805943a7e70be682264a6
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Hase-Spider_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.06976744}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 237
+      width: 22
+      height: 43
+    spriteID: 16b00c084ed7b9d4d96d48184a4dc699
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 237}
+  - name: Hase-Spider_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.06976744}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 288
+      width: 22
+      height: 43
+    spriteID: 38df3ae18d2e5e64f8f39a452b12380a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 288}
+  - name: Hase-Spider_Frame_2
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.078947365}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 53
+      width: 26
+      height: 38
+    spriteID: 43debf87dae837f459fd65adfc5cca5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 53}
+  - name: Hase-Spider_Frame_3
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.078947365}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 99
+      width: 26
+      height: 38
+    spriteID: 16d00bf1edab8c54ba0923ea7494c683
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 99}
+  - name: Hase-Spider_Frame_4
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07317073}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 236
+      width: 26
+      height: 41
+    spriteID: 3d8eebcd6a0589447914a55bce0ce42b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 236}
+  - name: Hase-Spider_Frame_5
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07317073}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 285
+      width: 26
+      height: 41
+    spriteID: 1d2ccfb7ca267d64b93e4ad0e1c5e912
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 285}
+  - name: Hase-Spider_Frame_6
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.06976744}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 339
+      width: 22
+      height: 43
+    spriteID: c57bb5dd176eff54ca97121faaaba0a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 339}
+  - name: Hase-Spider_Frame_7
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.06976744}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 390
+      width: 22
+      height: 43
+    spriteID: 8039b992027fc5746842f652ad7b91b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 390}
+  - name: Hase-Spider_Frame_8
+    originalName: 
+    pivot: {x: 0.4642857, y: -0.09302325}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 352
+      width: 28
+      height: 43
+    spriteID: 70c3ecab863dd8d44b5644895f87b69e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 352}
+  - name: Hase-Spider_Frame_9
+    originalName: 
+    pivot: {x: 0.4642857, y: -0.09302325}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 403
+      width: 28
+      height: 43
+    spriteID: 069180d48fc05a348b96c16794cf1410
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 403}
+  - name: Hase-Spider_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.06976744}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 441
+      width: 22
+      height: 43
+    spriteID: 7f27b9a7f91639c4bb17c4d968e04f74
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 441}
+  - name: Hase-Spider_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: -0.06976744}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 200
+      y: 4
+      width: 22
+      height: 43
+    spriteID: 8aac39e9a7e60d545987a7df68672760
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 200, y: 4}
+  - name: Hase-Spider_Frame_12
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.078947365}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 145
+      width: 26
+      height: 38
+    spriteID: 9a3c80104bd4b8f45bf3d19ec77b5a1f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 145}
+  - name: Hase-Spider_Frame_13
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.078947365}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 191
+      width: 26
+      height: 38
+    spriteID: 3ec6b9b2c57b20e44bdaf321845168f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 191}
+  - name: Hase-Spider_Frame_14
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07317073}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 334
+      width: 26
+      height: 41
+    spriteID: a6e2ef97df3935347a1a65cedfa4f7cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 334}
+  - name: Hase-Spider_Frame_15
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07317073}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 383
+      width: 26
+      height: 41
+    spriteID: 7e92be011535db54c9af0c629e223b8e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 383}
+  - name: Hase-Spider_Frame_16
+    originalName: 
+    pivot: {x: 0.48484847, y: -0.055555552}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 454
+      width: 33
+      height: 36
+    spriteID: 083ad288decbe974e9d7ffb947c993c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 454}
+  - name: Hase-Spider_Frame_17
+    originalName: 
+    pivot: {x: 0.48484847, y: -0.055555552}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 104
+      width: 33
+      height: 36
+    spriteID: c57456a04e2d47a47b6bb059eadc82be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 104}
+  - name: Hase-Spider_Frame_18
+    originalName: 
+    pivot: {x: 0.45454547, y: -0.15625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 192
+      width: 44
+      height: 32
+    spriteID: afd22d2bad353774f9c2b8c8619f4097
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 192}
+  - name: Hase-Spider_Frame_19
+    originalName: 
+    pivot: {x: 0.45454547, y: -0.15625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 232
+      width: 44
+      height: 32
+    spriteID: f47e82cfa1efa694ab35611524857249
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 232}
+  - name: Hase-Spider_Frame_20
+    originalName: 
+    pivot: {x: 0.5, y: -0.12820514}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 4
+      width: 46
+      height: 39
+    spriteID: c12bbbb21cf680a4699e8a6c5c6f399b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 4}
+  - name: Hase-Spider_Frame_21
+    originalName: 
+    pivot: {x: 0.5, y: -0.12820514}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 51
+      width: 46
+      height: 39
+    spriteID: 52a86a9d27b567449b2414df8eae98c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 51}
+  - name: Hase-Spider_Frame_22
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.13953488}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 47
+      height: 43
+    spriteID: 6c3a30d5a27a9314bae55fa7639cfdfc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Hase-Spider_Frame_23
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.13953488}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 55
+      width: 47
+      height: 43
+    spriteID: cc6773c889a0c2346b5b26bc37e0e7ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 55}
+  - name: Hase-Spider_Frame_24
+    originalName: 
+    pivot: {x: 0.48888892, y: -0.16666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 361
+      width: 45
+      height: 42
+    spriteID: cec392d4c8d90f04aa060f089a6d3fef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 361}
+  - name: Hase-Spider_Frame_25
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.13953488}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 106
+      width: 47
+      height: 43
+    spriteID: 70d9557747959d54e9dfb597331e4baf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 106}
+  - name: Hase-Spider_Frame_26
+    originalName: 
+    pivot: {x: 0.48888892, y: -0.16666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 411
+      width: 45
+      height: 42
+    spriteID: aea612b485e8acd45b167cbe42306d67
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 411}
+  - name: Hase-Spider_Frame_27
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.13953488}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 157
+      width: 47
+      height: 43
+    spriteID: 2d11a3a23cc82dc4c81c5d39a170f008
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 157}
+  - name: Hase-Spider_Frame_28
+    originalName: 
+    pivot: {x: 0.48888892, y: -0.16666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 461
+      width: 45
+      height: 42
+    spriteID: 31b385db48474cd4e9758d7c8085b03b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 461}
+  - name: Hase-Spider_Frame_29
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.13953488}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 208
+      width: 47
+      height: 43
+    spriteID: 20e6d551a3e591149b967cf76aea82ac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 208}
+  - name: Hase-Spider_Frame_30
+    originalName: 
+    pivot: {x: 0.48888892, y: -0.16666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 4
+      width: 45
+      height: 42
+    spriteID: fdc9b13fb50a0fe44bd49668f5578722
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 4}
+  - name: Hase-Spider_Frame_31
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.13953488}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 259
+      width: 47
+      height: 43
+    spriteID: 2d288f001a95b02429658eaf300d804a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 259}
+  - name: Hase-Spider_Frame_32
+    originalName: 
+    pivot: {x: 0.48888892, y: -0.16666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 54
+      width: 45
+      height: 42
+    spriteID: 9020d55aaa0dd0346ae12cdc84816fa6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 54}
+  - name: Hase-Spider_Frame_33
+    originalName: 
+    pivot: {x: 0.4893617, y: -0.13953488}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 310
+      width: 47
+      height: 43
+    spriteID: 050f8e9717646bd46ad3dbdc7aa94356
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 310}
+  - name: Hase-Spider_Frame_34
+    originalName: 
+    pivot: {x: 0.5, y: -0.12820514}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 98
+      width: 46
+      height: 39
+    spriteID: dbc13075008892c40b11be154947ceee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 98}
+  - name: Hase-Spider_Frame_35
+    originalName: 
+    pivot: {x: 0.5, y: -0.12820514}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 145
+      width: 46
+      height: 39
+    spriteID: 92975f299f3e75c4592751e03fd04d4b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 145}
+  - name: Hase-Spider_Frame_36
+    originalName: 
+    pivot: {x: 0.45454547, y: -0.15625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 272
+      width: 44
+      height: 32
+    spriteID: f6d24ccd4f7e7f840aa0887db9f66098
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 272}
+  - name: Hase-Spider_Frame_37
+    originalName: 
+    pivot: {x: 0.45454547, y: -0.15625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 312
+      width: 44
+      height: 32
+    spriteID: 1ed45495a36c6264f91e965fe8bdc1c5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 312}
+  - name: Hase-Spider_Frame_38
+    originalName: 
+    pivot: {x: 0.48484847, y: -0.055555552}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 148
+      width: 33
+      height: 36
+    spriteID: 9cb64876a2034e240a3107d11cc338c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 148}
+  - name: Hase-Spider_Frame_39
+    originalName: 
+    pivot: {x: 0.48484847, y: -0.055555552}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 192
+      width: 33
+      height: 36
+    spriteID: 3db15b826dd624240a3b1621644b712e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 192}
+  - name: Hase-Spider_Frame_40
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07317073}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 432
+      width: 26
+      height: 41
+    spriteID: e756eda92fa7c3740b4a2aa7ef59357c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 432}
+  - name: Hase-Spider_Frame_41
+    originalName: 
+    pivot: {x: 0.49999997, y: -0.07317073}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 4
+      width: 26
+      height: 41
+    spriteID: 70f5703ac0598e34f8a22bc3f5e97583
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 4}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 791761743
+    name: Hase-Spider
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Hase-Spider_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 3
+        width: 22
+        height: 43
+      spriteId: 16b00c084ed7b9d4d96d48184a4dc699
+    - name: Hase-Spider_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 3
+        width: 22
+        height: 43
+      spriteId: 38df3ae18d2e5e64f8f39a452b12380a
+    - name: Hase-Spider_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 3
+        width: 26
+        height: 38
+      spriteId: 43debf87dae837f459fd65adfc5cca5d
+    - name: Hase-Spider_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 3
+        width: 26
+        height: 38
+      spriteId: 16d00bf1edab8c54ba0923ea7494c683
+    - name: Hase-Spider_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 3
+        width: 26
+        height: 41
+      spriteId: 3d8eebcd6a0589447914a55bce0ce42b
+    - name: Hase-Spider_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 3
+        width: 26
+        height: 41
+      spriteId: 1d2ccfb7ca267d64b93e4ad0e1c5e912
+    - name: Hase-Spider_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 3
+        width: 22
+        height: 43
+      spriteId: c57bb5dd176eff54ca97121faaaba0a5
+    - name: Hase-Spider_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 3
+        width: 22
+        height: 43
+      spriteId: 8039b992027fc5746842f652ad7b91b7
+    - name: Hase-Spider_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 4
+        width: 28
+        height: 43
+      spriteId: 70c3ecab863dd8d44b5644895f87b69e
+    - name: Hase-Spider_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 4
+        width: 28
+        height: 43
+      spriteId: 069180d48fc05a348b96c16794cf1410
+    - name: Hase-Spider_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 3
+        width: 22
+        height: 43
+      spriteId: 7f27b9a7f91639c4bb17c4d968e04f74
+    - name: Hase-Spider_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 3
+        width: 22
+        height: 43
+      spriteId: 8aac39e9a7e60d545987a7df68672760
+    - name: Hase-Spider_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 3
+        width: 26
+        height: 38
+      spriteId: 9a3c80104bd4b8f45bf3d19ec77b5a1f
+    - name: Hase-Spider_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 3
+        width: 26
+        height: 38
+      spriteId: 3ec6b9b2c57b20e44bdaf321845168f0
+    - name: Hase-Spider_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 3
+        width: 26
+        height: 41
+      spriteId: a6e2ef97df3935347a1a65cedfa4f7cf
+    - name: Hase-Spider_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 3
+        width: 26
+        height: 41
+      spriteId: 7e92be011535db54c9af0c629e223b8e
+    - name: Hase-Spider_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 2
+        width: 33
+        height: 36
+      spriteId: 083ad288decbe974e9d7ffb947c993c0
+    - name: Hase-Spider_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 2
+        width: 33
+        height: 36
+      spriteId: c57456a04e2d47a47b6bb059eadc82be
+    - name: Hase-Spider_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 5
+        width: 44
+        height: 32
+      spriteId: afd22d2bad353774f9c2b8c8619f4097
+    - name: Hase-Spider_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 5
+        width: 44
+        height: 32
+      spriteId: f47e82cfa1efa694ab35611524857249
+    - name: Hase-Spider_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 46
+        height: 39
+      spriteId: c12bbbb21cf680a4699e8a6c5c6f399b
+    - name: Hase-Spider_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 46
+        height: 39
+      spriteId: 52a86a9d27b567449b2414df8eae98c3
+    - name: Hase-Spider_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 6
+        width: 47
+        height: 43
+      spriteId: 6c3a30d5a27a9314bae55fa7639cfdfc
+    - name: Hase-Spider_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 6
+        width: 47
+        height: 43
+      spriteId: cc6773c889a0c2346b5b26bc37e0e7ed
+    - name: Hase-Spider_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 7
+        width: 45
+        height: 42
+      spriteId: cec392d4c8d90f04aa060f089a6d3fef
+    - name: Hase-Spider_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 6
+        width: 47
+        height: 43
+      spriteId: 70d9557747959d54e9dfb597331e4baf
+    - name: Hase-Spider_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 7
+        width: 45
+        height: 42
+      spriteId: aea612b485e8acd45b167cbe42306d67
+    - name: Hase-Spider_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 6
+        width: 47
+        height: 43
+      spriteId: 2d11a3a23cc82dc4c81c5d39a170f008
+    - name: Hase-Spider_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 7
+        width: 45
+        height: 42
+      spriteId: 31b385db48474cd4e9758d7c8085b03b
+    - name: Hase-Spider_Frame_29
+      frameIndex: 29
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 6
+        width: 47
+        height: 43
+      spriteId: 20e6d551a3e591149b967cf76aea82ac
+    - name: Hase-Spider_Frame_30
+      frameIndex: 30
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 7
+        width: 45
+        height: 42
+      spriteId: fdc9b13fb50a0fe44bd49668f5578722
+    - name: Hase-Spider_Frame_31
+      frameIndex: 31
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 6
+        width: 47
+        height: 43
+      spriteId: 2d288f001a95b02429658eaf300d804a
+    - name: Hase-Spider_Frame_32
+      frameIndex: 32
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 7
+        width: 45
+        height: 42
+      spriteId: 9020d55aaa0dd0346ae12cdc84816fa6
+    - name: Hase-Spider_Frame_33
+      frameIndex: 33
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 6
+        width: 47
+        height: 43
+      spriteId: 050f8e9717646bd46ad3dbdc7aa94356
+    - name: Hase-Spider_Frame_34
+      frameIndex: 34
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 46
+        height: 39
+      spriteId: dbc13075008892c40b11be154947ceee
+    - name: Hase-Spider_Frame_35
+      frameIndex: 35
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 5
+        width: 46
+        height: 39
+      spriteId: 92975f299f3e75c4592751e03fd04d4b
+    - name: Hase-Spider_Frame_36
+      frameIndex: 36
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 5
+        width: 44
+        height: 32
+      spriteId: f6d24ccd4f7e7f840aa0887db9f66098
+    - name: Hase-Spider_Frame_37
+      frameIndex: 37
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 5
+        width: 44
+        height: 32
+      spriteId: 1ed45495a36c6264f91e965fe8bdc1c5
+    - name: Hase-Spider_Frame_38
+      frameIndex: 38
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 2
+        width: 33
+        height: 36
+      spriteId: 9cb64876a2034e240a3107d11cc338c8
+    - name: Hase-Spider_Frame_39
+      frameIndex: 39
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 2
+        width: 33
+        height: 36
+      spriteId: 3db15b826dd624240a3b1621644b712e
+    - name: Hase-Spider_Frame_40
+      frameIndex: 40
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 3
+        width: 26
+        height: 41
+      spriteId: e756eda92fa7c3740b4a2aa7ef59357c
+    - name: Hase-Spider_Frame_41
+      frameIndex: 41
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 3
+        width: 26
+        height: 41
+      spriteId: 70f5703ac0598e34f8a22bc3f5e97583
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 50, y: 50}
