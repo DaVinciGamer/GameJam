@@ -35,6 +35,18 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    // Bucket State Variable for Sprite switches between the worlds
+    private bool BucketState = false;
+    public GameObject Bucket;
+    private SpriteRenderer spriteRendererBucket;
+    public Sprite brokenBucket;
+    public Sprite normalBucket;
+    public Sprite waterBucket;
+
+    // Reference to the WaterCollider GameObject
+    public GameObject WaterCollider;
+
+
     void Start()
 {
     // Find VarInvertedWorld component
@@ -50,6 +62,13 @@ public class PlayerController : MonoBehaviour
     if (spriteRenderer == null)
     {
         Debug.LogError("No SpriteRenderer component found on this GameObject.");
+    }
+
+    // Get the Bucket SpriteRenderer Component
+    spriteRendererBucket = Bucket.GetComponent<SpriteRenderer>();
+    if (spriteRendererBucket == null)
+    {
+        Debug.LogError("No SpriteRenderer component found on Bucket.");
     }
 
     // Get the Animator component
@@ -81,6 +100,12 @@ public class PlayerController : MonoBehaviour
     {
         if (VarInvertedWorld.invertedWorld == "true")
         {
+            //Set bucket Sprite to not broken
+            if (BucketState == false)
+            {
+            spriteRendererBucket.sprite = normalBucket;
+            }
+
             animator.SetBool("LeftInv", false);
             animator.SetBool("RightInv", false);
             animator.SetBool("UpInv", false);
@@ -128,6 +153,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (VarInvertedWorld.invertedWorld == "false")
         {
+            //Set bucket Sprite to not broken
+            if (BucketState == false)
+            {
+            spriteRendererBucket.sprite = brokenBucket;
+            }
+
             animator.SetBool("Left", false);
             animator.SetBool("Right", false);
             animator.SetBool("Up", false);
@@ -200,9 +231,28 @@ public class PlayerController : MonoBehaviour
     {
         carriedObject.transform.position = transform.position;
     }
+
+    // Check BucketState and set spriteRendererBucket.sprite
+    if (BucketState == true)
+    {
+        spriteRendererBucket.sprite = waterBucket;
+    }
 }
 
+    // Diese Methode wird aufgerufen, wenn die Kollision beginnt
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Überprüfen, ob die Kollision mit den spezifischen GameObjects stattgefunden hat
+        if ((collision.gameObject == Bucket && gameObject == WaterCollider) ||
+            (collision.gameObject == WaterCollider && gameObject == Bucket))
+        {
+            // Ändere den Zustand der Variable von true auf false
+            BucketState = true;
 
+            // Optional: Debug-Nachricht in der Konsole anzeigen
+            Debug.Log("Kollision zwischen Bucket und WaterCollider erkannt. BucketState ist jetzt: " + BucketState);
+        }
+    }
 
     void ShootProjectile()
     {
@@ -262,6 +312,16 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    // Method called when the collider enters another trigger collider
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if the collider is the WaterCollider
+        if (other.gameObject == WaterCollider)
+        {
+            BucketState = true;
+        }
+    }
+
     // draw Gizmo in Pick Up Radius Size
     void OnDrawGizmosSelected()
     {
