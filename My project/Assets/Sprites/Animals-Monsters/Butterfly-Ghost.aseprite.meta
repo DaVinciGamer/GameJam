@@ -1,0 +1,1270 @@
+fileFormatVersion: 2
+guid: 66de395459df63c42b472b46b8abd022
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Butterfly-Ghost_Frame_0
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 119
+      y: 83
+      width: 31
+      height: 29
+    spriteID: 9421e09683d48b54f95b5dbad8a1f899
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 119, y: 83}
+  - name: Butterfly-Ghost_Frame_1
+    originalName: 
+    pivot: {x: 0.5641026, y: -0.5806452}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 39
+      height: 31
+    spriteID: ba444e2ae7d889449a290915a365af76
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Butterfly-Ghost_Frame_2
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 158
+      y: 83
+      width: 31
+      height: 29
+    spriteID: bb231e35552d5774db68abfedfcd5276
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 158, y: 83}
+  - name: Butterfly-Ghost_Frame_3
+    originalName: 
+    pivot: {x: 0.76470584, y: -0.64285713}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 123
+      width: 17
+      height: 28
+    spriteID: fe5c719d9e0a78a4181cf1a831319eae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 123}
+  - name: Butterfly-Ghost_Frame_4
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 197
+      y: 83
+      width: 31
+      height: 29
+    spriteID: 72376e7020cf6a34d89a7168121dae1e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 197, y: 83}
+  - name: Butterfly-Ghost_Frame_5
+    originalName: 
+    pivot: {x: 0.5641026, y: -0.5806452}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 51
+      y: 4
+      width: 39
+      height: 31
+    spriteID: 1433a43a944749b47a41d1601b462ebc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 51, y: 4}
+  - name: Butterfly-Ghost_Frame_6
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 123
+      width: 31
+      height: 29
+    spriteID: c9d78064ca3c84b43a7cbf7356757916
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 123}
+  - name: Butterfly-Ghost_Frame_7
+    originalName: 
+    pivot: {x: 0.76470584, y: -0.64285713}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 152
+      y: 199
+      width: 17
+      height: 28
+    spriteID: 0abe8ba29c448d9498379212376951a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 152, y: 199}
+  - name: Butterfly-Ghost_Frame_8
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 123
+      width: 31
+      height: 29
+    spriteID: 441634ba85161c3498de3673daa63698
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 123}
+  - name: Butterfly-Ghost_Frame_9
+    originalName: 
+    pivot: {x: 0.5641026, y: -0.5806452}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 98
+      y: 4
+      width: 39
+      height: 31
+    spriteID: 4a499eff5d0d74f44a68be2e7101dec9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 98, y: 4}
+  - name: Butterfly-Ghost_Frame_10
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 82
+      y: 123
+      width: 31
+      height: 29
+    spriteID: d1b544f6a9771f8449a6766620177555
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 82, y: 123}
+  - name: Butterfly-Ghost_Frame_11
+    originalName: 
+    pivot: {x: 0.76470584, y: -0.64285713}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 199
+      width: 17
+      height: 28
+    spriteID: eb18d2bf84e5329469fc2a25d6d940c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 199}
+  - name: Butterfly-Ghost_Frame_12
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 121
+      y: 123
+      width: 31
+      height: 29
+    spriteID: 1cd2ebd62de601e4fa118d39c1f6c352
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 121, y: 123}
+  - name: Butterfly-Ghost_Frame_13
+    originalName: 
+    pivot: {x: 0.6296296, y: -0.6}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 160
+      width: 27
+      height: 30
+    spriteID: c0fab966cd98ee942aedbcf735d5117f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 160}
+  - name: Butterfly-Ghost_Frame_14
+    originalName: 
+    pivot: {x: 0.64, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 227
+      y: 4
+      width: 25
+      height: 29
+    spriteID: 0650ee184ed951441b600402b84a8700
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 227, y: 4}
+  - name: Butterfly-Ghost_Frame_15
+    originalName: 
+    pivot: {x: 0.65217394, y: -0.6}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 199
+      width: 23
+      height: 30
+    spriteID: b46dd53d9b3d89345ba8629e523df147
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 36, y: 199}
+  - name: Butterfly-Ghost_Frame_16
+    originalName: 
+    pivot: {x: 0.6296296, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 197
+      y: 123
+      width: 27
+      height: 29
+    spriteID: c03cd473ae7e7244e8dedcad3273fcac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 197, y: 123}
+  - name: Butterfly-Ghost_Frame_17
+    originalName: 
+    pivot: {x: 0.6206897, y: -0.6}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 41
+      y: 160
+      width: 29
+      height: 30
+    spriteID: 572e1e9cc61f339488c463b69f961ca4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 41, y: 160}
+  - name: Butterfly-Ghost_Frame_18
+    originalName: 
+    pivot: {x: 0.6, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 4
+      width: 35
+      height: 29
+    spriteID: 0211202b0d1c662498d5f60c50169d79
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 4}
+  - name: Butterfly-Ghost_Frame_19
+    originalName: 
+    pivot: {x: 0.6060606, y: -0.53125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 43
+      width: 33
+      height: 32
+    spriteID: 1437a8f0d8fcd6a4a97fe88ac6a16881
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 43}
+  - name: Butterfly-Ghost_Frame_20
+    originalName: 
+    pivot: {x: 0.6060606, y: -0.53125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 135
+      y: 43
+      width: 33
+      height: 32
+    spriteID: 4f96c30da437e7242925776bfd2f3ba8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 135, y: 43}
+  - name: Butterfly-Ghost_Frame_21
+    originalName: 
+    pivot: {x: 0.6296296, y: -0.5862069}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 160
+      width: 27
+      height: 29
+    spriteID: 33562e44df27b6d4ca4fae9720e7b5f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 160}
+  - name: Butterfly-Ghost_Frame_22
+    originalName: 
+    pivot: {x: 0.6666667, y: -0.53125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 126
+      y: 199
+      width: 18
+      height: 32
+    spriteID: d8f25f4d2955c3a4ca4e61c8d170e703
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 126, y: 199}
+  - name: Butterfly-Ghost_Frame_23
+    originalName: 
+    pivot: {x: 0.6206897, y: -0.5483871}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 160
+      width: 29
+      height: 31
+    spriteID: 3c19003122add9d44a63545cef3a3112
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 160}
+  - name: Butterfly-Ghost_Frame_24
+    originalName: 
+    pivot: {x: 0.5945946, y: -0.53125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 43
+      width: 37
+      height: 32
+    spriteID: 20db1c405ec4acb4c821e58425f6aa4d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 43}
+  - name: Butterfly-Ghost_Frame_25
+    originalName: 
+    pivot: {x: 0.6060606, y: -0.53125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 43
+      width: 33
+      height: 32
+    spriteID: a9cd11e0b03ba3c4a99e46025c98dd87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 176, y: 43}
+  - name: Butterfly-Ghost_Frame_26
+    originalName: 
+    pivot: {x: 0.6206897, y: -0.53125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 83
+      width: 29
+      height: 32
+    spriteID: 40fcee3b359931f48b36f23003533331
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 83}
+  - name: Butterfly-Ghost_Frame_27
+    originalName: 
+    pivot: {x: 0.6666667, y: -0.56666666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 97
+      y: 199
+      width: 21
+      height: 30
+    spriteID: b0ccfe56b89c21944a93b414e1a6ccc7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 97, y: 199}
+  - name: Butterfly-Ghost_Frame_28
+    originalName: 
+    pivot: {x: 0.6206897, y: -0.53125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 82
+      y: 83
+      width: 29
+      height: 32
+    spriteID: e7f1d52e4b5e9f940a86157c62c7435b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 82, y: 83}
+  - name: Butterfly-Ghost_Frame_29
+    originalName: 
+    pivot: {x: 0.5945946, y: -0.53125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 43
+      width: 37
+      height: 32
+    spriteID: 87e00ca971159f84eb4d811c88f1fd34
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 43}
+  - name: Butterfly-Ghost_Frame_30
+    originalName: 
+    pivot: {x: 0.6060606, y: -0.53125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 217
+      y: 43
+      width: 33
+      height: 32
+    spriteID: 4e4e657cd8a0bc54082fe7d56a47b633
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 217, y: 43}
+  - name: Butterfly-Ghost_Frame_31
+    originalName: 
+    pivot: {x: 0.6060606, y: -0.53125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 83
+      width: 33
+      height: 32
+    spriteID: b4c3087acfafc734bbb713b93ca41d71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 83}
+  - name: Butterfly-Ghost_Frame_32
+    originalName: 
+    pivot: {x: 0.6296296, y: -0.5862069}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 183
+      y: 160
+      width: 27
+      height: 29
+    spriteID: 3e9ea87a9ba64174e879cab0ce88ddee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 183, y: 160}
+  - name: Butterfly-Ghost_Frame_33
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.5806452}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 188
+      y: 4
+      width: 31
+      height: 31
+    spriteID: 6db434a131e709346ae15fb08b9f56c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 188, y: 4}
+  - name: Butterfly-Ghost_Frame_34
+    originalName: 
+    pivot: {x: 0.6206897, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 123
+      width: 29
+      height: 29
+    spriteID: c849deb6e9cce474caf6ad78f1ded667
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 160, y: 123}
+  - name: Butterfly-Ghost_Frame_35
+    originalName: 
+    pivot: {x: 0.6296296, y: -0.5806452}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 160
+      width: 27
+      height: 31
+    spriteID: 3258c6478eddb064e97241b9314f65fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 160}
+  - name: Butterfly-Ghost_Frame_36
+    originalName: 
+    pivot: {x: 0.6363636, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 67
+      y: 199
+      width: 22
+      height: 29
+    spriteID: 11e4209d973cf8046b73557e777cce2c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 67, y: 199}
+  - name: Butterfly-Ghost_Frame_37
+    originalName: 
+    pivot: {x: 0.6666666, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 199
+      width: 24
+      height: 29
+    spriteID: 95721fe5be217d54da0dd06aaacc50e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 199}
+  - name: Butterfly-Ghost_Frame_38
+    originalName: 
+    pivot: {x: 0.6296296, y: -0.6206897}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 218
+      y: 160
+      width: 27
+      height: 29
+    spriteID: 833fe3ccb15aff341be251e4d893027c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 218, y: 160}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 445666493
+    name: Butterfly-Ghost
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Butterfly-Ghost_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 18
+        width: 31
+        height: 29
+      spriteId: 9421e09683d48b54f95b5dbad8a1f899
+    - name: Butterfly-Ghost_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 18
+        width: 39
+        height: 31
+      spriteId: ba444e2ae7d889449a290915a365af76
+    - name: Butterfly-Ghost_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 18
+        width: 31
+        height: 29
+      spriteId: bb231e35552d5774db68abfedfcd5276
+    - name: Butterfly-Ghost_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 18
+        width: 17
+        height: 28
+      spriteId: fe5c719d9e0a78a4181cf1a831319eae
+    - name: Butterfly-Ghost_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 18
+        width: 31
+        height: 29
+      spriteId: 72376e7020cf6a34d89a7168121dae1e
+    - name: Butterfly-Ghost_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 18
+        width: 39
+        height: 31
+      spriteId: 1433a43a944749b47a41d1601b462ebc
+    - name: Butterfly-Ghost_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 18
+        width: 31
+        height: 29
+      spriteId: c9d78064ca3c84b43a7cbf7356757916
+    - name: Butterfly-Ghost_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 18
+        width: 17
+        height: 28
+      spriteId: 0abe8ba29c448d9498379212376951a6
+    - name: Butterfly-Ghost_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 18
+        width: 31
+        height: 29
+      spriteId: 441634ba85161c3498de3673daa63698
+    - name: Butterfly-Ghost_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 18
+        width: 39
+        height: 31
+      spriteId: 4a499eff5d0d74f44a68be2e7101dec9
+    - name: Butterfly-Ghost_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 18
+        width: 31
+        height: 29
+      spriteId: d1b544f6a9771f8449a6766620177555
+    - name: Butterfly-Ghost_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 18
+        width: 17
+        height: 28
+      spriteId: eb18d2bf84e5329469fc2a25d6d940c3
+    - name: Butterfly-Ghost_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 18
+        width: 31
+        height: 29
+      spriteId: 1cd2ebd62de601e4fa118d39c1f6c352
+    - name: Butterfly-Ghost_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 18
+        width: 27
+        height: 30
+      spriteId: c0fab966cd98ee942aedbcf735d5117f
+    - name: Butterfly-Ghost_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 18
+        width: 25
+        height: 29
+      spriteId: 0650ee184ed951441b600402b84a8700
+    - name: Butterfly-Ghost_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 10
+        y: 18
+        width: 23
+        height: 30
+      spriteId: b46dd53d9b3d89345ba8629e523df147
+    - name: Butterfly-Ghost_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 18
+        width: 27
+        height: 29
+      spriteId: c03cd473ae7e7244e8dedcad3273fcac
+    - name: Butterfly-Ghost_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 18
+        width: 29
+        height: 30
+      spriteId: 572e1e9cc61f339488c463b69f961ca4
+    - name: Butterfly-Ghost_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 18
+        width: 35
+        height: 29
+      spriteId: 0211202b0d1c662498d5f60c50169d79
+    - name: Butterfly-Ghost_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 17
+        width: 33
+        height: 32
+      spriteId: 1437a8f0d8fcd6a4a97fe88ac6a16881
+    - name: Butterfly-Ghost_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 17
+        width: 33
+        height: 32
+      spriteId: 4f96c30da437e7242925776bfd2f3ba8
+    - name: Butterfly-Ghost_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 17
+        width: 27
+        height: 29
+      spriteId: 33562e44df27b6d4ca4fae9720e7b5f5
+    - name: Butterfly-Ghost_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 17
+        width: 18
+        height: 32
+      spriteId: d8f25f4d2955c3a4ca4e61c8d170e703
+    - name: Butterfly-Ghost_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 17
+        width: 29
+        height: 31
+      spriteId: 3c19003122add9d44a63545cef3a3112
+    - name: Butterfly-Ghost_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 17
+        width: 37
+        height: 32
+      spriteId: 20db1c405ec4acb4c821e58425f6aa4d
+    - name: Butterfly-Ghost_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 17
+        width: 33
+        height: 32
+      spriteId: a9cd11e0b03ba3c4a99e46025c98dd87
+    - name: Butterfly-Ghost_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 17
+        width: 29
+        height: 32
+      spriteId: 40fcee3b359931f48b36f23003533331
+    - name: Butterfly-Ghost_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 17
+        width: 21
+        height: 30
+      spriteId: b0ccfe56b89c21944a93b414e1a6ccc7
+    - name: Butterfly-Ghost_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 17
+        width: 29
+        height: 32
+      spriteId: e7f1d52e4b5e9f940a86157c62c7435b
+    - name: Butterfly-Ghost_Frame_29
+      frameIndex: 29
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 17
+        width: 37
+        height: 32
+      spriteId: 87e00ca971159f84eb4d811c88f1fd34
+    - name: Butterfly-Ghost_Frame_30
+      frameIndex: 30
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 17
+        width: 33
+        height: 32
+      spriteId: 4e4e657cd8a0bc54082fe7d56a47b633
+    - name: Butterfly-Ghost_Frame_31
+      frameIndex: 31
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 17
+        width: 33
+        height: 32
+      spriteId: b4c3087acfafc734bbb713b93ca41d71
+    - name: Butterfly-Ghost_Frame_32
+      frameIndex: 32
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 17
+        width: 27
+        height: 29
+      spriteId: 3e9ea87a9ba64174e879cab0ce88ddee
+    - name: Butterfly-Ghost_Frame_33
+      frameIndex: 33
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 18
+        width: 31
+        height: 31
+      spriteId: 6db434a131e709346ae15fb08b9f56c7
+    - name: Butterfly-Ghost_Frame_34
+      frameIndex: 34
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 18
+        width: 29
+        height: 29
+      spriteId: c849deb6e9cce474caf6ad78f1ded667
+    - name: Butterfly-Ghost_Frame_35
+      frameIndex: 35
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 18
+        width: 27
+        height: 31
+      spriteId: 3258c6478eddb064e97241b9314f65fd
+    - name: Butterfly-Ghost_Frame_36
+      frameIndex: 36
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 18
+        width: 22
+        height: 29
+      spriteId: 11e4209d973cf8046b73557e777cce2c
+    - name: Butterfly-Ghost_Frame_37
+      frameIndex: 37
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 18
+        width: 24
+        height: 29
+      spriteId: 95721fe5be217d54da0dd06aaacc50e2
+    - name: Butterfly-Ghost_Frame_38
+      frameIndex: 38
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 18
+        width: 27
+        height: 29
+      spriteId: 833fe3ccb15aff341be251e4d893027c
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 50, y: 50}
