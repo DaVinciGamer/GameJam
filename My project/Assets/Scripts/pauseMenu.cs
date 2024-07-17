@@ -8,7 +8,7 @@ public class pauseMenu : MonoBehaviour
     private MusicController MusicController;
 
 void Start(){
-    MusicController.Instance.FadeTo(1);
+    MusicController.Instance.FadeTo(5);
 }
     void Update()
     {

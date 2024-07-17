@@ -90,7 +90,6 @@ public class MusicController : MonoBehaviour
         AudioSource newSource = isPlayingSource1 ? audioSource2 : audioSource1;
 
         newSource.clip = newClip;
-        newSource.Play();
 
         float time = 0f;
 
@@ -100,12 +99,31 @@ public class MusicController : MonoBehaviour
             float t = time / fadeDuration;
 
             activeSource.volume = Mathf.Lerp(1f, 0f, t);
+            newSource.volume = Mathf.Lerp(0f, 0f, t); // Ensure newSource volume remains 0 during fade
+
+            yield return null;
+        }
+
+        // Stop both sources briefly to ensure no overlap
+        activeSource.Stop();
+        newSource.Stop();
+
+        // Start the new clip after a brief pause
+        yield return new WaitForSeconds(0.1f); // Brief pause to ensure no overlap
+
+        newSource.Play();
+        time = 0f;
+
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime;
+            float t = time / fadeDuration;
+
             newSource.volume = Mathf.Lerp(0f, 1f, t);
 
             yield return null;
         }
 
-        activeSource.Stop();
         isPlayingSource1 = !isPlayingSource1;
     }
 
