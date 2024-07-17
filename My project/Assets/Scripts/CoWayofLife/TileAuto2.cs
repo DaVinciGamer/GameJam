@@ -141,7 +141,7 @@ public class TileAuto : MonoBehaviour
             {
                 delaycount = 0;
                 iniChance++;
-                Debug.Log("inichance: " + iniChance);
+                //Debug.Log("inichance: " + iniChance);
                 doSim(numR);
 
             }
