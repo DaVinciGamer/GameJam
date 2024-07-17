@@ -165,7 +165,7 @@ public class StateBar : MonoBehaviour
     void invStartRotation()
     {
         isDangerActive = true;
-        MusicController.Instance.FadeTo(2);
+        MusicController.Instance.FadeTo(6);
         invRotationTween = invImage.DORotate(new Vector3(0, 0, rotationAngle), rotationDuration)
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.InOutSine);
@@ -174,7 +174,7 @@ public class StateBar : MonoBehaviour
     void invStopRotation()
     {
         isDangerActive = false;
-        MusicController.Instance.FadeTo(1);
+        MusicController.Instance.FadeTo(5);
         invRotationTween.Kill();
         invImage.rotation = Quaternion.Euler(0, 0, 0);
     }

@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     private MusicController MusicController;
     public void PlayGame()
     {
-        MusicController.Instance.PlaySoundEffect(0);
+        MusicController.Instance.PlaySoundEffect(1);
         SceneManager.LoadScene(1);
     }
 
