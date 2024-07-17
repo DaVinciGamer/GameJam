@@ -1430,15 +1430,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 58049019768947350, guid: 90ae002146de0b54d8ed3608572c624d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 58049019768947350, guid: 90ae002146de0b54d8ed3608572c624d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5512496115431871646, guid: 90ae002146de0b54d8ed3608572c624d, type: 3}
       propertyPath: m_Name
       value: Enemy_CorporateSlave
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512496115431871646, guid: 90ae002146de0b54d8ed3608572c624d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7638552916890670797, guid: 90ae002146de0b54d8ed3608572c624d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1539,15 +1543,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3275353085046175857, guid: 49fa309a615ef5743acfcb7694d7c521, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3275353085046175857, guid: 49fa309a615ef5743acfcb7694d7c521, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3922948589928669281, guid: 49fa309a615ef5743acfcb7694d7c521, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922948589928669281, guid: 49fa309a615ef5743acfcb7694d7c521, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1562,12 +1570,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 845848371548982925, guid: dd27e075c262f004a9af49950d0966bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5543221315480430831, guid: dd27e075c262f004a9af49950d0966bc, type: 3}
       propertyPath: m_Name
       value: Enemy_Butterfly
       objectReference: {fileID: 0}
     - target: {fileID: 6053572216405521512, guid: dd27e075c262f004a9af49950d0966bc, type: 3}
       propertyPath: intactEnemy
+      value: 
+      objectReference: {fileID: 1156098145}
+    - target: {fileID: 6053572216405521512, guid: dd27e075c262f004a9af49950d0966bc, type: 3}
+      propertyPath: intactEnemyTransitioned
       value: 
       objectReference: {fileID: 1900153196}
     - target: {fileID: 6210617609997228572, guid: dd27e075c262f004a9af49950d0966bc, type: 3}
@@ -1649,11 +1665,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 593262166216494061, guid: 072ad77bf26eed844860243825299adb, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 593262166216494061, guid: 072ad77bf26eed844860243825299adb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 608859064011846825, guid: 072ad77bf26eed844860243825299adb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1699,6 +1715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Bunny
       objectReference: {fileID: 0}
+    - target: {fileID: 4105524959030692089, guid: 072ad77bf26eed844860243825299adb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1714,11 +1734,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 787984051551683833, guid: be62385b3daa76a46a4f2434f36a2ebb, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 787984051551683833, guid: be62385b3daa76a46a4f2434f36a2ebb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1163025408785299303, guid: be62385b3daa76a46a4f2434f36a2ebb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1763,6 +1783,10 @@ PrefabInstance:
     - target: {fileID: 9194604437078285896, guid: be62385b3daa76a46a4f2434f36a2ebb, type: 3}
       propertyPath: m_Name
       value: Enemy_Bird
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194604437078285896, guid: be62385b3daa76a46a4f2434f36a2ebb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

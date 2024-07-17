@@ -15,6 +15,9 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] GameObject destroyedEnemy;
     [SerializeField] GameObject intactEnemy;
+    [SerializeField] GameObject intactEnemyTransitioned;
+
+    public bool isDead = false;
 
     private void Awake()
     {
@@ -44,8 +47,10 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        isDead = true;
         destroyedEnemy.SetActive(true); //Enable the destroyed Game Object
         intactEnemy.SetActive(false); //Disable the intact Game Object
+        intactEnemyTransitioned.SetActive(false);
         AIPath aiPath = GetComponentInParent<AIPath>();
         aiPath.enabled = false; //Disable the AIPath component so the destroyed Game Object stays in place
         healthBarGameObject.SetActive(false); //Disable the health bar
