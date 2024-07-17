@@ -10,13 +10,13 @@ public class TileAuto : MonoBehaviour
     [Range(0, 100)] // zwischen 0% und 100% 
     public int iniChance; //initial chance of the tiles being alive
 
-    [Range(1, 8)] 
+    [Range(1, 8)]
     public int birthLimit;
 
     [Range(1, 8)]
     public int deathLimit;
 
-    [Range (1, 10)]
+    [Range(1, 10)]
     public int numR; //number of repetition for the algorithm 
     private int count = 0;
     private int[,] terrainMap;
@@ -30,7 +30,7 @@ public class TileAuto : MonoBehaviour
     int width; //width of the Map
     int height; //height of the Map
 
-    //Timer für die Nebelwolken zum spawnen
+    //Timer fï¿½r die Nebelwolken zum spawnen
     private float time;
     private float delay;
     private float delaycount;
@@ -130,14 +130,14 @@ public class TileAuto : MonoBehaviour
 
     void Update()
     {
-        //inichance hochzählen wenn die Zeit vergeht 
+        //inichance hochzï¿½hlen wenn die Zeit vergeht 
         if (time <= 100)
         {
             time += Time.deltaTime;
             Debug.Log("Time: " + time);
             delaycount += Time.deltaTime;
 
-            if (delaycount>=delay)
+            if (delaycount >= delay)
             {
                 delaycount = 0;
                 iniChance++;
@@ -145,11 +145,11 @@ public class TileAuto : MonoBehaviour
                 doSim(numR);
 
             }
-            
+
             //iniChance= (int)time;
-            
+
             //initPos();
-           
+
         }
 
     }
@@ -162,24 +162,24 @@ public class TileAuto : MonoBehaviour
         //doSim(numR);
     }
 
-    public void SaveAssetMap()
-    {
-        string saveName = "tmapXY_" + count;
-        var mf = GameObject.Find("MapGenerator");
+    // public void SaveAssetMap()
+    // {
+    //     string saveName = "tmapXY_" + count;
+    //     var mf = GameObject.Find("MapGenerator");
 
-        if (mf)
-        {
-            var savePath = "Assets/" + saveName + ".prefab";
-            if (PrefabUtility.CreatePrefab(savePath, mf))
-            {
-                EditorUtility.DisplayDialog("Tilemap saved", "Your Tilemap was saved under" + savePath, "Continue");
-            }
-            else
-            {
-                EditorUtility.DisplayDialog("Tilemap NOT saved", "An ERROR occured while trying to saveTilemap under" + savePath, "Continue");
-            }
-        }
-    }
+    //     if (mf)
+    //     {
+    //         var savePath = "Assets/" + saveName + ".prefab";
+    //         if (PrefabUtility.CreatePrefab(savePath, mf))
+    //         {
+    //             EditorUtility.DisplayDialog("Tilemap saved", "Your Tilemap was saved under" + savePath, "Continue");
+    //         }
+    //         else
+    //         {
+    //             EditorUtility.DisplayDialog("Tilemap NOT saved", "An ERROR occured while trying to saveTilemap under" + savePath, "Continue");
+    //         }
+    //     }
+    // }
 
     public void clearMap(bool complete)
     {
