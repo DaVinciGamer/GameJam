@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 523590485360780619}
   - component: {fileID: 2357063249956649656}
   - component: {fileID: 4071035974081568159}
+  - component: {fileID: 7043759126005319551}
   m_Layer: 7
   m_Name: Enemy_Butterfly
   m_TagString: Enemy
@@ -205,6 +206,18 @@ MonoBehaviour:
   playerController: {fileID: 1064977422766226772, guid: 75a252256b42f4fab87c6e123c6bb403, type: 3}
   destroyedEnemy: {fileID: 3740046834851666846}
   intactEnemy: {fileID: 2380461882953754907}
+--- !u!114 &7043759126005319551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145663476132078896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78529b828ab5c1748a9d55935e474563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1825363691328048742
 GameObject:
   m_ObjectHideFlags: 0
