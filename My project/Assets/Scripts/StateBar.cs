@@ -52,10 +52,6 @@ public class StateBar : MonoBehaviour
             elapsed = 0.0f;
             UpdateSliders();
         }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            VarInvertedWorld.invertedWorld = (VarInvertedWorld.invertedWorld == "true") ? "false" : "true";
-        }
     }
 
     void UpdateSliders()
