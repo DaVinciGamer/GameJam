@@ -13,12 +13,19 @@ public class PlayerCollision : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-        {
-            // Reduziere die Gesundheit des Spielers
-            playerClass.currentHealth -= enemyDamage.damageAmount;
+        {   
+            try
+            {
+                // Reduziere die Gesundheit des Spielers
+                playerClass.currentHealth -= enemyDamage.damageAmount;
 
-            // Aktualisiere den Slider-Wert
-            healthSlider.value = (float)playerClass.currentHealth / playerClass.maxHealth;
+                // Aktualisiere den Slider-Wert
+                healthSlider.value = (float)playerClass.currentHealth / playerClass.maxHealth;
+
+            } catch
+            {
+
+            }
         }
         if (playerClass.currentHealth <= 0)
         {
