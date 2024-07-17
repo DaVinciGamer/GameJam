@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ButterflyGhostController : MonoBehaviour
 {
-    private Animator animator;
+    private Animator animatorButterfly;
+    private Animator animatorCorporate;
     private bool isTransitionedOriginal = false;
     private bool isTransitionedInverted = false;
     
@@ -15,20 +16,29 @@ public class ButterflyGhostController : MonoBehaviour
     public bool testIsDangerActive;
     public string testInvertedWorld;
 
+    private GameObject butterflyGameObject;
+    private GameObject corporateSlaveGameObject;
+
 
     private void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        butterflyGameObject = transform.Find("Butterfly").gameObject;
+        corporateSlaveGameObject = transform.Find("CorporateSlave").gameObject;
+        animatorButterfly = butterflyGameObject.GetComponentInChildren<Animator>();
+        animatorCorporate = corporateSlaveGameObject.GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
         if (testInvertedWorld == "false")
         {
+            butterflyGameObject.SetActive(true);
+            corporateSlaveGameObject.SetActive(false);
+
             // if (VarInvertedWorld.invertedWorld == "false") //when original world is active
             if (testIsDangerActive == false) // Testweise Variable
             {
-                animator.Play("Butterfly");
+                animatorButterfly.Play("ButterflyEnemy");
             }
 
             // if (stateBarScript.isDangerActive) //in original world and danger zone begins
@@ -38,14 +48,16 @@ public class ButterflyGhostController : MonoBehaviour
                 isTransitionedOriginal = true;
                 StartCoroutine(PlayDangerAnimations("ButterflyDangerTransition", "Ghost")); //play transition animation from normal to monster and then keep monster state
             }
-
         }
 
         else
         {
+            butterflyGameObject.SetActive(false);
+            corporateSlaveGameObject.SetActive(true);
+
             if (testIsDangerActive == false) // Testweise Variable
             {
-                animator.Play("CorporateSlave");
+                animatorCorporate.Play("CorporateSlave");
             }
 
             // if (stateBarScript.isDangerActive) //in original world and danger zone begins
@@ -60,9 +72,8 @@ public class ButterflyGhostController : MonoBehaviour
 
     private IEnumerator PlayDangerAnimations(string animation1, string animation2)
     {
-        
-        animator.Play(animation1);
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-        animator.Play(animation2);
+        animatorCorporate.Play(animation1);
+        yield return new WaitForSeconds(animatorButterfly.GetCurrentAnimatorStateInfo(0).length);
+        animatorCorporate.Play(animation2);
     }
 }
