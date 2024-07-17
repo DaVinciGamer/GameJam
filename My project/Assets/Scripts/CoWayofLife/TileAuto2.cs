@@ -30,7 +30,7 @@ public class TileAuto : MonoBehaviour
     int width; //width of the Map
     int height; //height of the Map
 
-    //Timer für die Nebelwolken zum spawnen
+    //Timer fÃ¼r die Nebelwolken zum spawnen
     public float time;
     private float delay;
     public float delaycount;
@@ -131,7 +131,7 @@ public class TileAuto : MonoBehaviour
 
     void Update()
     {
-        //inichance hochzählen wenn die Zeit vergeht 
+        //inichance hochzÃ¤hlen wenn die Zeit vergeht 
         if (time <= 100)
         {
             time += Time.deltaTime;
@@ -142,7 +142,9 @@ public class TileAuto : MonoBehaviour
             {
                 delaycount = 0;
                 iniChance++;
+
                 deathLimit = 2;
+
                 //Debug.Log("inichance: " + iniChance);
                 doSim(numR);
             }
