@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
         // Check the value of the invertedWorld string
         if (varInvertedWorld != null)
         {
-            if (VarInvertedWorld.invertedWorld == "true")
+            if (VarInvertedWorld.invertedWorld == "false")
             {
                 //Set bucket Sprite to not broken
                 if (BucketState == false)
@@ -111,7 +111,6 @@ public class PlayerController : MonoBehaviour
                     spriteRendererBucket.sprite = normalBucket;
 
                 }
-                animator.SetBool("Down", true);
 
                 animator.SetBool("LeftInv", false);
                 animator.SetBool("RightInv", false);
@@ -158,14 +157,13 @@ public class PlayerController : MonoBehaviour
                     spriteRenderer.sprite = normalSprite;
                 }
             }
-            else if (VarInvertedWorld.invertedWorld == "false")
+            else if (VarInvertedWorld.invertedWorld == "true")
             {
                 //Set bucket Sprite to not broken
                 if (BucketState == false)
                 {
                     spriteRendererBucket.sprite = brokenBucket;
                 }
-                animator.SetBool("DownInv", true);
 
                 animator.SetBool("Left", false);
                 animator.SetBool("Right", false);
