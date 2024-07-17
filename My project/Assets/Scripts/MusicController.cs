@@ -8,6 +8,8 @@ public class MusicController : MonoBehaviour
     public AudioSource audioSource1;
     public AudioSource audioSource2;
     public AudioClip[] tracks; // Array to hold the four music tracks
+    public AudioClip[] soundEffects; // Array to hold the sound effects
+    public AudioSource sfxSource; // AudioSource for playing sound effects
 
     private bool isPlayingSource1 = true;
     private Coroutine fadeCoroutine;
@@ -28,6 +30,12 @@ public class MusicController : MonoBehaviour
         // Ensure both audio sources loop
         audioSource1.loop = true;
         audioSource2.loop = true;
+
+        // Ensure the sfxSource does not loop
+        if (sfxSource != null)
+        {
+            sfxSource.loop = false;
+        }
     }
 
     private void Start()
@@ -99,5 +107,21 @@ public class MusicController : MonoBehaviour
 
         activeSource.Stop();
         isPlayingSource1 = !isPlayingSource1;
+    }
+
+    // Method to play a sound effect by its index
+    public void PlaySoundEffect(int soundIndex)
+    {
+        if (soundIndex < 0 || soundIndex >= soundEffects.Length)
+        {
+            Debug.LogWarning("Invalid sound effect index");
+            return;
+        }
+
+        if (sfxSource != null)
+        {
+            sfxSource.clip = soundEffects[soundIndex];
+            sfxSource.Play();
+        }
     }
 }
