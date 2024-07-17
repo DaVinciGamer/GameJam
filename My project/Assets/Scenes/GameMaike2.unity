@@ -24157,7 +24157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireObject: {fileID: 1465505031}
-  deletedFire: {fileID: 1120574918, guid: f4fbfe1d3b1dddd488b467c78ec918ed, type: 3}
+  deletedFire: {fileID: -1278238781, guid: f4fbfe1d3b1dddd488b467c78ec918ed, type: 3}
 --- !u!1 &2082511627
 GameObject:
   m_ObjectHideFlags: 0
@@ -24251,11 +24251,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439834521216193950, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0026028082
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 439834521216193950, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
       propertyPath: m_Offset.y
-      value: -0.020326361
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 439834521216193950, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -24290,8 +24290,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2427359334104717060, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2427359334104717060, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
       propertyPath: m_BodyType
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2427359334104717060, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2904066972061067818, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
       propertyPath: m_IsActive
@@ -24300,6 +24308,10 @@ PrefabInstance:
     - target: {fileID: 4098328198225545108, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
       propertyPath: m_Name
       value: Fires
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098328198225545108, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5897603401675541828, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
       propertyPath: m_IsActive
@@ -24327,7 +24339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684085233934635940, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0456156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7684085233934635940, guid: c4af5f912485c49f5a7f1654664de858, type: 3}
       propertyPath: m_LocalRotation.w

@@ -148,7 +148,6 @@ public class StateBar : MonoBehaviour
     void orStartRotation()
     {
         isDangerActive = true;
-
         MusicController.Instance.FadeTo(2);
         orRotationTween = orImage.DORotate(new Vector3(0, 0, rotationAngle), rotationDuration)
             .SetLoops(-1, LoopType.Yoyo)
