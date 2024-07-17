@@ -519,7 +519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1156098146
 Animator:
   serializedVersion: 5
@@ -1566,6 +1566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Butterfly
       objectReference: {fileID: 0}
+    - target: {fileID: 6053572216405521512, guid: dd27e075c262f004a9af49950d0966bc, type: 3}
+      propertyPath: intactEnemy
+      value: 
+      objectReference: {fileID: 1900153196}
     - target: {fileID: 6210617609997228572, guid: dd27e075c262f004a9af49950d0966bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.265

@@ -24,14 +24,15 @@ public class ButterflyGhostController : MonoBehaviour
     {
         butterflyGameObject = transform.Find("Butterfly").gameObject;
         corporateSlaveGameObject = transform.Find("CorporateSlave").gameObject;
-        animatorButterfly = butterflyGameObject.GetComponentInChildren<Animator>();
-        animatorCorporate = corporateSlaveGameObject.GetComponentInChildren<Animator>();
+        animatorButterfly = butterflyGameObject.GetComponent<Animator>();
+        animatorCorporate = corporateSlaveGameObject.GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (testInvertedWorld == "false")
         {
+            isTransitionedInverted = false;
             butterflyGameObject.SetActive(true);
             corporateSlaveGameObject.SetActive(false);
 
@@ -40,18 +41,19 @@ public class ButterflyGhostController : MonoBehaviour
             {
                 animatorButterfly.Play("ButterflyEnemy");
             }
-
+                
             // if (stateBarScript.isDangerActive) //in original world and danger zone begins
 
             else if (testIsDangerActive && !isTransitionedOriginal) // Testweise Variable
             {
+                StartCoroutine(PlayDangerAnimations(animatorButterfly, "ButterflyDangerTransition", "Ghost")); //play transition animation from normal to monster and then keep monster state
                 isTransitionedOriginal = true;
-                StartCoroutine(PlayDangerAnimations("ButterflyDangerTransition", "Ghost")); //play transition animation from normal to monster and then keep monster state
             }
         }
 
         else
         {
+            isTransitionedOriginal = false;
             butterflyGameObject.SetActive(false);
             corporateSlaveGameObject.SetActive(true);
 
@@ -64,16 +66,16 @@ public class ButterflyGhostController : MonoBehaviour
 
             else if (testIsDangerActive && !isTransitionedInverted) // Testweise Variable
             {
+                StartCoroutine(PlayDangerAnimations(animatorCorporate, "CorporateDangerTransition", "Fly")); //play transition animation from normal to monster and then keep monster state
                 isTransitionedInverted = true;
-                StartCoroutine(PlayDangerAnimations("CorporateDangerTransition", "Fly")); //play transition animation from normal to monster and then keep monster state
             }
         }
     }
 
-    private IEnumerator PlayDangerAnimations(string animation1, string animation2)
+    private IEnumerator PlayDangerAnimations(Animator animator, string animation1, string animation2)
     {
-        animatorCorporate.Play(animation1);
-        yield return new WaitForSeconds(animatorButterfly.GetCurrentAnimatorStateInfo(0).length);
-        animatorCorporate.Play(animation2);
+        animator.Play(animation1);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        animator.Play(animation2);
     }
 }
