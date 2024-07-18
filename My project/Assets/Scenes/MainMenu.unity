@@ -945,6 +945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource1: {fileID: 612990840}
   audioSource2: {fileID: 612990843}
+  sfxSource: {fileID: 612990844}
   tracks:
   - {fileID: 8300000, guid: a5e5c92e676937448b957f4a047d0689, type: 3}
   - {fileID: 8300000, guid: 5a78a63605a134046a8ab122ccec11e8, type: 3}
@@ -953,10 +954,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3d376265e5a2c1469e8f8359ebca680, type: 3}
   - {fileID: 8300000, guid: 9b203b65688d1f94d9c917dd0fb1dd11, type: 3}
   - {fileID: 8300000, guid: 08d6eb28e447f05448138c86eb9efa3c, type: 3}
+  - {fileID: 8300000, guid: a4c235b633ded6d479ac959faff8b0d4, type: 3}
   soundEffects:
   - {fileID: 8300000, guid: 7c82a657e6d339c4a9c1352a89e7e1d7, type: 3}
   - {fileID: 8300000, guid: e30efe2f661d0f84e8a5eeb308ccefb3, type: 3}
-  sfxSource: {fileID: 612990844}
   fadeDuration: 1
 --- !u!4 &612990842
 Transform:

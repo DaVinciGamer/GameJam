@@ -50,6 +50,7 @@ public class SpriteAnimatorController : MonoBehaviour
         {
             isAnimating = false;
             spriteRenderer.enabled = false; // Hide the sprite
+            Debug.Log($"Hiding instance with ID: {id}"); // Debug log to verify the method call
         }
     }
 
@@ -59,6 +60,7 @@ public class SpriteAnimatorController : MonoBehaviour
         {
             isAnimating = true;
             spriteRenderer.enabled = true; // Show the sprite
+            Debug.Log($"Showing instance with ID: {id}"); // Debug log to verify the method call
         }
     }
 
