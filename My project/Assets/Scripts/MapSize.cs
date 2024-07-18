@@ -94,11 +94,11 @@ public class MapSize : MonoBehaviour
                     GameObject logObject = Instantiate(logPrefab, worldPosition, Quaternion.identity);
 
                     logObject.tag = "Log";
-                    Debug.Log("Gameobjekt für Log wurde erstellt: " + logObject.name + " mit dem Tag: " + logObject.tag);
+                    //Debug.Log("Gameobjekt für Log wurde erstellt: " + logObject.name + " mit dem Tag: " + logObject.tag);
                     BoxCollider2D collider = logObject.GetComponent<BoxCollider2D>();
                     if (collider != null)
                     {
-                        Debug.Log("Collider ist nicht null und wird skaliert auf 4,2");
+                        //Debug.Log("Collider ist nicht null und wird skaliert auf 4,2");
                         collider.size = new Vector2(4,2);  // Assuming tiles are 32x32 pixels
                     }
                     /*count = (int)(count + x * Time.deltaTime);
