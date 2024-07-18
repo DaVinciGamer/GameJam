@@ -16,15 +16,23 @@ public class WallCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (istriggered && Player.transform.position.y >= 3.8)
+        if (!istriggered && Player.transform.position.y > 9)
+        {
+            return;
+        }
+        if(istriggered&& Player.transform.position.y <= 8.7f && Player.transform.position.y>7)
+        {
+            Player.transform.position = new Vector3(Player.transform.position.x, 9.2f, 0);
+        }
+        if (istriggered && Player.transform.position.y >= 3.8 && Player.transform.position.y<6)
         {
             Player.transform.position = new Vector3(Player.transform.position.x, 3.6f, 0);
         }
-        else if (istriggered && Player.transform.position.y >= 10)
+        /*else if (istriggered && Player.transform.position.y >= 10)
         {
             istriggered = false;
             return;
-        }
+        }*/
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
