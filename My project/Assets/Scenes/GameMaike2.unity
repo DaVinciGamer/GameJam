@@ -1708,7 +1708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196a1659d4748ce4699a5374ce9f3d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDangerActive: 0
   or_slider: {fileID: 212112246}
   inv_slider: {fileID: 485566663}
   rotationDuration: 0.3
@@ -11358,7 +11357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5913465796246017672, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
       propertyPath: m_Name
-      value: Gnome01
+      value: WasserspenderGnom
       objectReference: {fileID: 0}
     - target: {fileID: 5913465796246017672, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
       propertyPath: m_TagString
@@ -13624,6 +13623,7 @@ MonoBehaviour:
   watermap: {fileID: 0}
   logmap: {fileID: 0}
   logtile: {fileID: 0}
+  tileset: []
   isfilled: 0
 --- !u!483693784 &1772025986
 TilemapRenderer:
