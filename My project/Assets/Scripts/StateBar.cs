@@ -14,7 +14,7 @@ public class StateBar : MonoBehaviour
     public static float danger_zone_trigger = 90.0f; //triggers warning
     private VarInvertedWorld varInvertedWorld;
 
-    public bool isDangerActive = false;
+    public static bool isDangerActive;
 
     public Slider or_slider;
     public Slider inv_slider;
@@ -42,6 +42,7 @@ public class StateBar : MonoBehaviour
         or_slider.value = or_curr;
         inv_slider.value = inv_curr;
         varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
+        isDangerActive = false;
     }
 
     void Update()
