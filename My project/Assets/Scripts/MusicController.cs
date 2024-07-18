@@ -8,6 +8,8 @@ public class MusicController : MonoBehaviour
     public AudioSource audioSource1;
     public AudioSource audioSource2;
     public AudioClip[] tracks; // Array to hold the four music tracks
+    public AudioClip[] soundEffects; // Array to hold the sound effects
+    public AudioSource sfxSource; // AudioSource for playing sound effects
 
     private bool isPlayingSource1 = true;
     private Coroutine fadeCoroutine;
@@ -28,6 +30,12 @@ public class MusicController : MonoBehaviour
         // Ensure both audio sources loop
         audioSource1.loop = true;
         audioSource2.loop = true;
+
+        // Ensure the sfxSource does not loop
+        if (sfxSource != null)
+        {
+            sfxSource.loop = false;
+        }
     }
 
     private void Start()
@@ -82,7 +90,6 @@ public class MusicController : MonoBehaviour
         AudioSource newSource = isPlayingSource1 ? audioSource2 : audioSource1;
 
         newSource.clip = newClip;
-        newSource.Play();
 
         float time = 0f;
 
@@ -92,12 +99,47 @@ public class MusicController : MonoBehaviour
             float t = time / fadeDuration;
 
             activeSource.volume = Mathf.Lerp(1f, 0f, t);
+            newSource.volume = Mathf.Lerp(0f, 0f, t); // Ensure newSource volume remains 0 during fade
+
+            yield return null;
+        }
+
+        // Stop both sources briefly to ensure no overlap
+        activeSource.Stop();
+        newSource.Stop();
+
+        // Start the new clip after a brief pause
+        yield return new WaitForSeconds(0.1f); // Brief pause to ensure no overlap
+
+        newSource.Play();
+        time = 0f;
+
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime;
+            float t = time / fadeDuration;
+
             newSource.volume = Mathf.Lerp(0f, 1f, t);
 
             yield return null;
         }
 
-        activeSource.Stop();
         isPlayingSource1 = !isPlayingSource1;
+    }
+
+    // Method to play a sound effect by its index
+    public void PlaySoundEffect(int soundIndex)
+    {
+        if (soundIndex < 0 || soundIndex >= soundEffects.Length)
+        {
+            Debug.LogWarning("Invalid sound effect index");
+            return;
+        }
+
+        if (sfxSource != null)
+        {
+            sfxSource.clip = soundEffects[soundIndex];
+            sfxSource.Play();
+        }
     }
 }

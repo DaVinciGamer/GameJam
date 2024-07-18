@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     // Reference to VarInvertedWorld component
     private VarInvertedWorld varInvertedWorld;
+    private MusicController MusicController;
     // New public variable for the alternate sprite
     public Sprite normalSprite;
     public Sprite invertedSprite;
@@ -232,6 +233,7 @@ public class PlayerController : MonoBehaviour
         if (ShootAction.triggered)
         {
             ShootProjectile();
+            MusicController.Instance.PlaySoundEffect(1);
         }
 
         // Update position of carried object
