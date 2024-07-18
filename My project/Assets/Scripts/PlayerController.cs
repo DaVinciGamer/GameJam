@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastDirection;
     public PlayerClass playerClass;
 
-
+    private bool dead = false;
 
     void Start()
     {
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         spriteRendererBucket = Bucket.GetComponent<SpriteRenderer>();
         if (spriteRendererBucket == null)
         {
-           // Debug.LogError("No SpriteRenderer component found on Bucket.");
+            // Debug.LogError("No SpriteRenderer component found on Bucket.");
         }
         else { Debug.Log("Bucket Sprite gefunden"); }
 
@@ -109,251 +109,253 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector2 move = Vector2.zero;
-
-        if (Input.GetKeyDown(KeyCode.Space) && !jumpingState)
+        if (!dead)
         {
-            StartCoroutine(Jump());
-        }
-
-        // Check the value of the invertedWorld string
-        if (varInvertedWorld != null)
-        {
-            bool isInvertedWorld = VarInvertedWorld.invertedWorld == "true";
-
-            if (!IsAnyDirectionActionPressed() && !jumpingState)
+            if (Input.GetKeyDown(KeyCode.Space) && !jumpingState)
             {
-                if (isInvertedWorld)
+                StartCoroutine(Jump());
+            }
+
+            // Check the value of the invertedWorld string
+            if (varInvertedWorld != null)
+            {
+                bool isInvertedWorld = VarInvertedWorld.invertedWorld == "true";
+
+                if (!IsAnyDirectionActionPressed() && !jumpingState)
                 {
-                    animator.SetBool("IDLEInv", true);
-                    animator.SetBool("IDLE", false);
+                    if (isInvertedWorld)
+                    {
+                        animator.SetBool("IDLEInv", true);
+                        animator.SetBool("IDLE", false);
+                    }
+                    else
+                    {
+                        animator.SetBool("IDLE", true);
+                        animator.SetBool("IDLEInv", false);
+                    }
                 }
                 else
                 {
-                    animator.SetBool("IDLE", true);
+                    animator.SetBool("IDLE", false);
                     animator.SetBool("IDLEInv", false);
                 }
-            }
-            else
-            {
-                animator.SetBool("IDLE", false);
-                animator.SetBool("IDLEInv", false);
-            }
 
-            if (!isInvertedWorld)
-            {
-                //Debug.LogWarning("VarInvertredWorld False");
-
-                // Set bucket Sprite to not broken
-                if (BucketState == false)
+                if (!isInvertedWorld)
                 {
-                    spriteRendererBucket.sprite = normalBucket;
-                }
+                    //Debug.LogWarning("VarInvertredWorld False");
 
-                // Reset inverted world animations
-                animator.SetBool("LeftInv", false);
-                animator.SetBool("RightInv", false);
-                animator.SetBool("UpInv", false);
-                animator.SetBool("DownInv", false);
-                animator.SetBool("JumpL", false); // Reset JumpL animation
+                    // Set bucket Sprite to not broken
+                    if (BucketState == false)
+                    {
+                        spriteRendererBucket.sprite = normalBucket;
+                    }
 
-                // Handle left action
-                if (LeftAction.IsPressed())
-                {
-                    animator.SetBool("Left", true);
-                    animator.SetBool("Right", false);
-                    animator.SetBool("Up", false);
-                    animator.SetBool("Down", false);
-                    move.x = -1f;
-                    lastDirection = Vector2.left;
-                    if (jumpingState == true)
+                    // Reset inverted world animations
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("DownInv", false);
+                    animator.SetBool("JumpL", false); // Reset JumpL animation
+
+                    // Handle left action
+                    if (LeftAction.IsPressed())
+                    {
+                        animator.SetBool("Left", true);
+                        animator.SetBool("Right", false);
+                        animator.SetBool("Up", false);
+                        animator.SetBool("Down", false);
+                        move.x = -1f;
+                        lastDirection = Vector2.left;
+                        if (jumpingState == true)
+                        {
+                            animator.SetBool("Left", false);
+                            animator.SetBool("JumpL", true);
+                        }
+                    }
+                    else
                     {
                         animator.SetBool("Left", false);
-                        animator.SetBool("JumpL", true);
+                        animator.SetBool("JumpL", false);
                     }
-                }
-                else
-                {
-                    animator.SetBool("Left", false);
-                    animator.SetBool("JumpL", false);
-                }
 
-                // Handle right action
-                if (RightAction.IsPressed())
-                {
-                    animator.SetBool("Left", false);
-                    animator.SetBool("Right", true);
-                    animator.SetBool("Up", false);
-                    animator.SetBool("Down", false);
-                    move.x = 1f;
-                    lastDirection = Vector2.right;
-                     if (jumpingState == true)
+                    // Handle right action
+                    if (RightAction.IsPressed())
+                    {
+                        animator.SetBool("Left", false);
+                        animator.SetBool("Right", true);
+                        animator.SetBool("Up", false);
+                        animator.SetBool("Down", false);
+                        move.x = 1f;
+                        lastDirection = Vector2.right;
+                        if (jumpingState == true)
+                        {
+                            animator.SetBool("Right", false);
+                            animator.SetBool("JumpR", true);
+                        }
+                    }
+                    else
                     {
                         animator.SetBool("Right", false);
-                        animator.SetBool("JumpR", true);
+                        animator.SetBool("JumpR", false);
                     }
-                }
-                else
-                {
-                    animator.SetBool("Right", false);
-                    animator.SetBool("JumpR", false);
-                }
 
-                // Handle up action
-                if (UpAction.IsPressed())
-                {
-                    animator.SetBool("Left", false);
-                    animator.SetBool("Right", false);
-                    animator.SetBool("Up", true);
-                    animator.SetBool("Down", false);
-                    move.y = 1f;
-                    lastDirection = Vector2.up;
-                     if (jumpingState == true)
+                    // Handle up action
+                    if (UpAction.IsPressed())
+                    {
+                        animator.SetBool("Left", false);
+                        animator.SetBool("Right", false);
+                        animator.SetBool("Up", true);
+                        animator.SetBool("Down", false);
+                        move.y = 1f;
+                        lastDirection = Vector2.up;
+                        if (jumpingState == true)
+                        {
+                            animator.SetBool("Up", false);
+                            animator.SetBool("JumpU", true);
+                        }
+                    }
+                    else
                     {
                         animator.SetBool("Up", false);
-                        animator.SetBool("JumpU", true);
+                        animator.SetBool("JumpU", false);
+                    }
+
+                    // Handle down action
+                    if (DownAction.IsPressed())
+                    {
+                        animator.SetBool("Left", false);
+                        animator.SetBool("Right", false);
+                        animator.SetBool("Up", false);
+                        animator.SetBool("Down", true);
+                        move.y = -1f;
+                        lastDirection = Vector2.down;
+                        if (jumpingState == true)
+                        {
+                            animator.SetBool("Down", false);
+                            animator.SetBool("JumpD", true);
+                        }
+                    }
+                    else
+                    {
+                        animator.SetBool("Down", false);
+                        animator.SetBool("JumpD", false);
+                    }
+
+                    // Set the normal sprite
+                    if (spriteRenderer != null && spriteRenderer.sprite != normalSprite)
+                    {
+                        spriteRenderer.sprite = normalSprite;
                     }
                 }
                 else
                 {
-                    animator.SetBool("Up", false);
-                    animator.SetBool("JumpU", false);
-                }
+                    //Debug.LogWarning("VarInvertredWorld True");
 
-                // Handle down action
-                if (DownAction.IsPressed())
-                {
+                    // Set bucket Sprite to not broken
+                    if (BucketState == false)
+                    {
+                        spriteRendererBucket.sprite = brokenBucket;
+                    }
+
+                    // Reset normal world animations
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", false);
                     animator.SetBool("Up", false);
-                    animator.SetBool("Down", true);
-                    move.y = -1f;
-                    lastDirection = Vector2.down;
-                     if (jumpingState == true)
-                    {
-                        animator.SetBool("Down", false);
-                        animator.SetBool("JumpD", true);
-                    }
-                }
-                else
-                {
                     animator.SetBool("Down", false);
-                    animator.SetBool("JumpD", false);
-                }
+                    animator.SetBool("JumpL", false); // Reset JumpL animation
 
-                // Set the normal sprite
-                if (spriteRenderer != null && spriteRenderer.sprite != normalSprite)
-                {
-                    spriteRenderer.sprite = normalSprite;
-                }
-            }
-            else
-            {
-                //Debug.LogWarning("VarInvertredWorld True");
-
-                // Set bucket Sprite to not broken
-                if (BucketState == false)
-                {
-                    spriteRendererBucket.sprite = brokenBucket;
-                }
-
-                // Reset normal world animations
-                animator.SetBool("Left", false);
-                animator.SetBool("Right", false);
-                animator.SetBool("Up", false);
-                animator.SetBool("Down", false);
-                animator.SetBool("JumpL", false); // Reset JumpL animation
-
-                // Handle left action in inverted world
-                if (LeftAction.IsPressed())
-                {
-                    animator.SetBool("LeftInv", false);
-                    animator.SetBool("RightInv", true);
-                    animator.SetBool("UpInv", false);
-                    animator.SetBool("DownInv", false);
-                    move.x = 1f;
-                    lastDirection = Vector2.right;
-                     if (jumpingState == true)
-                    {
-                        animator.SetBool("RightInv", false);
-                        animator.SetBool("JumpRInv", true);
-                    }
-                }
-                else
-                {
-                    animator.SetBool("RightInv", false);
-                    animator.SetBool("JumpRInv", false);
-                }
-
-                // Handle right action in inverted world
-                if (RightAction.IsPressed())
-                {
-                    animator.SetBool("LeftInv", true);
-                    animator.SetBool("RightInv", false);
-                    animator.SetBool("UpInv", false);
-                    animator.SetBool("DownInv", false);
-                    move.x = -1f;
-                    lastDirection = Vector2.left;
-                     if (jumpingState == true)
+                    // Handle left action in inverted world
+                    if (LeftAction.IsPressed())
                     {
                         animator.SetBool("LeftInv", false);
-                        animator.SetBool("JumpLInv", true);
+                        animator.SetBool("RightInv", true);
+                        animator.SetBool("UpInv", false);
+                        animator.SetBool("DownInv", false);
+                        move.x = 1f;
+                        lastDirection = Vector2.right;
+                        if (jumpingState == true)
+                        {
+                            animator.SetBool("RightInv", false);
+                            animator.SetBool("JumpRInv", true);
+                        }
                     }
-                }
-                else
-                {
-                    animator.SetBool("LeftInv", false);
-                    animator.SetBool("JumpLInv", false);
-                }
+                    else
+                    {
+                        animator.SetBool("RightInv", false);
+                        animator.SetBool("JumpRInv", false);
+                    }
 
-                // Handle up action in inverted world
-                if (UpAction.IsPressed())
-                {
-                    animator.SetBool("LeftInv", false);
-                    animator.SetBool("RightInv", false);
-                    animator.SetBool("UpInv", false);
-                    animator.SetBool("DownInv", true);
-                    move.y = -1f;
-                    lastDirection = Vector2.down;
-                     if (jumpingState == true)
+                    // Handle right action in inverted world
+                    if (RightAction.IsPressed())
+                    {
+                        animator.SetBool("LeftInv", true);
+                        animator.SetBool("RightInv", false);
+                        animator.SetBool("UpInv", false);
+                        animator.SetBool("DownInv", false);
+                        move.x = -1f;
+                        lastDirection = Vector2.left;
+                        if (jumpingState == true)
+                        {
+                            animator.SetBool("LeftInv", false);
+                            animator.SetBool("JumpLInv", true);
+                        }
+                    }
+                    else
+                    {
+                        animator.SetBool("LeftInv", false);
+                        animator.SetBool("JumpLInv", false);
+                    }
+
+                    // Handle up action in inverted world
+                    if (UpAction.IsPressed())
+                    {
+                        animator.SetBool("LeftInv", false);
+                        animator.SetBool("RightInv", false);
+                        animator.SetBool("UpInv", false);
+                        animator.SetBool("DownInv", true);
+                        move.y = -1f;
+                        lastDirection = Vector2.down;
+                        if (jumpingState == true)
+                        {
+                            animator.SetBool("DownInv", false);
+                            animator.SetBool("JumpDInv", true);
+                        }
+                    }
+                    else
                     {
                         animator.SetBool("DownInv", false);
-                        animator.SetBool("JumpDInv", true);
+                        animator.SetBool("JumpDInv", false);
                     }
-                }
-                else
-                {
-                    animator.SetBool("DownInv", false);
-                    animator.SetBool("JumpDInv", false);
-                }
 
-                // Handle down action in inverted world
-                if (DownAction.IsPressed())
-                {
-                    animator.SetBool("LeftInv", false);
-                    animator.SetBool("RightInv", false);
-                    animator.SetBool("UpInv", true);
-                    animator.SetBool("DownInv", false);
-                    move.y = 1f;
-                    lastDirection = Vector2.up;
-                     if (jumpingState == true)
+                    // Handle down action in inverted world
+                    if (DownAction.IsPressed())
+                    {
+                        animator.SetBool("LeftInv", false);
+                        animator.SetBool("RightInv", false);
+                        animator.SetBool("UpInv", true);
+                        animator.SetBool("DownInv", false);
+                        move.y = 1f;
+                        lastDirection = Vector2.up;
+                        if (jumpingState == true)
+                        {
+                            animator.SetBool("UpInv", false);
+                            animator.SetBool("JumpuInv", true);
+                        }
+                    }
+                    else
                     {
                         animator.SetBool("UpInv", false);
-                        animator.SetBool("JumpuInv", true);
+                        animator.SetBool("JumpUInv", false);
+                    }
+
+                    // Set the inverted sprite
+                    if (spriteRenderer != null && spriteRenderer.sprite != invertedSprite)
+                    {
+                        spriteRenderer.sprite = invertedSprite;
                     }
                 }
-                else
-                {
-                    animator.SetBool("UpInv", false);
-                    animator.SetBool("JumpUInv", false);
-                }
-
-                // Set the inverted sprite
-                if (spriteRenderer != null && spriteRenderer.sprite != invertedSprite)
-                {
-                    spriteRenderer.sprite = invertedSprite;
-                }
+                CheckCollision();
             }
-            CheckCollision();
         }
 
         // Normalize move vector
@@ -521,9 +523,10 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("Right", false);
                 animator.SetBool("Up", false);
                 animator.SetBool("Down", false);
-                animator.SetBool("Drown", true);
-                //wait till it's finished
-                playerClass.currentHealth = 0;
+                //animator.SetBool("Drown", true);
+                animator.Play("Drown");
+                StartCoroutine(Delay());
+
             }
             else if (collider.CompareTag("Log"))
             {
@@ -531,4 +534,14 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private IEnumerator Delay()
+    {
+        Debug.LogWarning("Delay started");
+        dead = true;
+        yield return new WaitForSeconds(4);
+        Debug.LogWarning("5 seconds have passed");
+        playerClass.currentHealth = 0;
+    }
+
 }
