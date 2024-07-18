@@ -9,9 +9,6 @@ public class Fire : MonoBehaviour
     private PlayerController playerController;
     private SpriteRenderer spriteRenderer;
     public Sprite deletedFire;
-<<<<<<< Updated upstream
-     
-=======
     private Animator animator;
 
     public float xMin = -10f; // Left Border of bucket position
@@ -21,7 +18,6 @@ public class Fire : MonoBehaviour
 
     private bool isBucketInArea = false; // Zustand, ob der Eimer im Bereich ist
 
->>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +26,6 @@ public class Fire : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-<<<<<<< Updated upstream
-=======
     {
         if (Bucket != null)
         {
@@ -59,22 +53,12 @@ public class Fire : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
->>>>>>> Stashed changes
-    {
-        
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.LogWarning("Collision with Fire");
         Debug.LogWarning(playerController.PickupBucket + "PickupBucket STate");
         if (playerController.PickupBucket == false && playerController.BucketState == true)
         {
-<<<<<<< Updated upstream
-            Debug.LogWarning("Fire Delete Anforderungen Erfüllt");
-            spriteRenderer.sprite = deletedFire;
-=======
             if (playerController.PickupBucket == false && playerController.BucketState == true)
             {
                 Debug.Log("PickupBucket is false and BucketState is true");
@@ -89,7 +73,6 @@ public class Fire : MonoBehaviour
                     Debug.LogError("SpriteRenderer is not assigned");
                 }
             }
->>>>>>> Stashed changes
         }
         
     }
