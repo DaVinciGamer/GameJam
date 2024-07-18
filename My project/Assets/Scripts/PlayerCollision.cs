@@ -13,7 +13,7 @@ public class PlayerCollision : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-        {   
+        {
             try
             {
                 // Reduziere die Gesundheit des Spielers
@@ -22,17 +22,22 @@ public class PlayerCollision : MonoBehaviour
                 // Aktualisiere den Slider-Wert
                 healthSlider.value = (float)playerClass.currentHealth / playerClass.maxHealth;
 
-            } catch
+            }
+            catch
             {
 
             }
         }
+
+    }
+
+    void Update()
+    {
         if (playerClass.currentHealth <= 0)
         {
             ShowGameOverPanel();
         }
     }
-
     private void ShowGameOverPanel()
     {
         if (gameOver != null && gameOver.gameOverCanvas != null)
