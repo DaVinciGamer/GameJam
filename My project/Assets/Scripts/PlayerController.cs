@@ -106,6 +106,7 @@ public class PlayerController : MonoBehaviour
         {
             if (VarInvertedWorld.invertedWorld == "false")
             {
+                Debug.LogWarning("VarInvertredWorld False");
                 //Set bucket Sprite to not broken
                 if (BucketState == false)
                 {
@@ -160,6 +161,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (VarInvertedWorld.invertedWorld == "true")
             {
+                Debug.LogWarning("VarInvertredWorld True");
                 //Set bucket Sprite to not broken
                 if (BucketState == false)
                 {
