@@ -9,6 +9,7 @@ TagManager:
   - River
   - Crocodile
   - Log
+  - WaterDispenser
   layers:
   - Default
   - TransparentFX

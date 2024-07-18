@@ -1708,7 +1708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196a1659d4748ce4699a5374ce9f3d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDangerActive: 0
   or_slider: {fileID: 212112246}
   inv_slider: {fileID: 485566663}
   rotationDuration: 0.3
@@ -11358,7 +11357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5913465796246017672, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
       propertyPath: m_Name
-      value: Gnome01
+      value: WasserspenderGnom
       objectReference: {fileID: 0}
     - target: {fileID: 5913465796246017672, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
       propertyPath: m_TagString
@@ -13190,6 +13189,37 @@ MonoBehaviour:
   targetTransform: {fileID: 828767967}
   fireTargetTransform: {fileID: 1465505032}
   playerController: {fileID: 2081635075}
+--- !u!1 &1598980929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598980930}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1598980930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598980929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.657665, y: 1.3507245, z: -0.05062293}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1602020149
 GameObject:
   m_ObjectHideFlags: 0
@@ -13624,6 +13654,7 @@ MonoBehaviour:
   watermap: {fileID: 0}
   logmap: {fileID: 0}
   logtile: {fileID: 0}
+  tileset: []
   isfilled: 0
 --- !u!483693784 &1772025986
 TilemapRenderer:
@@ -24157,7 +24188,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireObject: {fileID: 1465505031}
-  deletedFire: {fileID: -1278238781, guid: f4fbfe1d3b1dddd488b467c78ec918ed, type: 3}
+  Bucket: {fileID: 828767960}
+  playerController: {fileID: 2081635075}
+  xMin: -1
+  xMax: 1
+  yMin: -1
+  yMax: 1
 --- !u!1 &2082511627
 GameObject:
   m_ObjectHideFlags: 0
@@ -24393,3 +24429,4 @@ SceneRoots:
   - {fileID: 1430138435}
   - {fileID: 1745662753}
   - {fileID: 2927853223271180852}
+  - {fileID: 1598980930}

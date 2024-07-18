@@ -4,52 +4,90 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-    public GameObject FireObject;
-    private PlayerController playerController;
-    private SpriteRenderer spriteRenderer;
-    public Sprite deletedFire;
+    public GameObject FireObject; // Das Objekt, das das Feuer repräsentiert
+    public GameObject Bucket; // Der Eimer
+    public PlayerController playerController;
     private Animator animator;
 
-    // Start is called before the first frame update
+    // Relative Grenzen zur Position des FireObject
+    public float xMin = -1f; // Linke Grenze relativ zur Position von FireObject
+    public float xMax = 1f; // Rechte Grenze relativ zur Position von FireObject
+    public float yMin = -1f; // Untere Grenze relativ zur Position von FireObject
+    public float yMax = 1f; // Obere Grenze relativ zur Position von FireObject
+
+    private bool isBucketInArea = false; // Zustand, ob der Eimer im Bereich ist
+    private Vector2 firePosition; // Position des FireObject
+    [SerializeField] private GameObject winCanvas;
+
     void Start()
     {
-        playerController = GameObject.FindObjectOfType<PlayerController>();
-
-        // Get the SpriteRenderer from the FireObject
+        // Position des FireObject initialisieren
         if (FireObject != null)
         {
+            firePosition = FireObject.transform.position;
+
+            // Animator vom FireObject initialisieren
             animator = FireObject.GetComponent<Animator>();
-            spriteRenderer = FireObject.GetComponent<SpriteRenderer>();
-            if (spriteRenderer == null)
+            if (animator == null)
             {
-                Debug.LogError("No SpriteRenderer found on the FireObject");
+                Debug.LogError("Animator-Komponente fehlt an FireObject.");
             }
         }
         else
         {
-            Debug.LogError("FireObject is not assigned");
+            Debug.LogError("FireObject ist nicht zugewiesen");
         }
-        spriteRenderer.sprite = deletedFire;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    // Update is called once per frame
+    void Update()
     {
-        if (playerController != null)
+        if (Bucket != null)
         {
-            if (playerController.PickupBucket == false && playerController.BucketState == true)
+            Vector2 bucketPosition = Bucket.transform.position;
+
+            // Überprüfung der relativen Position des Buckets zur gespeicherten Position des FireObject
+            if (bucketPosition.x >= firePosition.x + xMin && bucketPosition.x <= firePosition.x + xMax &&
+                bucketPosition.y >= firePosition.y + yMin && bucketPosition.y <= firePosition.y + yMax)
             {
-                Debug.Log("PickupBucket is false and BucketState is true");
-                if (spriteRenderer != null)
+                //Debug.Log("Bucket ist in der Nähe von FireObject");
+                if (playerController != null)
                 {
-                    animator.SetBool("Fire", false);
-                    //spriteRenderer.sprite = deletedFire;
-                    Debug.Log("Deleted Fire");
+                    if (playerController.PickupBucket == false && playerController.BucketState == true)
+                    {
+                        Debug.Log("PickupBucket ist false und BucketState ist true");
+                        if (animator != null)
+                        {
+                            animator.SetBool("Fire", false);
+                            Debug.Log("Feuer gelöscht");
+                            StartCoroutine(WaitAndExecute(2.0f));
+                        }
+                        else
+                        {
+                            Debug.LogError("Animator ist nicht zugewiesen");
+                        }
+                    }
                 }
                 else
                 {
-                    Debug.LogError("SpriteRenderer is not assigned");
+                    Debug.LogError("PlayerController ist nicht zugewiesen");
                 }
             }
         }
+        else
+        {
+            Debug.LogError("Bucket ist nicht zugewiesen");
+        }
+    }
+    private void ShowWinPanel()
+    {
+        winCanvas.SetActive(true);
+    }
+
+    IEnumerator WaitAndExecute(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        ShowWinPanel();
+        Debug.Log("Du hast gewonnen!");
     }
 }
