@@ -14,7 +14,7 @@ public class StateBar : MonoBehaviour
     public static float danger_zone_trigger = 95.0f; //triggers warning
     private VarInvertedWorld varInvertedWorld;
 
-    public static bool isDangerActive;
+    public bool isDangerActive;
 
     public Slider or_slider;
     public Slider inv_slider;
@@ -159,7 +159,7 @@ public class StateBar : MonoBehaviour
     void orStopRotation()
     {
         isDangerActive = false;
-       // Debug.Log("End Danger Zone in Original");
+        // Debug.Log("End Danger Zone in Original");
         MusicController.Instance.FadeTo(1);
         orRotationTween.Kill();
         orImage.rotation = Quaternion.Euler(0, 0, 0);
