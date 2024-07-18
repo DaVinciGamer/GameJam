@@ -1628,7 +1628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858447210}
   m_Layer: 0
-  m_Name: New
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22882,7 +22882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5913465796246017672, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
       propertyPath: m_TagString
-      value: River
+      value: WaterDispenser
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5800412307154293210, guid: fe4255bdc177846369fe78dfb8eddebb, type: 3}
@@ -24184,7 +24184,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireObject: {fileID: 1425530436}
-  deletedFire: {fileID: 0}
+  Bucket: {fileID: 1006561734}
+  playerController: {fileID: 2081635075}
+  xMin: -1
+  xMax: 1
+  yMin: -1
+  yMax: 1
 --- !u!1 &2082511627
 GameObject:
   m_ObjectHideFlags: 0
