@@ -31,6 +31,8 @@ public class ButterflyGhostController : MonoBehaviour
         animatorButterfly = butterflyGameObject.GetComponent<Animator>();
         animatorCorporate = corporateSlaveGameObject.GetComponent<Animator>();
         enemyHealthScript = FindAnyObjectByType<EnemyHealth>();
+        stateBarScript = FindAnyObjectByType<StateBar>();
+        varInvertedWorld = FindAnyObjectByType<VarInvertedWorld>();
         circleCollider = GetComponent<CircleCollider2D>();
         circleCollider.enabled = false;
         AIPath aiPath = GetComponentInParent<AIPath>();
@@ -39,60 +41,64 @@ public class ButterflyGhostController : MonoBehaviour
 
     private void Update()
     {
-        if (!enemyHealthScript.isDead)
+        Debug.Log("isTransitionedInverted "+ isTransitionedInverted);
+        Debug.Log("isTransitionedOriginal "+isTransitionedOriginal);
+        //Debug.Log("invertedWorld " + varInvertedWorld.invertedWorldNonStatic);
+        if (!enemyHealthScript.isDead) //if the enemy is not dead yet
         {
 
-            if (varInvertedWorld.ToString() == "false")
+            if (varInvertedWorld.invertedWorldNonStatic == "false") //if the player is in the original world
             {
-                isTransitionedInverted = false;
+                isTransitionedInverted = false; //reset the bool for the inverted state so that it can tansition again when worlds are changed
                 butterflyGameObject.SetActive(true);
                 corporateSlaveGameObject.SetActive(false);
 
-                // if (VarInvertedWorld.invertedWorld == "false") //when original world is active
-                if (stateBarScript.isDangerActive == false) // Testweise Variable
+                
+                if (stateBarScript.isDangerActive == false) //player has not yet reached the danger zone
                 {
-                    animatorButterfly.Play("ButterflyEnemy");
+                    animatorButterfly.Play("ButterflyEnemy"); //play idle animation from enemies
                     AIPath aiPath = GetComponentInParent<AIPath>();
-                    aiPath.enabled = false;
+                    aiPath.enabled = false; //don't chase the player yet
                     circleCollider.enabled = false;
                 }
 
-                // if (stateBarScript.isDangerActive) //in original world and danger zone begins
-
-                else if (stateBarScript.isDangerActive && !isTransitionedOriginal) // Testweise Variable
+                //when player hits danger zone and enemy has not yet transitioned to it's monster state
+                else if (stateBarScript.isDangerActive && !isTransitionedOriginal) 
                 {
                     circleCollider.enabled = true;
                     AIPath aiPath = GetComponentInParent<AIPath>();
-                    aiPath.enabled = true;
+                    aiPath.enabled = true; //start chasing the player
 
+                    //play transition animation to monster state
                     StartCoroutine(PlayDangerAnimations(animatorButterfly, "ButterflyDangerTransition", "Ghost")); //play transition animation from normal to monster and then keep monster state
-                    isTransitionedOriginal = true;
+                    isTransitionedOriginal = true; //set flag that the enemy has already transitioned
                 }
             }
 
-            else
+            else //if the player is in the inverted world
             {
-                isTransitionedOriginal = false;
+                isTransitionedOriginal = false; //reset the bool for the original state so that it can tansition again when worlds are changed
                 butterflyGameObject.SetActive(false);
                 corporateSlaveGameObject.SetActive(true);
 
-                if (stateBarScript.isDangerActive == false) // Testweise Variable
+                if (stateBarScript.isDangerActive == false) //player has not yet reached the danger zone
                 {
-                    animatorCorporate.Play("CorporateSlave");
+                    animatorCorporate.Play("CorporateSlave"); //play idle animation from enemies
                     AIPath aiPath = GetComponentInParent<AIPath>();
-                    aiPath.enabled = false;
+                    aiPath.enabled = false; //don't chase the player yet
                     circleCollider.enabled = false;
                 }
 
-                // if (stateBarScript.isDangerActive) //in original world and danger zone begins
-
-                else if (stateBarScript.isDangerActive && !isTransitionedInverted) // Testweise Variable
+                //when player hits danger zone and enemy has not yet transitioned to it's monster state
+                else if (stateBarScript.isDangerActive && !isTransitionedInverted)
                 {
                     circleCollider.enabled = true;
                     AIPath aiPath = GetComponentInParent<AIPath>();
                     aiPath.enabled = true;
+
+                    //play transition animation to monster state
                     StartCoroutine(PlayDangerAnimations(animatorCorporate, "CorporateDangerTransition", "Fly")); //play transition animation from normal to monster and then keep monster state
-                    isTransitionedInverted = true;
+                    isTransitionedInverted = true; //set flag that the enemy has already transitioned
                 }
             }
         }

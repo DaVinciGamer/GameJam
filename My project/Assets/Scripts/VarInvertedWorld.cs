@@ -7,6 +7,11 @@ public class VarInvertedWorld : MonoBehaviour
 {
     public static string invertedWorld = "true"; // True = Adult-World, False = Child-World
     public InputAction invertWorldAction; // InputAction for the P key
+    public string invertedWorldNonStatic = invertedWorld;
+    private void Update()
+    {
+        invertedWorldNonStatic = invertedWorld;
+    }
 
     void OnEnable()
     {
