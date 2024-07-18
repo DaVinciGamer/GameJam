@@ -3620,7 +3620,7 @@ GameObject:
   - component: {fileID: 1141067369}
   m_Layer: 0
   m_Name: StreetCollider
-  m_TagString: Untagged
+  m_TagString: Street
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34533,6 +34533,10 @@ PrefabInstance:
       propertyPath: WaterCollider
       value: 
       objectReference: {fileID: 1177359966}
+    - target: {fileID: 1064977422766226772, guid: 75a252256b42f4fab87c6e123c6bb403, type: 3}
+      propertyPath: streetCollider
+      value: 
+      objectReference: {fileID: 1141067370}
     - target: {fileID: 1373415073562632051, guid: 75a252256b42f4fab87c6e123c6bb403, type: 3}
       propertyPath: m_Name
       value: Player
