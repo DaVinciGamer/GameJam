@@ -57,7 +57,7 @@ public class BirdSnakeController : MonoBehaviour
                 isTransitionedInverted = false; //reset the bool for the inverted state so that it can tansition again when worlds are changed
                 birdGameObject.SetActive(true);
                 corporateSlaveGameObject.SetActive(false);
-                Debug.Log(stateBarScript.isDangerActive);
+                //Debug.Log(stateBarScript.isDangerActive);
                 yield return new WaitForSeconds(0.5f);
                 if (stateBarScript.isDangerActive == false) //player has not yet reached the danger zone
                 {

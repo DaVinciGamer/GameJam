@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Window_QuestPointer : MonoBehaviour
 {
-    public Transform targetTransform; // Das Zielobjekt, auf das der Pfeil zeigen soll
+    private Transform targetTransform;
+    public Transform bucketTargetTransform; // Das Zielobjekt, auf das der Pfeil zeigen soll
+    public Transform fountainTargetTransform;
     public Transform fireTargetTransform;
     private RectTransform pointerRectTransform;
     private Canvas canvas;
@@ -12,6 +14,7 @@ public class Window_QuestPointer : MonoBehaviour
     {
         pointerRectTransform = transform.Find("Pointer").GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
+        targetTransform = bucketTargetTransform;
     }
 
     private void Update()
@@ -21,13 +24,27 @@ public class Window_QuestPointer : MonoBehaviour
             Debug.LogWarning("PlayerController is not assigned!");
             return;
         }
+        else if (!playerController.PickupBucket)
+        {
+            targetTransform = bucketTargetTransform;
+        }
 
-        if (playerController.BucketState && fireTargetTransform != null)
+        else if (playerController.PickupBucket && !playerController.BucketState)
+        {
+            targetTransform = fountainTargetTransform;
+        }
+
+        else if (playerController.PickupBucket && playerController.BucketState)
         {
             targetTransform = fireTargetTransform;
         }
 
-        if (targetTransform == null)
+        else if (playerController.BucketState && !playerController.PickupBucket)
+        {
+            targetTransform = bucketTargetTransform;
+        }
+
+        else if (bucketTargetTransform == null)
         {
             Debug.LogWarning("Target Transform is not assigned!");
             return;
