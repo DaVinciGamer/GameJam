@@ -11,7 +11,7 @@ public class StateBar : MonoBehaviour
     public static float or_curr;
     float inc_speed = 1.9f;
     float dec_speed = 1.8f;
-    public static float danger_zone_trigger = 95.0f; //triggers warning
+    public static float danger_zone_trigger = 75.0f; //triggers warning
     private VarInvertedWorld varInvertedWorld;
 
     public bool isDangerActive;
@@ -57,7 +57,7 @@ public class StateBar : MonoBehaviour
             elapsed = 0.0f;
             UpdateSliders();
         }
-        if(inv_curr <= 0 || or_curr <= 0)
+        if (inv_curr <= 0 || or_curr <= 0)
         {
             if (barElapsed >= updateInterval)
             {

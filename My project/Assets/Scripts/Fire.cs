@@ -87,9 +87,10 @@ public class Fire : MonoBehaviour
 
     IEnumerator WaitAndExecute(float waitTime)
     {
-        //MusicController.Instance.FadeTo(4);
+        MusicController.Instance.FadeTo(4);
         yield return new WaitForSeconds(waitTime);
         ShowWinPanel();
+        Time.timeScale = 0;
         Debug.Log("Du hast gewonnen!");
     }
 }

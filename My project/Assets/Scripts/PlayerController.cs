@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
     private bool jumpingState = false;
     private Vector2 lastDirection;
     public PlayerClass playerClass;
+    public SpriteAnimatorController[] uiAnimators;
 
     public Vector2 log;
     bool isLog;
@@ -464,6 +465,7 @@ public class PlayerController : MonoBehaviour
         //When no object is worn
         else
         {
+            HideInstanceById(0);
             // Search for Collider objects in the PickUpRadius
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, pickUpRadius);
             foreach (var collider in colliders)
@@ -476,6 +478,7 @@ public class PlayerController : MonoBehaviour
                     PickupBucket = true;
                     //Set found object as carriedObject so that the player carries it
                     carriedObject = collider.gameObject;
+
                     break;
                 }
             }
@@ -587,6 +590,15 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(4);
         Debug.LogWarning("5 seconds have passed");
         playerClass.currentHealth = 0;
+    }
+
+    public void HideInstanceById(int id)
+    {
+        Debug.LogWarning("sliudhgosdnvojd");
+        foreach (var animator in uiAnimators)
+        {
+            animator.HideInstanceById(id);
+        }
     }
 
 }

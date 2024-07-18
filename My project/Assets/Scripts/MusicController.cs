@@ -7,10 +7,10 @@ public class MusicController : MonoBehaviour
     
     public AudioSource audioSource1;
     public AudioSource audioSource2;
-    public AudioClip[] tracks; // Array to hold the four music tracks
-    public AudioClip[] soundEffects; // Array to hold the sound effects
-    public AudioSource sfxSource; // AudioSource for playing sound effects
+    public AudioSource sfxSource;
 
+    public AudioClip[] tracks;
+    public AudioClip[] soundEffects;
     private bool isPlayingSource1 = true;
     private Coroutine fadeCoroutine;
 
@@ -70,15 +70,15 @@ public class MusicController : MonoBehaviour
         if (isPlayingSource1)
         {
             audioSource1.clip = tracks[trackIndex];
-            audioSource1.Play();
             audioSource1.volume = 1f;
+            audioSource1.Play();
             audioSource2.Stop();
         }
         else
         {
             audioSource2.clip = tracks[trackIndex];
-            audioSource2.Play();
             audioSource2.volume = 1f;
+            audioSource2.Play();
             audioSource1.Stop();
         }
         isPlayingSource1 = !isPlayingSource1;
@@ -90,6 +90,8 @@ public class MusicController : MonoBehaviour
         AudioSource newSource = isPlayingSource1 ? audioSource2 : audioSource1;
 
         newSource.clip = newClip;
+        newSource.volume = 0f;
+        newSource.Play();
 
         float time = 0f;
 
@@ -99,31 +101,13 @@ public class MusicController : MonoBehaviour
             float t = time / fadeDuration;
 
             activeSource.volume = Mathf.Lerp(1f, 0f, t);
-            newSource.volume = Mathf.Lerp(0f, 0f, t); // Ensure newSource volume remains 0 during fade
-
-            yield return null;
-        }
-
-        // Stop both sources briefly to ensure no overlap
-        activeSource.Stop();
-        newSource.Stop();
-
-        // Start the new clip after a brief pause
-        yield return new WaitForSeconds(0.1f); // Brief pause to ensure no overlap
-
-        newSource.Play();
-        time = 0f;
-
-        while (time < fadeDuration)
-        {
-            time += Time.deltaTime;
-            float t = time / fadeDuration;
-
             newSource.volume = Mathf.Lerp(0f, 1f, t);
 
             yield return null;
         }
 
+        activeSource.Stop();
+        activeSource.volume = 1f; // Reset volume for future use
         isPlayingSource1 = !isPlayingSource1;
     }
 
