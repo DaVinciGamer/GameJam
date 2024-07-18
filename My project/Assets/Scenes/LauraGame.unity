@@ -1359,11 +1359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8975885552212733799, guid: e99bb99e37902ad4e9ee922ba88ad12a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.265
+      value: -2.19
       objectReference: {fileID: 0}
     - target: {fileID: 8975885552212733799, guid: e99bb99e37902ad4e9ee922ba88ad12a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.83
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 8975885552212733799, guid: e99bb99e37902ad4e9ee922ba88ad12a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24180,6 +24180,7 @@ MonoBehaviour:
       m_Action: Invert World
       m_Flags: 0
     m_Flags: 0
+  invertedWorldNonStatic: false
 --- !u!4 &2071128415
 Transform:
   m_ObjectHideFlags: 0

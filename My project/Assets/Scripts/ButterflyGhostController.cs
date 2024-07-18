@@ -41,8 +41,20 @@ public class ButterflyGhostController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("isTransitionedInverted "+ isTransitionedInverted);
-        Debug.Log("isTransitionedOriginal "+isTransitionedOriginal);
+        StartCoroutine(waitUpdate());
+    }
+
+    private IEnumerator PlayDangerAnimations(Animator animator, string animation1, string animation2)
+    {
+        animator.Play(animation1);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        animator.Play(animation2);
+    }
+
+    private IEnumerator waitUpdate()
+    {
+        //Debug.Log("isTransitionedInverted "+ isTransitionedInverted);
+        //Debug.Log("isTransitionedOriginal "+isTransitionedOriginal);
         //Debug.Log("invertedWorld " + varInvertedWorld.invertedWorldNonStatic);
         if (!enemyHealthScript.isDead) //if the enemy is not dead yet
         {
@@ -52,10 +64,11 @@ public class ButterflyGhostController : MonoBehaviour
                 isTransitionedInverted = false; //reset the bool for the inverted state so that it can tansition again when worlds are changed
                 butterflyGameObject.SetActive(true);
                 corporateSlaveGameObject.SetActive(false);
-
-                
+                Debug.Log(stateBarScript.isDangerActive);
+                yield return new WaitForSeconds(0.5f);
                 if (stateBarScript.isDangerActive == false) //player has not yet reached the danger zone
                 {
+                    //Debug.Log("Original normal zone");
                     animatorButterfly.Play("ButterflyEnemy"); //play idle animation from enemies
                     AIPath aiPath = GetComponentInParent<AIPath>();
                     aiPath.enabled = false; //don't chase the player yet
@@ -63,7 +76,7 @@ public class ButterflyGhostController : MonoBehaviour
                 }
 
                 //when player hits danger zone and enemy has not yet transitioned to it's monster state
-                else if (stateBarScript.isDangerActive && !isTransitionedOriginal) 
+                else if (stateBarScript.isDangerActive && !isTransitionedOriginal)
                 {
                     circleCollider.enabled = true;
                     AIPath aiPath = GetComponentInParent<AIPath>();
@@ -80,7 +93,7 @@ public class ButterflyGhostController : MonoBehaviour
                 isTransitionedOriginal = false; //reset the bool for the original state so that it can tansition again when worlds are changed
                 butterflyGameObject.SetActive(false);
                 corporateSlaveGameObject.SetActive(true);
-
+                yield return new WaitForSeconds(0.5f);
                 if (stateBarScript.isDangerActive == false) //player has not yet reached the danger zone
                 {
                     animatorCorporate.Play("CorporateSlave"); //play idle animation from enemies
@@ -102,12 +115,5 @@ public class ButterflyGhostController : MonoBehaviour
                 }
             }
         }
-    }
-
-    private IEnumerator PlayDangerAnimations(Animator animator, string animation1, string animation2)
-    {
-        animator.Play(animation1);
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-        animator.Play(animation2);
     }
 }

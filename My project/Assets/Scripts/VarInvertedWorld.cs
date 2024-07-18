@@ -27,14 +27,9 @@ public class VarInvertedWorld : MonoBehaviour
 
     private void OnInvertWorld(InputAction.CallbackContext context)
     {
-        if (invertedWorld == "true")
-        {
-            invertedWorld = "false";
-        }
-        else
-        {
-            invertedWorld = "true";
-        }
+        invertedWorld = invertedWorld == "true" ? "false" : "true";
+        invertedWorldNonStatic = invertedWorld;
+
         Debug.Log("VarInvertedWorld set to " + invertedWorld);
     }
 }
