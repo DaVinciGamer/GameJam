@@ -45,6 +45,7 @@ public class PlayerCollision : MonoBehaviour
         {
             gameOver.gameOverCanvas.SetActive(true);
             MusicController.Instance.FadeTo(3);
+            Time.timeScale = 0;
         }
         else
         {
