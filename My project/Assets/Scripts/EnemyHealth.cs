@@ -49,16 +49,19 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        //Debug.Log("take damage");
         health -= damageAmount;
         healthBar.UpdateHealthBar(health, maxHealth);
         if (health <= 0)
         {
+            Debug.Log("---------test is health < 0");
             Die();
         }
     }
 
     void Die()
     {
+        Debug.Log("testDIE");
         isDead = true;
         destroyedEnemy.SetActive(true); //Enable the destroyed Game Object
         intactEnemy.SetActive(false); //Disable the intact Game Object
