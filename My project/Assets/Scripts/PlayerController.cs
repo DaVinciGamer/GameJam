@@ -121,7 +121,11 @@ public class PlayerController : MonoBehaviour
             if (varInvertedWorld != null)
             {
                 bool isInvertedWorld = VarInvertedWorld.invertedWorld == "true";
-
+                if (varInvertedWorld == true)
+                {
+                    animator.Play("CapeOn");
+                    StartCoroutine(Delay2());
+                }
                 if (!IsAnyDirectionActionPressed() && !jumpingState)
                 {
                     if (isInvertedWorld)
@@ -543,6 +547,10 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         playerClass.currentHealth = 0;
+    }
 
+    private IEnumerator Delay2()
+    {
+        yield return new WaitForSeconds(3);
     }
 }
