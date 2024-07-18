@@ -1708,6 +1708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196a1659d4748ce4699a5374ce9f3d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDangerActive: 0
   or_slider: {fileID: 212112246}
   inv_slider: {fileID: 485566663}
   rotationDuration: 0.3
@@ -13656,6 +13657,7 @@ MonoBehaviour:
   logtile: {fileID: 0}
   tileset: []
   isfilled: 0
+  logPrefab: {fileID: 0}
 --- !u!483693784 &1772025986
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -24000,6 +24002,7 @@ MonoBehaviour:
       m_Action: Invert World
       m_Flags: 0
     m_Flags: 0
+  invertedWorldNonStatic: false
 --- !u!4 &2071128415
 Transform:
   m_ObjectHideFlags: 0
@@ -24194,6 +24197,7 @@ MonoBehaviour:
   xMax: 1
   yMin: -1
   yMax: 1
+  winCanvas: {fileID: 0}
 --- !u!1 &2082511627
 GameObject:
   m_ObjectHideFlags: 0
