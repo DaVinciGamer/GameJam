@@ -13,17 +13,10 @@ MonoBehaviour:
   m_Name: CrocAnim
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-<<<<<<< Updated upstream
-  - {fileID: 21300000, guid: ac43dacc8ace41948873c1702f1da630, type: 3}
-  - {fileID: 21300000, guid: 6b29c6d28b34b284c8bc7dc8285320ff, type: 3}
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
-=======
   - {fileID: 21300000, guid: a8bbf29268c34ab4abe36fbecbac6e64, type: 3}
   - {fileID: 21300000, guid: cf33a298f57990f4bbe8c36403839a68, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 2
->>>>>>> Stashed changes
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0

@@ -57,21 +57,11 @@ public class PlayerController : MonoBehaviour
     public PlayerClass playerClass;
     public SpriteAnimatorController[] uiAnimators;
 
-    public Vector2 log;
-    bool isLog;
-    public static bool isjumping;
-
-
     private bool dead = false;
     public static bool isJumping;
     void Start()
     {
-<<<<<<< Updated upstream
-        isLog = false;
-        isjumping = false;
-=======
         isJumping = false;
->>>>>>> Stashed changes
         // Find VarInvertedWorld component
         varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
         playerClass = FindObjectOfType<PlayerClass>();
@@ -415,11 +405,6 @@ public class PlayerController : MonoBehaviour
             BucketState = true;
             //Debug.Log("BucketState gesetzt auf true.");
         }
-        else if(collision.gameObject.tag == "Log")
-        {
-            Debug.Log("#########################");
-            Debug.Log("SPieler kollidiert mit Log");
-        }
     }
 
     void ShootProjectile()
@@ -505,11 +490,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Jump()
     {
         jumpingState = true;
-<<<<<<< Updated upstream
-        isjumping = true;
-=======
         isJumping = true;
->>>>>>> Stashed changes
         //animator.SetBool("Jumping", true);
 
         Vector2 jumpTarget = (Vector2)transform.position + lastDirection * jumpHeight;
@@ -518,13 +499,6 @@ public class PlayerController : MonoBehaviour
         float elapsedTime = 0f;
         while (elapsedTime < jumpDuration)
         {
-            //Debug.Log("In Jump while schleife mit jumpTarget: "+jumpTarget+" und Startposition: "+startPosition);
-            
-            /*if (isLog)
-            {
-                jumpTarget = log;
-                isLog = false;
-            }*/
             transform.position = Vector2.Lerp(startPosition, jumpTarget, (elapsedTime / jumpDuration));
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -532,18 +506,10 @@ public class PlayerController : MonoBehaviour
 
         transform.position = jumpTarget;
         jumpingState = false;
-<<<<<<< Updated upstream
-        isjumping = false;
-=======
         isJumping = false;
->>>>>>> Stashed changes
         //animator.SetBool("Jumping", false);
-        CheckCollision();
-    }
 
-    private void CheckIfLog()
-    {
-        
+        CheckCollision();
     }
 
     private void CheckCollision()
@@ -574,11 +540,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (collider.CompareTag("Log"))
             {
-                log = collider.gameObject.transform.position;
-                isLog = true;
-                //Debug.LogWarning("Log");
-                //Debug.Log("Log with collider at position: (" + log.x + ", " + log.y + ")");
-                //Debug.Log("Spieler position: (" + transform.position.x+", "+transform.position.y+")");
+                Debug.LogWarning("Log");
             }
         }
     }

@@ -512,12 +512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0a5ecf7e933400ba268afdb103a87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  targetTransform: {fileID: 1158836585}
-=======
   bucketTargetTransform: {fileID: 0}
   fountainTargetTransform: {fileID: 0}
->>>>>>> Stashed changes
   fireTargetTransform: {fileID: 452254178}
   playerController: {fileID: 1193066965}
 --- !u!1 &168047007
@@ -13417,11 +13413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1193066966}
-<<<<<<< Updated upstream
-=======
   currentPos: {x: 0, y: 0, z: 0}
   istriggered: 0
->>>>>>> Stashed changes
 --- !u!61 &780846907
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14499,14 +14492,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1158836587}
   m_SourcePrefab: {fileID: 100100000, guid: b2b5f952104a244899f9602cde11e80b, type: 3}
-<<<<<<< Updated upstream
---- !u!4 &1158836585 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5011557812159617152, guid: b2b5f952104a244899f9602cde11e80b, type: 3}
-  m_PrefabInstance: {fileID: 1158836584}
-  m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> Stashed changes
 --- !u!1 &1158836586 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4459467954711554738, guid: b2b5f952104a244899f9602cde11e80b, type: 3}
@@ -33441,15 +33426,9 @@ MonoBehaviour:
   randVectorRa: {x: 0, y: 0, z: 0}
   monsterMap: {fileID: 2017394190}
   waterMap: {fileID: 1581307130}
-<<<<<<< Updated upstream
-  rabbit: {fileID: 11400000, guid: 9c638ecb9f63fdd40ab6007504fdc3a7, type: 2}
-  butterfly: {fileID: 11400000, guid: 75ac7c6882dad7544ba48810cd3ea5e2, type: 2}
-  bird: {fileID: 11400000, guid: 332a85febef231b48b9b30e99ac6b77d, type: 2}
-=======
   rabbit: {fileID: 0}
   butterfly: {fileID: 0}
   bird: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!1 &1888584971
 GameObject:
   m_ObjectHideFlags: 0

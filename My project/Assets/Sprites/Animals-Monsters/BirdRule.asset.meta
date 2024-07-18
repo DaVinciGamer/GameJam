@@ -1,15 +1,8 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:My project/Assets/Sprites/Animals-Monsters/BirdRule.asset.meta
 guid: bded50b2050a2ed4dbcd377b433d50c6
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
-========
-guid: 90eb6546c1d5940ce83174fc8ca0e802
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 8400000
->>>>>>>> main:My project/Assets/Videos/New Render Texture.renderTexture.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
