@@ -11,7 +11,7 @@ public class StateBar : MonoBehaviour
     public static float or_curr;
     float inc_speed = 1.9f;
     float dec_speed = 1.8f;
-    public static float danger_zone_trigger = 90.0f; //triggers warning
+    public static float danger_zone_trigger = 95.0f; //triggers warning
     private VarInvertedWorld varInvertedWorld;
 
     public static bool isDangerActive;
@@ -57,7 +57,7 @@ public class StateBar : MonoBehaviour
 
     void UpdateSliders()
     {
-        if (VarInvertedWorld.invertedWorld == "true")
+        if (VarInvertedWorld.invertedWorld != "true")
         {
             if (or_curr > 0)
             {
@@ -149,6 +149,7 @@ public class StateBar : MonoBehaviour
     void orStartRotation()
     {
         isDangerActive = true;
+        Debug.Log("Start Danger Zone in Original");
         MusicController.Instance.FadeTo(2);
         orRotationTween = orImage.DORotate(new Vector3(0, 0, rotationAngle), rotationDuration)
             .SetLoops(-1, LoopType.Yoyo)
@@ -158,6 +159,7 @@ public class StateBar : MonoBehaviour
     void orStopRotation()
     {
         isDangerActive = false;
+       // Debug.Log("End Danger Zone in Original");
         MusicController.Instance.FadeTo(1);
         orRotationTween.Kill();
         orImage.rotation = Quaternion.Euler(0, 0, 0);
@@ -166,6 +168,7 @@ public class StateBar : MonoBehaviour
     void invStartRotation()
     {
         isDangerActive = true;
+        Debug.Log("Start Danger Zone in Inv");
         MusicController.Instance.FadeTo(6);
         invRotationTween = invImage.DORotate(new Vector3(0, 0, rotationAngle), rotationDuration)
             .SetLoops(-1, LoopType.Yoyo)

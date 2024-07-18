@@ -66,21 +66,21 @@ public class PlayerController : MonoBehaviour
 
         if (varInvertedWorld == null)
         {
-            Debug.LogError("VarInvertedWorld component not found in the scene.");
+            //Debug.LogError("VarInvertedWorld component not found in the scene.");
         }
 
         // Get the SpriteRenderer component
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer == null)
         {
-            Debug.LogError("No SpriteRenderer component found on this GameObject.");
+            //Debug.LogError("No SpriteRenderer component found on this GameObject.");
         }
 
         // Get the Bucket SpriteRenderer Component
         spriteRendererBucket = Bucket.GetComponent<SpriteRenderer>();
         if (spriteRendererBucket == null)
         {
-            Debug.LogError("No SpriteRenderer component found on Bucket.");
+           // Debug.LogError("No SpriteRenderer component found on Bucket.");
         }
         else { Debug.Log("Bucket Sprite gefunden"); }
 
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         if (animator == null)
         {
-            Debug.LogError("No Animator component found on this GameObject.");
+            //Debug.LogError("No Animator component found on this GameObject.");
         }
 
         // Activate Input Actions
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
 
             if (!isInvertedWorld)
             {
-                Debug.LogWarning("VarInvertredWorld False");
+                //Debug.LogWarning("VarInvertredWorld False");
 
                 // Set bucket Sprite to not broken
                 if (BucketState == false)
@@ -248,7 +248,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("VarInvertredWorld True");
+                //Debug.LogWarning("VarInvertredWorld True");
 
                 // Set bucket Sprite to not broken
                 if (BucketState == false)
@@ -344,7 +344,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     animator.SetBool("UpInv", false);
-                    animator.SetBool("JumpuInv", false);
+                    animator.SetBool("JumpUInv", false);
                 }
 
                 // Set the inverted sprite
@@ -399,7 +399,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "WaterDispenser" && PickupBucket == true)
         {
             BucketState = true;
-            Debug.Log("BucketState gesetzt auf true.");
+            //Debug.Log("BucketState gesetzt auf true.");
         }
     }
 
@@ -440,7 +440,7 @@ public class PlayerController : MonoBehaviour
         if (carriedObject != null)
         {
             carriedObject = null;
-            Debug.LogWarning("Dropped object");
+            //Debug.LogWarning("Dropped object");
             PickupBucket = false;
         }
         //When no object is worn
@@ -454,7 +454,7 @@ public class PlayerController : MonoBehaviour
                 if (collider.gameObject != this.gameObject && collider.gameObject.CompareTag("Pickup"))
                 {
                     //Debug message that displays the name of the object to be picked up
-                    Debug.Log("Picking up object: " + collider.gameObject.name);
+                    //Debug.Log("Picking up object: " + collider.gameObject.name);
                     PickupBucket = true;
                     //Set found object as carriedObject so that the player carries it
                     carriedObject = collider.gameObject;
@@ -513,7 +513,15 @@ public class PlayerController : MonoBehaviour
             if (collider.CompareTag("River"))
             {
                 Debug.LogWarning("River");
-                //play animation Ertrinken
+                animator.SetBool("LeftInv", false);
+                animator.SetBool("RightInv", false);
+                animator.SetBool("UpInv", false);
+                animator.SetBool("DownInv", false);
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", false);
+                animator.SetBool("Up", false);
+                animator.SetBool("Down", false);
+                animator.SetBool("Drown", true);
                 //wait till it's finished
                 playerClass.currentHealth = 0;
             }
