@@ -118,36 +118,67 @@ public class PlayerController : MonoBehaviour
         // Check the value of the invertedWorld string
         if (varInvertedWorld != null)
         {
-            if (VarInvertedWorld.invertedWorld == "false")
+            bool isInvertedWorld = VarInvertedWorld.invertedWorld == "true";
+
+            if (!IsAnyDirectionActionPressed() && !jumpingState)
+            {
+                if (isInvertedWorld)
+                {
+                    animator.SetBool("IDLEInv", true);
+                    animator.SetBool("IDLE", false);
+                }
+                else
+                {
+                    animator.SetBool("IDLE", true);
+                    animator.SetBool("IDLEInv", false);
+                }
+            }
+            else
+            {
+                animator.SetBool("IDLE", false);
+                animator.SetBool("IDLEInv", false);
+            }
+
+            if (!isInvertedWorld)
             {
                 Debug.LogWarning("VarInvertredWorld False");
-                //Set bucket Sprite to not broken
+
+                // Set bucket Sprite to not broken
                 if (BucketState == false)
                 {
                     spriteRendererBucket.sprite = normalBucket;
-
                 }
 
+                // Reset inverted world animations
                 animator.SetBool("LeftInv", false);
                 animator.SetBool("RightInv", false);
                 animator.SetBool("UpInv", false);
                 animator.SetBool("DownInv", false);
+                animator.SetBool("JumpL", false); // Reset JumpL animation
 
+                // Handle left action
                 if (LeftAction.IsPressed())
                 {
                     animator.SetBool("Left", true);
                     animator.SetBool("Right", false);
                     animator.SetBool("Up", false);
-                    animator.SetBool("Down", false);  if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        animator.SetBool("JumpL", true);
-                    }
-
+                    animator.SetBool("Down", false);
                     move.x = -1f;
                     lastDirection = Vector2.left;
-
+                    if (jumpingState == true)
+                    {
+                        animator.SetBool("Left", false);
+                        animator.SetBool("JumpL", true);
+                    }
                 }
-                else if (RightAction.IsPressed())
+                else
+                {
+                    animator.SetBool("Left", false);
+                    animator.SetBool("JumpL", false);
+                }
+
+                // Handle right action
+                if (RightAction.IsPressed())
                 {
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", true);
@@ -155,8 +186,19 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Down", false);
                     move.x = 1f;
                     lastDirection = Vector2.right;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("Right", false);
+                        animator.SetBool("JumpR", true);
+                    }
+                }
+                else
+                {
+                    animator.SetBool("Right", false);
+                    animator.SetBool("JumpR", false);
                 }
 
+                // Handle up action
                 if (UpAction.IsPressed())
                 {
                     animator.SetBool("Left", false);
@@ -165,8 +207,20 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Down", false);
                     move.y = 1f;
                     lastDirection = Vector2.up;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("Up", false);
+                        animator.SetBool("JumpU", true);
+                    }
                 }
-                else if (DownAction.IsPressed())
+                else
+                {
+                    animator.SetBool("Up", false);
+                    animator.SetBool("JumpU", false);
+                }
+
+                // Handle down action
+                if (DownAction.IsPressed())
                 {
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", false);
@@ -174,6 +228,16 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Down", true);
                     move.y = -1f;
                     lastDirection = Vector2.down;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("Down", false);
+                        animator.SetBool("JumpD", true);
+                    }
+                }
+                else
+                {
+                    animator.SetBool("Down", false);
+                    animator.SetBool("JumpD", false);
                 }
 
                 // Set the normal sprite
@@ -182,20 +246,24 @@ public class PlayerController : MonoBehaviour
                     spriteRenderer.sprite = normalSprite;
                 }
             }
-            else if (VarInvertedWorld.invertedWorld == "true")
+            else
             {
                 Debug.LogWarning("VarInvertredWorld True");
-                //Set bucket Sprite to not broken
+
+                // Set bucket Sprite to not broken
                 if (BucketState == false)
                 {
                     spriteRendererBucket.sprite = brokenBucket;
                 }
 
+                // Reset normal world animations
                 animator.SetBool("Left", false);
                 animator.SetBool("Right", false);
                 animator.SetBool("Up", false);
                 animator.SetBool("Down", false);
+                animator.SetBool("JumpL", false); // Reset JumpL animation
 
+                // Handle left action in inverted world
                 if (LeftAction.IsPressed())
                 {
                     animator.SetBool("LeftInv", false);
@@ -204,8 +272,20 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("DownInv", false);
                     move.x = 1f;
                     lastDirection = Vector2.right;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("RightInv", false);
+                        animator.SetBool("JumpRInv", true);
+                    }
                 }
-                else if (RightAction.IsPressed())
+                else
+                {
+                    animator.SetBool("RightInv", false);
+                    animator.SetBool("JumpRInv", false);
+                }
+
+                // Handle right action in inverted world
+                if (RightAction.IsPressed())
                 {
                     animator.SetBool("LeftInv", true);
                     animator.SetBool("RightInv", false);
@@ -213,8 +293,19 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("DownInv", false);
                     move.x = -1f;
                     lastDirection = Vector2.left;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("LeftInv", false);
+                        animator.SetBool("JumpLInv", true);
+                    }
+                }
+                else
+                {
+                    animator.SetBool("LeftInv", false);
+                    animator.SetBool("JumpLInv", false);
                 }
 
+                // Handle up action in inverted world
                 if (UpAction.IsPressed())
                 {
                     animator.SetBool("LeftInv", false);
@@ -223,8 +314,20 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("DownInv", true);
                     move.y = -1f;
                     lastDirection = Vector2.down;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("DownInv", false);
+                        animator.SetBool("JumpDInv", true);
+                    }
                 }
-                else if (DownAction.IsPressed())
+                else
+                {
+                    animator.SetBool("DownInv", false);
+                    animator.SetBool("JumpDInv", false);
+                }
+
+                // Handle down action in inverted world
+                if (DownAction.IsPressed())
                 {
                     animator.SetBool("LeftInv", false);
                     animator.SetBool("RightInv", false);
@@ -232,6 +335,16 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("DownInv", false);
                     move.y = 1f;
                     lastDirection = Vector2.up;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("UpInv", false);
+                        animator.SetBool("JumpuInv", true);
+                    }
+                }
+                else
+                {
+                    animator.SetBool("UpInv", false);
+                    animator.SetBool("JumpuInv", false);
                 }
 
                 // Set the inverted sprite
@@ -239,10 +352,6 @@ public class PlayerController : MonoBehaviour
                 {
                     spriteRenderer.sprite = invertedSprite;
                 }
-            }
-            else
-            {
-                Debug.LogError("VarInvertedWorld has an invalid value: " + VarInvertedWorld.invertedWorld);
             }
             CheckCollision();
         }
@@ -276,6 +385,12 @@ public class PlayerController : MonoBehaviour
             spriteRendererBucket.sprite = waterBucket;
         }
     }
+
+    private bool IsAnyDirectionActionPressed()
+    {
+        return LeftAction.IsPressed() || RightAction.IsPressed() || UpAction.IsPressed() || DownAction.IsPressed();
+    }
+
 
     // Diese Methode wird aufgerufen, wenn die Kollision beginnt
     private void OnCollisionEnter2D(Collision2D collision)
@@ -398,7 +513,7 @@ public class PlayerController : MonoBehaviour
             if (collider.CompareTag("River"))
             {
                 Debug.LogWarning("River");
-                //play animation
+                //play animation Ertrinken
                 //wait till it's finished
                 playerClass.currentHealth = 0;
             }
