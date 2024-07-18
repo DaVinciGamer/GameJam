@@ -17,6 +17,7 @@ public class Fire : MonoBehaviour
 
     private bool isBucketInArea = false; // Zustand, ob der Eimer im Bereich ist
     private Vector2 firePosition; // Position des FireObject
+    [SerializeField] private GameObject winCanvas;
 
     void Start()
     {
@@ -59,6 +60,7 @@ public class Fire : MonoBehaviour
                         {
                             animator.SetBool("Fire", false);
                             Debug.Log("Feuer gelöscht");
+                            StartCoroutine(WaitAndExecute(2.0f));
                         }
                         else
                         {
@@ -76,5 +78,16 @@ public class Fire : MonoBehaviour
         {
             Debug.LogError("Bucket ist nicht zugewiesen");
         }
+    }
+    private void ShowWinPanel()
+    {
+        winCanvas.SetActive(true);
+    }
+
+    IEnumerator WaitAndExecute(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        ShowWinPanel();
+        Debug.Log("Du hast gewonnen!");
     }
 }
