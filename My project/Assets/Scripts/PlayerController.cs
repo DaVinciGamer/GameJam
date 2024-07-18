@@ -58,9 +58,10 @@ public class PlayerController : MonoBehaviour
     public SpriteAnimatorController[] uiAnimators;
 
     private bool dead = false;
-
+    public static bool isJumping;
     void Start()
     {
+        isJumping = false;
         // Find VarInvertedWorld component
         varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
         playerClass = FindObjectOfType<PlayerClass>();
@@ -489,6 +490,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Jump()
     {
         jumpingState = true;
+        isJumping = true;
         //animator.SetBool("Jumping", true);
 
         Vector2 jumpTarget = (Vector2)transform.position + lastDirection * jumpHeight;
@@ -504,6 +506,7 @@ public class PlayerController : MonoBehaviour
 
         transform.position = jumpTarget;
         jumpingState = false;
+        isJumping = false;
         //animator.SetBool("Jumping", false);
 
         CheckCollision();
@@ -527,8 +530,12 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("Up", false);
                 animator.SetBool("Down", false);
                 //animator.SetBool("Drown", true);
-                animator.Play("Drown");
-                StartCoroutine(Delay());
+                if (!isJumping)
+                {
+                    animator.Play("Drown");
+                    StartCoroutine(Delay());
+                }
+
 
             }
             else if (collider.CompareTag("Log"))

@@ -28,9 +28,9 @@ public class EnemySpawn : MonoBehaviour
     public Tilemap monsterMap; //z.B. Grass
     public Tilemap waterMap;
     //public Tilemap botMap; //z.B. Stone
-    public AnimatedTile rabbit;
-    public AnimatedTile butterfly;
-    public AnimatedTile bird;
+    public RuleTile rabbit;
+    public RuleTile butterfly;
+    public RuleTile bird;
 
     int width; //width of the Map
     int height; //height of the Map
