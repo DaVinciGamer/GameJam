@@ -49,11 +49,20 @@ public class PlayerController : MonoBehaviour
     // Reference to the WaterCollider GameObject
     public GameObject WaterCollider;
 
+    //Jumping
+    public float jumpHeight = 5f;
+    public float jumpDuration = 1f;
+    private bool jumpingState = false;
+    private Vector2 lastDirection;
+    public PlayerClass playerClass;
+
+
 
     void Start()
     {
         // Find VarInvertedWorld component
         varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
+        playerClass = FindObjectOfType<PlayerClass>();
 
         if (varInvertedWorld == null)
         {
@@ -101,6 +110,11 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 move = Vector2.zero;
 
+        if (Input.GetKeyDown(KeyCode.Space) && !jumpingState)
+        {
+            StartCoroutine(Jump());
+        }
+
         // Check the value of the invertedWorld string
         if (varInvertedWorld != null)
         {
@@ -125,6 +139,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Up", false);
                     animator.SetBool("Down", false);
                     move.x = -1f;
+                    lastDirection = Vector2.left;
                 }
                 else if (RightAction.IsPressed())
                 {
@@ -133,6 +148,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Up", false);
                     animator.SetBool("Down", false);
                     move.x = 1f;
+                    lastDirection = Vector2.right;
                 }
 
                 if (UpAction.IsPressed())
@@ -142,6 +158,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Up", true);
                     animator.SetBool("Down", false);
                     move.y = 1f;
+                    lastDirection = Vector2.up;
                 }
                 else if (DownAction.IsPressed())
                 {
@@ -150,6 +167,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Up", false);
                     animator.SetBool("Down", true);
                     move.y = -1f;
+                    lastDirection = Vector2.down;
                 }
 
                 // Set the normal sprite
@@ -178,6 +196,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("UpInv", false);
                     animator.SetBool("DownInv", false);
                     move.x = 1f;
+                    lastDirection = Vector2.right;
                 }
                 else if (RightAction.IsPressed())
                 {
@@ -186,6 +205,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("UpInv", false);
                     animator.SetBool("DownInv", false);
                     move.x = -1f;
+                    lastDirection = Vector2.left;
                 }
 
                 if (UpAction.IsPressed())
@@ -195,6 +215,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("UpInv", false);
                     animator.SetBool("DownInv", true);
                     move.y = -1f;
+                    lastDirection = Vector2.down;
                 }
                 else if (DownAction.IsPressed())
                 {
@@ -203,6 +224,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("UpInv", true);
                     animator.SetBool("DownInv", false);
                     move.y = 1f;
+                    lastDirection = Vector2.up;
                 }
 
                 // Set the inverted sprite
@@ -215,6 +237,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.LogError("VarInvertedWorld has an invalid value: " + VarInvertedWorld.invertedWorld);
             }
+            CheckCollision();
         }
 
         // Normalize move vector
@@ -250,7 +273,6 @@ public class PlayerController : MonoBehaviour
     // Diese Methode wird aufgerufen, wenn die Kollision beginnt
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log("Colliiiiiision");
         // Überprüfen, ob das kollidierende Objekt ein Wasserobjekt ist
         if (collision.gameObject.tag == "River" && PickupBucket == true)
         {
@@ -334,5 +356,49 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, pickUpRadius);
+    }
+
+
+    private IEnumerator Jump()
+    {
+        jumpingState = true;
+        //animator.SetBool("Jumping", true);
+
+        Vector2 jumpTarget = (Vector2)transform.position + lastDirection * jumpHeight;
+        Vector2 startPosition = transform.position;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < jumpDuration)
+        {
+            transform.position = Vector2.Lerp(startPosition, jumpTarget, (elapsedTime / jumpDuration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = jumpTarget;
+        jumpingState = false;
+        //animator.SetBool("Jumping", false);
+
+        CheckCollision();
+    }
+
+    private void CheckCollision()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("River"))
+            {
+                Debug.LogWarning("River");
+                //play animation
+                //wait till it's finished
+                playerClass.currentHealth = 0;
+            }
+            else if (collider.CompareTag("Log"))
+            {
+                Debug.LogWarning("Log");
+            }
+        }
     }
 }
