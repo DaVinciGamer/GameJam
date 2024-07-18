@@ -276,7 +276,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Überprüfen, ob das kollidierende Objekt ein Wasserobjekt ist
-        if (collision.gameObject.tag == "River" && PickupBucket == true)
+        if (collision.gameObject.tag == "WaterDispenser" && PickupBucket == true)
         {
             BucketState = true;
             Debug.Log("BucketState gesetzt auf true.");
