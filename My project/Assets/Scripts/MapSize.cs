@@ -41,11 +41,15 @@ public class MapSize : MonoBehaviour
                 {
                     string spriteName = watermap.GetSprite(tileVectorspos).name;
                     //Debug.Log(spriteName);
-                    if(spriteName == "Watermid" && tileVectorspos.y == 6)//&&tileVectorspos.y==6)
+                    if(spriteName == "Watermid" && x%5==0)//&&tileVectorspos.y==6)
                     {
-                        //Debug.Log("In Watermid-if mit position: "+tileVectorspos.x+", "+tileVectorspos.y);
-                        tileVectorspos.y = Random.Range(5, 8);
-                        logmap.SetTile(tileVectorspos, logtile);
+                        if(tileVectorspos.y == 6)
+                        {
+                            //Debug.Log("In Watermid-if mit position: "+tileVectorspos.x+", "+tileVectorspos.y);
+                            tileVectorspos.y = Random.Range(5, 8);
+                            logmap.SetTile(tileVectorspos, logtile);
+                        }
+
 
                     }
                     /*else if (spriteName == "Watermid" && tileVectorspos.y == 9)
@@ -106,7 +110,7 @@ public class MapSize : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveLog();
+        //moveLog();
         /*if(tileset.Length!= 0)
         {
             for (int i = 0; i < tileset.Length; i++)
