@@ -16,6 +16,7 @@ public class RiverCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
         if (PlayerController.isjumping)
         {
             Debug.Log("Spieler springt");
@@ -23,6 +24,15 @@ public class RiverCollider : MonoBehaviour
             {
                 return;
             }
+=======
+        if (PlayerController.isJumping)
+        {
+            Debug.Log("Spieler springt");
+            /*if (!istriggered && Player.transform.position.y > 9)
+            {
+                return;
+            }*/
+>>>>>>> Stashed changes
             if (istriggered && Player.transform.position.y <= 8.7f && Player.transform.position.y > 7)
             {
                 Player.transform.position = new Vector3(Player.transform.position.x, 3.6f, 0);

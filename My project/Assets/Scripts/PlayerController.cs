@@ -62,11 +62,15 @@ public class PlayerController : MonoBehaviour
 
 
     private bool dead = false;
-
+    public static bool isJumping;
     void Start()
     {
+<<<<<<< Updated upstream
         isLog = false;
         isjumping = false;
+=======
+        isJumping = false;
+>>>>>>> Stashed changes
         // Find VarInvertedWorld component
         varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
         playerClass = FindObjectOfType<PlayerClass>();
@@ -498,7 +502,11 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Jump()
     {
         jumpingState = true;
+<<<<<<< Updated upstream
         isjumping = true;
+=======
+        isJumping = true;
+>>>>>>> Stashed changes
         //animator.SetBool("Jumping", true);
 
         Vector2 jumpTarget = (Vector2)transform.position + lastDirection * jumpHeight;
@@ -521,7 +529,11 @@ public class PlayerController : MonoBehaviour
 
         transform.position = jumpTarget;
         jumpingState = false;
+<<<<<<< Updated upstream
         isjumping = false;
+=======
+        isJumping = false;
+>>>>>>> Stashed changes
         //animator.SetBool("Jumping", false);
         CheckCollision();
     }
@@ -549,8 +561,12 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("Up", false);
                 animator.SetBool("Down", false);
                 //animator.SetBool("Drown", true);
-                animator.Play("Drown");
-                StartCoroutine(Delay());
+                if (!isJumping)
+                {
+                    animator.Play("Drown");
+                    StartCoroutine(Delay());
+                }
+
 
             }
             else if (collider.CompareTag("Log"))
