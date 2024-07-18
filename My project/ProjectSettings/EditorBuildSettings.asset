@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: 85f1ab8f674af4034b3cae7eee41148f
   - enabled: 0
+    path: Assets/Scenes/LauraGame.unity
+    guid: 33f95e6dee22aa44fae576913f654e84
+  - enabled: 0
     path: Assets/Scenes/UIOverlay.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}
