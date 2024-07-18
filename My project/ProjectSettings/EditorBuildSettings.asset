@@ -9,8 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 7233269e971484a89b750f1493254947
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 15dfc06ae997b4a9d869cb8f25e7d6bf
+  - enabled: 1
+    path: Assets/Scenes/DamageFromPegel.unity
+    guid: 04078e3c0bc9b264a8a3b2b24d63fc11
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 85f1ab8f674af4034b3cae7eee41148f
+  - enabled: 0
+    path: Assets/Scenes/LauraGame.unity
+    guid: 7839606efeb834749b4ed5af540b2fe7
   - enabled: 0
     path: Assets/Scenes/UIOverlay.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
