@@ -31,27 +31,40 @@ public class StateBar : MonoBehaviour
     private bool invAnimationActive = false;
 
     private float elapsed = 0.0f;
+    private float barElapsed = 0.0f;
     public float updateInterval = 1.0f;
     private MusicController MusicController;
+
+    private PlayerClass playerClass;
+    public Slider healthSlider;
+
 
     void Start()
     {
         //set to default value
-        inv_curr = max_value;
-        or_curr = max_value;
-        or_slider.value = or_curr;
-        inv_slider.value = inv_curr;
+        inv_slider.value = or_slider.value = inv_curr = or_curr = max_value;
         varInvertedWorld = FindObjectOfType<VarInvertedWorld>();
+        playerClass = FindAnyObjectByType<PlayerClass>();
         isDangerActive = false;
     }
 
     void Update()
     {
         elapsed += Time.deltaTime;
+        barElapsed += Time.deltaTime;
         if (elapsed >= updateInterval)
         {
             elapsed = 0.0f;
             UpdateSliders();
+        }
+        if(inv_curr <= 0 || or_curr <= 0)
+        {
+            if (barElapsed >= updateInterval)
+            {
+                barElapsed = 0.0f;
+                playerClass.currentHealth -= 5;
+                healthSlider.value = (float)playerClass.currentHealth / playerClass.maxHealth;
+            }
         }
     }
 

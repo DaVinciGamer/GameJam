@@ -215,11 +215,16 @@ MonoBehaviour:
   normalSprite: {fileID: 702981761, guid: 550ff245f52b991418101b5360cd8e74, type: 3}
   invertedSprite: {fileID: -471527043, guid: db17da46ca9c5e14c80385f8760bd315, type: 3}
   animator: {fileID: -1641944908185629080}
+  BucketState: 0
   Bucket: {fileID: 4459467954711554738, guid: b2b5f952104a244899f9602cde11e80b, type: 3}
   brokenBucket: {fileID: 21300000, guid: e145ab1f5d44d4fe6a3e551fb0b2c190, type: 3}
   normalBucket: {fileID: 21300000, guid: ecd23a942df494b12bf36219bfdb0ccc, type: 3}
   waterBucket: {fileID: 21300000, guid: 43dce42a8b4da4e17afa784631fa209b, type: 3}
+  PickupBucket: 0
   WaterCollider: {fileID: 0}
+  jumpHeight: 5
+  jumpDuration: 1
+  playerClass: {fileID: 0}
 --- !u!50 &735272092497349149
 Rigidbody2D:
   serializedVersion: 4
@@ -228,13 +233,13 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373415073562632051}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -246,7 +251,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!114 &4301830019693825777
 MonoBehaviour:
   m_ObjectHideFlags: 0
