@@ -9,6 +9,7 @@ public class PlayerCollision : MonoBehaviour
     public Slider healthSlider;
     public EnemyDamage enemyDamage;
     public GameOver gameOver;
+    private MusicController MusicController;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -43,6 +44,7 @@ public class PlayerCollision : MonoBehaviour
         if (gameOver != null && gameOver.gameOverCanvas != null)
         {
             gameOver.gameOverCanvas.SetActive(true);
+            MusicController.Instance.FadeTo(3);
         }
         else
         {

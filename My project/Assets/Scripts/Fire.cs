@@ -18,6 +18,7 @@ public class Fire : MonoBehaviour
     private bool isBucketInArea = false; // Zustand, ob der Eimer im Bereich ist
     private Vector2 firePosition; // Position des FireObject
     [SerializeField] private GameObject winCanvas;
+    private MusicController MusicController;
 
     void Start()
     {
@@ -86,6 +87,7 @@ public class Fire : MonoBehaviour
 
     IEnumerator WaitAndExecute(float waitTime)
     {
+        MusicController.Instance.FadeTo(4);
         yield return new WaitForSeconds(waitTime);
         ShowWinPanel();
         Debug.Log("Du hast gewonnen!");
