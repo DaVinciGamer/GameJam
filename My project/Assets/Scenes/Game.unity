@@ -1620,6 +1620,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NEWEnemy_Butterfly
       objectReference: {fileID: 0}
+    - target: {fileID: 7639363470409804991, guid: e99bb99e37902ad4e9ee922ba88ad12a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7893057746732179952, guid: e99bb99e37902ad4e9ee922ba88ad12a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
