@@ -165,10 +165,16 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Down", false);
                     move.x = -1f;
                     lastDirection = Vector2.left;
+                    if (jumpingState == true)
+                    {
+                        animator.SetBool("Left", false);
+                        animator.SetBool("JumpL", true);
+                    }
                 }
                 else
                 {
                     animator.SetBool("Left", false);
+                    animator.SetBool("JumpL", false);
                 }
 
                 // Handle right action
@@ -180,10 +186,16 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Down", false);
                     move.x = 1f;
                     lastDirection = Vector2.right;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("Right", false);
+                        animator.SetBool("JumpR", true);
+                    }
                 }
                 else
                 {
                     animator.SetBool("Right", false);
+                    animator.SetBool("JumpR", false);
                 }
 
                 // Handle up action
@@ -195,10 +207,16 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Down", false);
                     move.y = 1f;
                     lastDirection = Vector2.up;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("Up", false);
+                        animator.SetBool("JumpU", true);
+                    }
                 }
                 else
                 {
                     animator.SetBool("Up", false);
+                    animator.SetBool("JumpU", false);
                 }
 
                 // Handle down action
@@ -210,10 +228,16 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Down", true);
                     move.y = -1f;
                     lastDirection = Vector2.down;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("Down", false);
+                        animator.SetBool("JumpD", true);
+                    }
                 }
                 else
                 {
                     animator.SetBool("Down", false);
+                    animator.SetBool("JumpD", false);
                 }
 
                 // Set the normal sprite
@@ -248,10 +272,16 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("DownInv", false);
                     move.x = 1f;
                     lastDirection = Vector2.right;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("RightInv", false);
+                        animator.SetBool("JumpRInv", true);
+                    }
                 }
                 else
                 {
                     animator.SetBool("RightInv", false);
+                    animator.SetBool("JumpRInv", false);
                 }
 
                 // Handle right action in inverted world
@@ -263,10 +293,16 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("DownInv", false);
                     move.x = -1f;
                     lastDirection = Vector2.left;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("LeftInv", false);
+                        animator.SetBool("JumpLInv", true);
+                    }
                 }
                 else
                 {
                     animator.SetBool("LeftInv", false);
+                    animator.SetBool("JumpLInv", false);
                 }
 
                 // Handle up action in inverted world
@@ -278,10 +314,16 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("DownInv", true);
                     move.y = -1f;
                     lastDirection = Vector2.down;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("DownInv", false);
+                        animator.SetBool("JumpDInv", true);
+                    }
                 }
                 else
                 {
                     animator.SetBool("DownInv", false);
+                    animator.SetBool("JumpDInv", false);
                 }
 
                 // Handle down action in inverted world
@@ -293,10 +335,16 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("DownInv", false);
                     move.y = 1f;
                     lastDirection = Vector2.up;
+                     if (jumpingState == true)
+                    {
+                        animator.SetBool("UpInv", false);
+                        animator.SetBool("JumpuInv", true);
+                    }
                 }
                 else
                 {
                     animator.SetBool("UpInv", false);
+                    animator.SetBool("JumpuInv", false);
                 }
 
                 // Set the inverted sprite
