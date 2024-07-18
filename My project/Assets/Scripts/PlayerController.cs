@@ -138,9 +138,14 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("Left", true);
                     animator.SetBool("Right", false);
                     animator.SetBool("Up", false);
-                    animator.SetBool("Down", false);
+                    animator.SetBool("Down", false);  if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        animator.SetBool("JumpL", true);
+                    }
+
                     move.x = -1f;
                     lastDirection = Vector2.left;
+
                 }
                 else if (RightAction.IsPressed())
                 {
