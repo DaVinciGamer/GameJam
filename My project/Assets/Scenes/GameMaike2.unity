@@ -24157,7 +24157,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireObject: {fileID: 1465505031}
+<<<<<<< Updated upstream
   deletedFire: {fileID: 1120574918, guid: f4fbfe1d3b1dddd488b467c78ec918ed, type: 3}
+=======
+  Bucket: {fileID: 828767960}
+  deletedFire: {fileID: -1278238781, guid: f4fbfe1d3b1dddd488b467c78ec918ed, type: 3}
+  xMin: -16
+  xMax: -5
+  yMin: 0
+  yMax: 11
+>>>>>>> Stashed changes
 --- !u!1 &2082511627
 GameObject:
   m_ObjectHideFlags: 0
