@@ -874,6 +874,32 @@ AnimatorTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 1
+--- !u!1102 &-5028943585818573116
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cape
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: dec4e8f6194b64d14b599834011bf70d, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &-4852106627565009945
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2587,6 +2613,12 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -8447760039817260123}
     m_Position: {x: 640, y: 170, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5028943585818573116}
+    m_Position: {x: 675, y: 235, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 9040440479159040176}
+    m_Position: {x: 710, y: 300, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: -2791541452508595018}
@@ -2624,13 +2656,13 @@ AnimatorStateMachine:
   - first: {fileID: -7712818891584317248}
     second:
     - {fileID: -3527991416353570938}
-  - first: {fileID: 5124949852532252645}
-    second:
-    - {fileID: 3081723736097700049}
   - first: {fileID: -2791541452508595018}
     second:
     - {fileID: 2227996729504296891}
     - {fileID: -6704003312427872831}
+  - first: {fileID: 5124949852532252645}
+    second:
+    - {fileID: 3081723736097700049}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 580, y: 60, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
@@ -3631,3 +3663,29 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &9040440479159040176
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CapeInv
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 1cb9a05fc4a324075b538f6b83457456, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
