@@ -32873,7 +32873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2398732633786404077, guid: 3fcb56992a9642143a70ec7fe1482f9f, type: 3}
       propertyPath: m_Name
-      value: AStarPathfinding
+      value: A*
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
