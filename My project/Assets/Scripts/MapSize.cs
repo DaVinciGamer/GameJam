@@ -20,6 +20,10 @@ public class MapSize : MonoBehaviour
     public bool isfilled;
     private Grid grid;
 
+    //private GameObject logobject;
+    public GameObject logPrefab;
+    //private GameObject[] listOfLogs;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,7 @@ public class MapSize : MonoBehaviour
         height = tmapSize.y;
         //terrainMap = new int[width, height];
         tileFilled();
+        moveLog();
     }
 
     public void tileFilled()//Tilemap tilemap, Vector3Int vec)
@@ -73,9 +78,10 @@ public class MapSize : MonoBehaviour
 
     public void moveLog()
     {
+        //MoveLog hat sich geändert ich nehme die funktion nicht mehr um die Baumstämme zu bewegen sondern um den einzelnen einen Collider zu geben
         BoundsInt myB = logmap.cellBounds;
         TileBase[] allTiles = logmap.GetTilesBlock(myB);
-        int count = 1;
+        //int count = 1;
         for (int x = 0; x < myB.size.x; x++)
         {
             for (int y = 0; y < myB.size.y; y++)
@@ -83,7 +89,19 @@ public class MapSize : MonoBehaviour
                 TileBase tile = allTiles[x + y * myB.size.x];
                 if (tile != null)
                 {
-                    count = (int)(count + x * Time.deltaTime);
+                    Vector3Int cellPosition = new Vector3Int(x + myB.xMin, y + myB.yMin, 0);
+                    Vector3 worldPosition = logmap.CellToWorld(cellPosition);
+                    GameObject logObject = Instantiate(logPrefab, worldPosition, Quaternion.identity);
+
+                    logObject.tag = "Log";
+                    Debug.Log("Gameobjekt für Log wurde erstellt: " + logObject.name + " mit dem Tag: " + logObject.tag);
+                    BoxCollider2D collider = logObject.GetComponent<BoxCollider2D>();
+                    if (collider != null)
+                    {
+                        Debug.Log("Collider ist nicht null und wird skaliert auf 4,2");
+                        collider.size = new Vector2(4,2);  // Assuming tiles are 32x32 pixels
+                    }
+                    /*count = (int)(count + x * Time.deltaTime);
                     if (count < 59)
                     {
                         Vector3Int movex = new Vector3Int(count,y,0);
@@ -92,12 +110,12 @@ public class MapSize : MonoBehaviour
                         /*grid = logmap.layoutGrid;
                         grid.WorldToCell();
                         tile.transform*/
-                        //logmap.RefreshTile(movex);
-                    }
+                    //logmap.RefreshTile(movex);
+                    /*}
                     else
                     {
                         count = 1;
-                    }
+                    }*/
                 }
                 else
                 {
@@ -110,7 +128,7 @@ public class MapSize : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //moveLog();
+
         /*if(tileset.Length!= 0)
         {
             for (int i = 0; i < tileset.Length; i++)
