@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
-
+// ChatGPT used as a help
 public class PlayerController : MonoBehaviour
 {
     //define Public variables
@@ -396,10 +396,10 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // Diese Methode wird aufgerufen, wenn die Kollision beginnt
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Überprüfen, ob das kollidierende Objekt ein Wasserobjekt ist
+
         if (collision.gameObject.tag == "WaterDispenser" && PickupBucket == true)
         {
             BucketState = true;
@@ -407,7 +407,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void ShootProjectile()
+    void ShootProjectile() // With the help of ChatGPT
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         mousePosition.z = 0f;
@@ -429,7 +429,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void heal(int healthPoints)
+    public void heal(int healthPoints) // not used in game
     {
         currentHealth += healthPoints;
         currentHealth = Mathf.Clamp(healthPoints, 0, maxHealth);

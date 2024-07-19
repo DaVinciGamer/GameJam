@@ -10,7 +10,7 @@ public class Intro : MonoBehaviour
 
     void Start()
     {
-        videoPlayer.loopPointReached += OnVideoEnd;
+        videoPlayer.loopPointReached += OnVideoEnd; // Idea from ChatGPT
         MusicController.Instance.FadeTo(7);
     }
 

@@ -17,12 +17,11 @@ public class PlayerCollision : MonoBehaviour
         {
             try
             {
-                // Reduziere die Gesundheit des Spielers
+                // Reduce Player Health
                 playerClass.currentHealth -= enemyDamage.damageAmount;
 
-                // Aktualisiere den Slider-Wert
+                // Update Health Slider Value
                 healthSlider.value = (float)playerClass.currentHealth / playerClass.maxHealth;
-
             }
             catch
             {

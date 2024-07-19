@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Health Bar Idea based on https://www.youtube.com/watch?v=_lREXfAMUcE
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Slider slider;
@@ -27,7 +28,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = camera.transform.rotation;
-        transform.position = target.position + offset;
+        transform.rotation = camera.transform.rotation; // Necessary to prevent Health Bar from rotating
+        transform.position = target.position + offset;  // Position + Offset --> Show health bar above opponent (y-Value in Inspector)
     }
 }
