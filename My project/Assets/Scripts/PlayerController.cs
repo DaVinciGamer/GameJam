@@ -55,10 +55,11 @@ public class PlayerController : MonoBehaviour
     private bool jumpingState = false;
     private Vector2 lastDirection;
     public PlayerClass playerClass;
-    public SpriteAnimatorController[] uiAnimators;
+    public SpriteAnimatorController[] spriteAnimators;
 
     private bool dead = false;
     public static bool isJumping;
+    private int shootCounter = 0;
     void Start()
     {
         isJumping = false;
@@ -417,6 +418,10 @@ public class PlayerController : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         rb.velocity = direction * projectileSpeed;
+        shootCounter += 1;
+        if(shootCounter == 3){
+            HideSpriteById(1);
+        }
     }
 
     public void takeDamage(int healthPoints)
@@ -450,7 +455,7 @@ public class PlayerController : MonoBehaviour
         //When no object is worn
         else
         {
-            HideInstanceById(0);
+            HideSpriteById(0);
             // Search for Collider objects in the PickUpRadius
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, pickUpRadius);
             foreach (var collider in colliders)
@@ -554,10 +559,9 @@ public class PlayerController : MonoBehaviour
         playerClass.currentHealth = 0;
     }
 
-    public void HideInstanceById(int id)
+    public void HideSpriteById(int id)
     {
-        Debug.LogWarning("sliudhgosdnvojd");
-        foreach (var animator in uiAnimators)
+        foreach (var animator in spriteAnimators)
         {
             animator.HideInstanceById(id);
         }
