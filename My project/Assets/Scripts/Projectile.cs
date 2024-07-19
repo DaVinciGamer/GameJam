@@ -1,10 +1,10 @@
 using UnityEngine;
-
+// ChatGPT used as help
 public class Projectile : MonoBehaviour
 {
     public float damageAmount = 1f; // Damage amount the projectile deals
-    public Rigidbody2D rb; // Reference to the Rigidbody2D component
-    public float manualRotationOffset = 0f; // Additional rotation offset to adjust the projectile's angle
+    public Rigidbody2D rb;
+    public float manualRotationOffset = 0f; // Additional rotation offset to adjust the projectile's angle (Necessary because of the design of our sprite)
 
     void Start()
     {

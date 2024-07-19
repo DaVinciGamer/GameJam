@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public int damageAmount = 10; // Schadenshöhe, die dieser Gegner verursacht
+    public int damageAmount = 10; // Amount of damage caused by the opponent
 }

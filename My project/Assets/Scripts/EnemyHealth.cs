@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] float health, maxHealth = 3f;
+    [SerializeField] float health, maxHealth = 3f; // current health and max-health values of enemy
     [SerializeField] HealthBar healthBar;
     [SerializeField] GameObject healthBarGameObject;
 
@@ -34,18 +34,11 @@ public class EnemyHealth : MonoBehaviour
     }
     private void showHealthBar()
     {
-        if(health < maxHealth && !isDead)
+        if (health < maxHealth && !isDead)
         {
             healthBarGameObject.SetActive(true);
         }
     }
-
-    // private void Start()
-    // {
-    //     playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
-    //     health = maxHealth;
-    //     healthBar.UpdateHealthBar(health, maxHealth);
-    // }
 
     public void TakeDamage(float damageAmount)
     {

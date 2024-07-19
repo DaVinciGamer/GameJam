@@ -1,9 +1,9 @@
 using UnityEngine;
-
+// The following video is used as a basis https://www.youtube.com/watch?v=dHzeHh-3bp4 and adapted and extended to our own needs
 public class Window_QuestPointer : MonoBehaviour
 {
-    private Transform targetTransform;
-    public Transform bucketTargetTransform; // Das Zielobjekt, auf das der Pfeil zeigen soll
+    private Transform targetTransform; // The target object to which the arrow should point
+    public Transform bucketTargetTransform;
     public Transform fountainTargetTransform;
     public Transform fireTargetTransform;
     private RectTransform pointerRectTransform;
@@ -14,10 +14,10 @@ public class Window_QuestPointer : MonoBehaviour
     {
         pointerRectTransform = transform.Find("Pointer").GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
-        targetTransform = bucketTargetTransform;
+        targetTransform = bucketTargetTransform; // First target is the bucket
     }
 
-    private void Update()
+    private void Update() // Dynamic adjustment of the arrow depending on the player's current target
     {
         if (playerController == null)
         {
@@ -50,20 +50,20 @@ public class Window_QuestPointer : MonoBehaviour
             return;
         }
 
-        // Zielposition in Weltkoordinaten
+        // Target position in world coordinates
         Vector3 toPosition = targetTransform.position;
-        // Kameraposition in Weltkoordinaten
+        // Camera position in world coordinates
         Vector3 fromPosition = Camera.main.transform.position;
-        fromPosition.z = 0f; // Falls das Ziel und die Kamera nicht auf derselben Z-Ebene liegen
+        fromPosition.z = 0f; // In case the target and the camera are not on the same Z-plane
 
-        // Richtung vom Kameraposition zur Zielposition berechnen
+        // Calculate direction from the camera position to the target position
         Vector3 dir = (toPosition - fromPosition).normalized;
 
-        // Winkel berechnen
+        // Calculate angle
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        angle += 270f;
+        angle += 270f; // Required for the arrow to point in the right direction
 
-        // Winkel auf den Pfeil anwenden
+        // Apply angle to the arrow
         pointerRectTransform.localEulerAngles = new Vector3(0, 0, angle);
 
         float borderSize = 100f;
@@ -79,15 +79,14 @@ public class Window_QuestPointer : MonoBehaviour
             if (cappedTargetScreenPosition.y <= borderSize) cappedTargetScreenPosition.y = borderSize;
             if (cappedTargetScreenPosition.y >= Screen.height - borderSize) cappedTargetScreenPosition.y = Screen.height - borderSize;
 
-            // Bildschirmkoordinaten in Canvas-Koordinaten umwandeln
+            // Convert screen coordinates to canvas coordinates
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, cappedTargetScreenPosition, canvas.worldCamera, out Vector2 localPoint);
             pointerRectTransform.localPosition = localPoint;
-            pointerRectTransform.gameObject.SetActive(true); // Pfeil anzeigen
+            pointerRectTransform.gameObject.SetActive(true); // Show arrow
         }
         else
         {
-            // Pfeil ausblenden
-            pointerRectTransform.gameObject.SetActive(false); // Pfeil anzeigen
+            pointerRectTransform.gameObject.SetActive(false); // Hide arrow
         }
     }
 }
